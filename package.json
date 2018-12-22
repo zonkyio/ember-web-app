@@ -17,7 +17,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/san650/ember-web-app.git",
+  "repository": "https://github.com/zonkyio/ember-web-app.git",
   "scripts": {
     "build": "ember build",
     "fast-test": "SKIP_ACCEPTANCE=true npm run node-test",

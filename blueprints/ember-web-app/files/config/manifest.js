@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = function(/* environment, appConfig */) {
-  // See https://github.com/san650/ember-web-app#documentation for a list of
+  // See https://github.com/zonkyio/ember-web-app#documentation for a list of
   // supported properties
 
   return {

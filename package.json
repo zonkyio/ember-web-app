@@ -58,7 +58,7 @@
     "loader.js": "^4.2.3",
     "mocha": "^3.5.3",
     "rsvp": "^3.6.2",
-    "strip-ansi": "^3.0.1"
+    "strip-ansi": "^5.0.0"
   },
   "engines": {
     "node": "6.* || >= 7.* || >= 8.*"

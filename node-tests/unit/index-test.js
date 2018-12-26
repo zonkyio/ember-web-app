@@ -11,7 +11,7 @@ function createIndex() {
       manifestConfiguration: {
         display: 'standalone'
       },
-      _disabled: function() {
+      _disabled() {
         return false
       }
     });

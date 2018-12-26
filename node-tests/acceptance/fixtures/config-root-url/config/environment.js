@@ -1,7 +1,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'dummy',
-    environment: environment,
+    environment,
     rootURL: '/foo/bar/baz/'
   };
 

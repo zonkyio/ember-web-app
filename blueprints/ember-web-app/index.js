@@ -1,16 +1,15 @@
-/*jshint node:true*/
 module.exports = {
   description: '',
 
-  normalizeEntityName: function() {},
+  normalizeEntityName() {},
 
-  locals: function(options) {
+  locals(options) {
     return {
       name: options.project.name()
     };
   },
 
-  afterInstall: function() {
+  afterInstall() {
     return this.removePackageFromProject('ember-web-app-rename');
   }
 };

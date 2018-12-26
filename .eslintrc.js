@@ -15,7 +15,8 @@ module.exports = {
     browser: true
   },
   rules: {
-    'no-var': 'error'
+    'no-var': 'error',
+    'object-shorthand': 'error'
   },
   overrides: [
     // node files
@@ -28,6 +29,7 @@ module.exports = {
         'testem.js',
         'blueprints/*/index.js',
         'config/**/*.js',
+        'lib/**/*.js',
         'tests/dummy/config/**/*.js',
         'node-tests/**/*.js'
       ],

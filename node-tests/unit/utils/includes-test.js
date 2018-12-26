@@ -1,7 +1,7 @@
 'use strict';
 
-var assert = require('assert');
-var includes = require('../../../lib/utils/includes');
+const assert = require('assert');
+const includes = require('../../../lib/utils/includes');
 
 describe('Unit: includes()', function() {
   it('returns false if the array is null', function() {

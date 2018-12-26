@@ -1,14 +1,14 @@
 'use strict';
 
-var assert = require('assert');
-var msMetaTags = require('../../lib/ms-meta-tags');
+const assert = require('assert');
+const msMetaTags = require('../../lib/ms-meta-tags');
 
 describe('Unit: msMetaTags()', function() {
   it('returns meta tag with the link to browserconfig.xml', function() {
-    var manifest = {
+    let manifest = {
       ms: true
     };
-    var config = {};
+    let config = {};
 
     assert.deepStrictEqual(
       msMetaTags(manifest, config, 'browserconfig.xml'),
@@ -19,10 +19,10 @@ describe('Unit: msMetaTags()', function() {
   });
 
   it('uses rootURL if defined', function() {
-    var manifest = {
+    let manifest = {
       ms: true
     };
-    var config = {
+    let config = {
       rootURL: '/foo/bar/'
     };
 
@@ -35,8 +35,8 @@ describe('Unit: msMetaTags()', function() {
   });
 
   it(`does not return the tag if 'ms' is falsey`, function() {
-    var manifest = {};
-    var config = {};
+    let manifest = {};
+    let config = {};
 
     assert.deepStrictEqual(msMetaTags(manifest, config, 'browserconfig.xml'), []);
   });

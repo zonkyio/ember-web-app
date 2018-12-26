@@ -1,11 +1,11 @@
 'use strict';
 
-var assert = require('assert');
-var generateManifestFromConfiguration = require('../../lib/generate-manifest-from-configuration');
+const assert = require('assert');
+const generateManifestFromConfiguration = require('../../lib/generate-manifest-from-configuration');
 
 describe('Unit: generateManifestFromConfiguration()', function() {
   it('filters custom "apple" property', function() {
-    var manifest = {
+    let manifest = {
       apple: 'apple'
     };
 
@@ -13,7 +13,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
   });
 
   it('filters custom "ms" property', function() {
-    var manifest = {
+    let manifest = {
       ms: 'ms'
     };
 
@@ -21,7 +21,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
   });
 
   it('returns manifest properties', function() {
-    var manifest = {
+    let manifest = {
       foo: 'bar'
     };
 
@@ -29,7 +29,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
   });
 
   it('includes icons with no target definition', function() {
-    var expected = {
+    let expected = {
       icons: [
         {
           src: 'foo/bar.png',
@@ -39,7 +39,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
       ]
     };
 
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: 'foo/bar.png',
@@ -53,7 +53,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
   });
 
   it('filters icons that has a different target than manifest', function() {
-    var expected = {
+    let expected = {
       icons: [
         {
           src: 'baz/qux.png',
@@ -63,7 +63,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
       ]
     };
 
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: 'foo/bar.png',

@@ -1,7 +1,7 @@
 'use strict';
 
-var assert = require('assert');
-var resolveURL = require('../../lib/resolve-url');
+const assert = require('assert');
+const resolveURL = require('../../lib/resolve-url');
 
 describe('Unit: resolveURL()', function() {
   it('returns original URL when it\'s absolute', function() {

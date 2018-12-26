@@ -7,7 +7,7 @@ describe('Unit: generateBrowserconfigFromConfiguration()', function() {
   it(`generates the minimal browserconfig.xml if there are no icons with 'ms' target`, function() {
     const manifest = {};
 
-    assert.equal(
+    assert.strictEqual(
       generateBrowserconfigFromConfiguration(manifest),
       '<?xml version="1.0"?><browserconfig><msapplication/></browserconfig>'
     );
@@ -70,7 +70,7 @@ describe('Unit: generateBrowserconfigFromConfiguration()', function() {
       }
     };
 
-    assert.equal(
+    assert.strictEqual(
       generateBrowserconfigFromConfiguration(manifest),
       `<?xml version="1.0"?><browserconfig><msapplication><tile><square150x150logo src="mstile-150x150.png"/><square310x310logo src="mstile-310x310.png"/><TileColor>#ffffff</TileColor></tile></msapplication></browserconfig>`
     );

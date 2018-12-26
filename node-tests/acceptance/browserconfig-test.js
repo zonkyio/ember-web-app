@@ -28,7 +28,7 @@ describe('Acceptance: browserconfig file generation', function() {
       })
       .then(contentOf(app, 'dist/browserconfig.xml'))
       .then(function(content) {
-        assert.equal(
+        assert.strictEqual(
           content,
           '<?xml version="1.0"?><browserconfig><msapplication/></browserconfig>'
         );
@@ -45,7 +45,7 @@ describe('Acceptance: browserconfig file generation', function() {
       })
       .then(contentOf(app, 'dist/browserconfig.xml'))
       .then(function(content) {
-        assert.equal(
+        assert.strictEqual(
           content,
           '<?xml version="1.0"?><browserconfig><msapplication><tile><square150x150logo src="pio-8911090226e7b5522790f1218f6924a5.png"/><TileColor>#FFFFFF</TileColor></tile></msapplication></browserconfig>'
         );
@@ -127,7 +127,7 @@ describe('Acceptance: browserconfig file generation', function() {
       })
       .then(contentOf(app, 'dist/browserconfig.xml'))
       .then(function(content) {
-        assert.equal(
+        assert.strictEqual(
           content,
           '<?xml version="1.0"?><browserconfig><msapplication><tile><square150x150logo src="https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png"/><TileColor>#FFFFFF</TileColor></tile></msapplication></browserconfig>'
         );
@@ -143,6 +143,6 @@ function contentOf(app, path) {
 
 function assertJSON(app, expected) {
   return function(actual) {
-    assert.deepEqual(JSON.parse(actual), expected, 'assert JSON');
+    assert.deepStrictEqual(JSON.parse(actual), expected, 'assert JSON');
   };
 }

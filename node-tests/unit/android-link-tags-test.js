@@ -5,17 +5,15 @@ var androidLinkTags = require('../../lib/android-link-tags');
 
 describe('Unit: androidLinkTags()', function() {
   it('returns `manifest` link', function() {
-    var manifest = {};
     var config = {};
     var expected = [
       '<link rel="manifest" href="manifest.webmanifest">'
     ];
 
-    assert.deepEqual(androidLinkTags(config, 'manifest.webmanifest'), expected);
+    assert.deepStrictEqual(androidLinkTags(config, 'manifest.webmanifest'), expected);
   });
 
   it('uses rootURL if defined', function() {
-    var manifest = {};
     var config = {
       rootURL: '/foo/bar/'
     };
@@ -23,6 +21,6 @@ describe('Unit: androidLinkTags()', function() {
       '<link rel="manifest" href="/foo/bar/manifest.webmanifest">'
     ];
 
-    assert.deepEqual(androidLinkTags(config, 'manifest.webmanifest'), expected);
+    assert.deepStrictEqual(androidLinkTags(config, 'manifest.webmanifest'), expected);
   });
 });

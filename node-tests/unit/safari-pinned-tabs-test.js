@@ -24,7 +24,7 @@ describe('Unit: safariPinnedTabs()', function() {
 
     var expected = [];
 
-    assert.deepEqual(safariPinnedTabTags(manifest, config), expected);
+    assert.deepStrictEqual(safariPinnedTabTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is not defined', function() {
@@ -32,7 +32,7 @@ describe('Unit: safariPinnedTabs()', function() {
     var manifest = {};
     var expected = [];
 
-    assert.deepEqual(safariPinnedTabTags(manifest, config), expected);
+    assert.deepStrictEqual(safariPinnedTabTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is empty', function() {
@@ -42,7 +42,7 @@ describe('Unit: safariPinnedTabs()', function() {
     };
     var expected = [];
 
-    assert.deepEqual(safariPinnedTabTags(manifest, config), expected);
+    assert.deepStrictEqual(safariPinnedTabTags(manifest, config), expected);
   });
 
   it('renders color attribute', function() {
@@ -63,7 +63,7 @@ describe('Unit: safariPinnedTabs()', function() {
       '<link rel="mask-icon" href="/foo/bar.svg" color="#abc">',
     ];
 
-    assert.deepEqual(safariPinnedTabTags(manifest, config), expected);
+    assert.deepStrictEqual(safariPinnedTabTags(manifest, config), expected);
   });
 
   it('uses an empty string as rootURL if it is undefined', function() {
@@ -82,7 +82,7 @@ describe('Unit: safariPinnedTabs()', function() {
       '<link rel="mask-icon" href="bar.svg">',
     ];
 
-    assert.deepEqual(safariPinnedTabTags(manifest, config), expected);
+    assert.deepStrictEqual(safariPinnedTabTags(manifest, config), expected);
   });
 
   it('respects absolute urls', function() {
@@ -107,6 +107,6 @@ describe('Unit: safariPinnedTabs()', function() {
       '<link rel="mask-icon" href="https://www.example.com/bar/baz.svg">'
     ];
 
-    assert.deepEqual(safariPinnedTabTags(manifest, config), expected);
+    assert.deepStrictEqual(safariPinnedTabTags(manifest, config), expected);
   });
 });

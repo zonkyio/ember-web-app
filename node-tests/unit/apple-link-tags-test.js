@@ -26,7 +26,7 @@ describe('Unit: appleLinkTags()', function() {
       '<link rel="apple-touch-icon" href="/qux/bar/baz.png" sizes="280x280">'
     ];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('excludes icons that are not targeted for apple', function() {
@@ -51,7 +51,7 @@ describe('Unit: appleLinkTags()', function() {
       '<link rel="apple-touch-icon" href="/qux/bar/baz.png" sizes="280x280">'
     ];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is not defined', function() {
@@ -59,7 +59,7 @@ describe('Unit: appleLinkTags()', function() {
     var manifest = {};
     var expected = [];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is empty', function() {
@@ -69,7 +69,7 @@ describe('Unit: appleLinkTags()', function() {
     };
     var expected = [];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('does not render sizes attribute when is not defined', function() {
@@ -88,7 +88,7 @@ describe('Unit: appleLinkTags()', function() {
       '<link rel="apple-touch-icon" href="/foo/bar.png">',
     ];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('uses an empty string as rootURL if it is undefined', function() {
@@ -106,7 +106,7 @@ describe('Unit: appleLinkTags()', function() {
       '<link rel="apple-touch-icon" href="bar.png">',
     ];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('generates icons with precomposed suffix', function() {
@@ -129,7 +129,7 @@ describe('Unit: appleLinkTags()', function() {
       '<link rel="apple-touch-icon-precomposed" href="/foo/bar.png">',
     ];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('does not generate apple link tags when apple is false', function() {
@@ -148,7 +148,7 @@ describe('Unit: appleLinkTags()', function() {
 
     var expected = [];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('respects absolute urls', function() {
@@ -171,6 +171,6 @@ describe('Unit: appleLinkTags()', function() {
       '<link rel="apple-touch-icon" href="https://www.example.com/bar/baz.png">'
     ];
 
-    assert.deepEqual(appleLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 });

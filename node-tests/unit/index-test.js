@@ -28,7 +28,7 @@ describe('Unit: index', function() {
     it('returns empty when section is other than "head"', function() {
       var index = createIndex();
 
-      assert.equal(index.contentFor('head-footer', { rootURL: '/' }), null);
+      assert.strictEqual(index.contentFor('head-footer', { rootURL: '/' }), undefined);
     });
 
     it('uses rootURL config', function() {

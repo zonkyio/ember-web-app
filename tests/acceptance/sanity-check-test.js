@@ -1,10 +1,13 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { module, test } from 'qunit';
+import { visit, currentURL } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
-moduleForAcceptance('Acceptance | sanity check');
+module('Acceptance | sanity check', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('Just a sanity check that the ember app is building ok with the addon', async function(assert) {
-  await visit('/');
+  test('Just a sanity check that the ember app is building ok with the addon', async function(assert) {
+    await visit('/');
 
-  assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/');
+  });
 });

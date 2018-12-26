@@ -15,7 +15,7 @@ describe('Unit: configureFingerprint()', function() {
 
     var actual = configureFingerprint(undefined, 'manifest.webmanifest');
 
-    assert.deepEqual(actual, expected);
+    assert.deepStrictEqual(actual, expected);
   });
 
   it('updates options', function() {
@@ -32,7 +32,7 @@ describe('Unit: configureFingerprint()', function() {
 
     var actual = configureFingerprint(userOptions, 'manifest.webmanifest');
 
-    assert.deepEqual(actual, expected);
+    assert.deepStrictEqual(actual, expected);
   });
 
   it('completes missing values using defaults', function() {
@@ -46,6 +46,6 @@ describe('Unit: configureFingerprint()', function() {
 
     var actual = configureFingerprint(userOptions, 'manifest.webmanifest');
 
-    assert.deepEqual(actual, expected);
+    assert.deepStrictEqual(actual, expected);
   });
 });

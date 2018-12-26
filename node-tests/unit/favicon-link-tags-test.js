@@ -24,7 +24,7 @@ describe('Unit: faviconLinkTags()', function() {
 
     var expected = [];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is not defined', function() {
@@ -32,7 +32,7 @@ describe('Unit: faviconLinkTags()', function() {
     var manifest = {};
     var expected = [];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is empty', function() {
@@ -42,7 +42,7 @@ describe('Unit: faviconLinkTags()', function() {
     };
     var expected = [];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('does not render sizes attribute when is not defined', function() {
@@ -62,7 +62,7 @@ describe('Unit: faviconLinkTags()', function() {
       '<link rel="icon" href="/foo/bar.png">',
     ];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('renders sizes attribute when it is defined', function() {
@@ -83,7 +83,7 @@ describe('Unit: faviconLinkTags()', function() {
       '<link rel="icon" href="/foo/bar.png" sizes="16x16">',
     ];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('does not render type attribute when is not defined', function() {
@@ -103,7 +103,7 @@ describe('Unit: faviconLinkTags()', function() {
       '<link rel="icon" href="/foo/bar.png">',
     ];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('renders type attribute when it is defined', function() {
@@ -124,7 +124,7 @@ describe('Unit: faviconLinkTags()', function() {
       '<link rel="icon" href="/foo/bar.png" type="image/png">',
     ];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('uses an empty string as rootURL if it is undefined', function() {
@@ -143,7 +143,7 @@ describe('Unit: faviconLinkTags()', function() {
       '<link rel="icon" href="bar.png">',
     ];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('respects absolute urls', function() {
@@ -168,6 +168,6 @@ describe('Unit: faviconLinkTags()', function() {
       '<link rel="icon" href="https://www.example.com/bar/baz.png">'
     ];
 
-    assert.deepEqual(faviconLinkTags(manifest, config), expected);
+    assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 });

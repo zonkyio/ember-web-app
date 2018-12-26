@@ -162,7 +162,7 @@ describe('Unit: appleMetaTags()', function() {
 
     var actual = appleMetaTags(manifest);
 
-    assert.deepEqual(actual, expected);
+    assert.deepStrictEqual(actual, expected);
   });
 
   it('returns `format-detection` meta tag with disabled telephone', function() {

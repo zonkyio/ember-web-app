@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 const path = require('path');
@@ -9,7 +8,7 @@ const MANIFEST_NAME = 'manifest.webmanifest';
 const BROWSERCONFIG_NAME = 'browserconfig.xml';
 
 module.exports = {
-  name: 'ember-web-app',
+  name: require('./package').name,
 
   shouldIncludeChildAddon(childAddon) {
     if (childAddon.name === 'broccoli-asset-rev') {

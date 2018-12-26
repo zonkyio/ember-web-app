@@ -128,6 +128,6 @@ function contentOf(app, path) {
 
 function assertJSON(app, expected) {
   return function(actual) {
-    assert.deepEqual(JSON.parse(actual), expected, 'assert JSON');
+    assert.deepStrictEqual(JSON.parse(actual), expected, 'assert JSON');
   };
 }

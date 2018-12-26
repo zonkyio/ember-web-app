@@ -10,7 +10,7 @@ describe('Unit: msMetaTags()', function() {
     };
     var config = {};
 
-    assert.deepEqual(
+    assert.deepStrictEqual(
       msMetaTags(manifest, config, 'browserconfig.xml'),
       [
         '<meta name="msapplication-config" content="browserconfig.xml">'
@@ -26,7 +26,7 @@ describe('Unit: msMetaTags()', function() {
       rootURL: '/foo/bar/'
     };
 
-    assert.deepEqual(
+    assert.deepStrictEqual(
       msMetaTags(manifest, config, 'browserconfig.xml'),
       [
         '<meta name="msapplication-config" content="/foo/bar/browserconfig.xml">'
@@ -38,6 +38,6 @@ describe('Unit: msMetaTags()', function() {
     var manifest = {};
     var config = {};
 
-    assert.deepEqual(msMetaTags(manifest, config, 'browserconfig.xml'), []);
+    assert.deepStrictEqual(msMetaTags(manifest, config, 'browserconfig.xml'), []);
   });
 });

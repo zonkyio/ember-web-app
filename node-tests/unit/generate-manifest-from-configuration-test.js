@@ -9,7 +9,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
       apple: 'apple'
     };
 
-    assert.deepEqual(generateManifestFromConfiguration(manifest), {});
+    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), {});
   });
 
   it('filters custom "ms" property', function() {
@@ -17,7 +17,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
       ms: 'ms'
     };
 
-    assert.deepEqual(generateManifestFromConfiguration(manifest), {});
+    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), {});
   });
 
   it('returns manifest properties', function() {
@@ -25,7 +25,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
       foo: 'bar'
     };
 
-    assert.deepEqual(generateManifestFromConfiguration(manifest), { foo: 'bar' });
+    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), { foo: 'bar' });
   });
 
   it('includes icons with no target definition', function() {
@@ -49,7 +49,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
       ]
     };
 
-    assert.deepEqual(generateManifestFromConfiguration(manifest), expected);
+    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), expected);
   });
 
   it('filters icons that has a different target than manifest', function() {
@@ -80,6 +80,6 @@ describe('Unit: generateManifestFromConfiguration()', function() {
       ]
     };
 
-    assert.deepEqual(generateManifestFromConfiguration(manifest), expected);
+    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), expected);
   });
 });

@@ -12,13 +12,13 @@ describe('Unit: androidMetaTags()', function() {
       '<meta name="theme-color" content="#ff0000">'
     ];
 
-    assert.deepEqual(androidMetaTags(manifest), expected);
+    assert.deepStrictEqual(androidMetaTags(manifest), expected);
   });
 
   it('resturns empty array when `theme-color` is not defined', function() {
     var manifest = {};
     var expected = [];
 
-    assert.deepEqual(androidMetaTags(manifest), expected);
+    assert.deepStrictEqual(androidMetaTags(manifest), expected);
   });
 });

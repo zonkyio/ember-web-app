@@ -4,8 +4,8 @@ module.exports = function() {
   return {
     icons: [
       {
-        src: 'pio.png'
-      }
-    ]
+        src: 'pio.png',
+      },
+    ],
   };
-}
+};

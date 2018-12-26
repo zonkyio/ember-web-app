@@ -9,6 +9,7 @@
 /node_modules/
 
 # misc
+/.eslintcache
 /.sass-cache
 /connect.lock
 /coverage/

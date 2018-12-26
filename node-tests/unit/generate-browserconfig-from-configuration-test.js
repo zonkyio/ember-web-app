@@ -19,16 +19,14 @@ describe('Unit: generateBrowserconfigFromConfiguration()', function() {
         {
           src: 'image.png',
           sizes: '150x150',
-          targets: ['ms']
-        }
-      ]
+          targets: ['ms'],
+        },
+      ],
     };
 
-    assert.throws(
-      function() {
-        generateBrowserconfigFromConfiguration(manifest);
-      }
-    );
+    assert.throws(function() {
+      generateBrowserconfigFromConfiguration(manifest);
+    });
   });
 
   it(`throws an error if the icon is valid but there's no 'ms.tileColor' property`, function() {
@@ -38,16 +36,14 @@ describe('Unit: generateBrowserconfigFromConfiguration()', function() {
           src: 'image.png',
           sizes: '150x150',
           element: 'square150x150logo',
-          targets: ['ms']
-        }
-      ]
+          targets: ['ms'],
+        },
+      ],
     };
 
-    assert.throws(
-      function() {
-        generateBrowserconfigFromConfiguration(manifest);
-      }
-    );
+    assert.throws(function() {
+      generateBrowserconfigFromConfiguration(manifest);
+    });
   });
 
   it(`adds each icon to the list of tiles`, function() {
@@ -56,18 +52,18 @@ describe('Unit: generateBrowserconfigFromConfiguration()', function() {
         {
           src: 'mstile-150x150.png',
           element: 'square150x150logo',
-          targets: ['ms']
+          targets: ['ms'],
         },
         {
           src: 'mstile-310x310.png',
           element: 'square310x310logo',
-          targets: ['ms']
-        }
+          targets: ['ms'],
+        },
       ],
 
       ms: {
-        tileColor: '#ffffff'
-      }
+        tileColor: '#ffffff',
+      },
     };
 
     assert.strictEqual(

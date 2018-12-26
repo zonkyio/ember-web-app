@@ -60,10 +60,13 @@
     "ember-source-channel-url": "^1.1.0",
     "ember-try": "^1.0.0",
     "eslint": "^5.11.0",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-ember": "^6.1.0",
     "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "loader.js": "^4.7.0",
     "mocha": "^3.5.3",
+    "prettier": "^1.15.3",
     "qunit-dom": "^0.8.0",
     "rsvp": "^3.6.2",
     "strip-ansi": "^5.0.0"

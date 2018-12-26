@@ -13,12 +13,13 @@ describe('Blueprints: ember generate and destroy ember-web-app', function() {
   it('generates config/manifest.js file', function() {
     let args = ['ember-web-app', 'foo'];
 
-    return emberNew()
-      .then(() => emberGenerateDestroy(args, (file) => {
+    return emberNew().then(() =>
+      emberGenerateDestroy(args, file => {
         expect(file('config/manifest.js'))
           .to.contain('name: "my-app"')
           .to.contain('short_name: "my-app"')
           .to.contain('display: "standalone"');
-    }));
+      })
+    );
   });
 });

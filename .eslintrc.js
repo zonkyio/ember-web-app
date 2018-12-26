@@ -2,27 +2,27 @@ module.exports = {
   root: true,
   parserOptions: {
     ecmaVersion: 2017,
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'ember'
-  ],
+  plugins: ['ember'],
   extends: [
     'eslint:recommended',
-    'plugin:ember/recommended'
+    'plugin:ember/recommended',
+    'plugin:prettier/recommended',
   ],
   env: {
-    browser: true
+    browser: true,
   },
   rules: {
     'no-var': 'error',
-    'object-shorthand': 'error'
+    'object-shorthand': 'error',
   },
   overrides: [
     // node files
     {
       files: [
         '.eslintrc.js',
+        '.prettierrc.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
         'index.js',
@@ -31,46 +31,52 @@ module.exports = {
         'config/**/*.js',
         'lib/**/*.js',
         'tests/dummy/config/**/*.js',
-        'node-tests/**/*.js'
+        'node-tests/**/*.js',
       ],
       excludedFiles: [
         'addon/**',
         'addon-test-support/**',
         'app/**',
         'tests/dummy/app/**',
-        'node-tests/**/*-test.js'
+        'node-tests/**/*-test.js',
       ],
       parserOptions: {
         sourceType: 'script',
-        ecmaVersion: 2015
-      },
-      env: {
-        browser: false,
-        node: true
-      },
-      plugins: ['node'],
-      rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
-        // add your custom rules and overrides for node files here
-      })
-    },
-    // mocha files
-    {
-      files: [
-        'node-tests/**/*-test.js'
-      ],
-      parserOptions: {
-        sourceType: 'script',
-        ecmaVersion: 2015
+        ecmaVersion: 2015,
       },
       env: {
         browser: false,
         node: true,
-        mocha: true
       },
       plugins: ['node'],
-      rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
-        // add your custom rules and overrides for node files here
-      })
-    }
-  ]
+      rules: Object.assign(
+        {},
+        require('eslint-plugin-node').configs.recommended.rules,
+        {
+          // add your custom rules and overrides for node files here
+        }
+      ),
+    },
+    // mocha files
+    {
+      files: ['node-tests/**/*-test.js'],
+      parserOptions: {
+        sourceType: 'script',
+        ecmaVersion: 2015,
+      },
+      env: {
+        browser: false,
+        node: true,
+        mocha: true,
+      },
+      plugins: ['node'],
+      rules: Object.assign(
+        {},
+        require('eslint-plugin-node').configs.recommended.rules,
+        {
+          // add your custom rules and overrides for node files here
+        }
+      ),
+    },
+  ],
 };

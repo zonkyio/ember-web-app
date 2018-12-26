@@ -1,14 +1,14 @@
 'use strict';
 
-var assert = require('assert');
-var appleLinkTags = require('../../lib/apple-link-tags');
+const assert = require('assert');
+const appleLinkTags = require('../../lib/apple-link-tags');
 
 describe('Unit: appleLinkTags()', function() {
   it('generates `apple-touch-icon` links from icons with no targets set', function() {
-    var config = {
+    let config = {
       rootURL: '/qux/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png',
@@ -21,7 +21,7 @@ describe('Unit: appleLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="apple-touch-icon" href="/qux/foo/bar.png" sizes="180x180">',
       '<link rel="apple-touch-icon" href="/qux/bar/baz.png" sizes="280x280">'
     ];
@@ -30,10 +30,10 @@ describe('Unit: appleLinkTags()', function() {
   });
 
   it('excludes icons that are not targeted for apple', function() {
-    var config = {
+    let config = {
       rootURL: '/qux/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png',
@@ -47,7 +47,7 @@ describe('Unit: appleLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="apple-touch-icon" href="/qux/bar/baz.png" sizes="280x280">'
     ];
 
@@ -55,28 +55,28 @@ describe('Unit: appleLinkTags()', function() {
   });
 
   it('returns empty array when icons is not defined', function() {
-    var config = {};
-    var manifest = {};
-    var expected = [];
+    let config = {};
+    let manifest = {};
+    let expected = [];
 
     assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is empty', function() {
-    var config = {};
-    var manifest = {
+    let config = {};
+    let manifest = {
       icons: []
     };
-    var expected = [];
+    let expected = [];
 
     assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('does not render sizes attribute when is not defined', function() {
-    var config = {
+    let config = {
       rootURL: '/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png'
@@ -84,7 +84,7 @@ describe('Unit: appleLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="apple-touch-icon" href="/foo/bar.png">',
     ];
 
@@ -92,9 +92,9 @@ describe('Unit: appleLinkTags()', function() {
   });
 
   it('uses an empty string as rootURL if it is undefined', function() {
-    var config = {}
+    let config = {}
 
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: 'bar.png'
@@ -102,7 +102,7 @@ describe('Unit: appleLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="apple-touch-icon" href="bar.png">',
     ];
 
@@ -110,11 +110,11 @@ describe('Unit: appleLinkTags()', function() {
   });
 
   it('generates icons with precomposed suffix', function() {
-    var config = {
+    let config = {
       rootURL: '/'
     };
 
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png'
@@ -125,7 +125,7 @@ describe('Unit: appleLinkTags()', function() {
       }
     };
 
-    var expected = [
+    let expected = [
       '<link rel="apple-touch-icon-precomposed" href="/foo/bar.png">',
     ];
 
@@ -133,11 +133,11 @@ describe('Unit: appleLinkTags()', function() {
   });
 
   it('does not generate apple link tags when apple is false', function() {
-    var config = {
+    let config = {
       rootURL: '/'
     };
 
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png'
@@ -146,16 +146,16 @@ describe('Unit: appleLinkTags()', function() {
       apple: false
     };
 
-    var expected = [];
+    let expected = [];
 
     assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
   });
 
   it('respects absolute urls', function() {
-    var config = {
+    let config = {
       rootURL: '/qux/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: 'http://www.example.com/foo/bar.png'
@@ -166,7 +166,7 @@ describe('Unit: appleLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="apple-touch-icon" href="http://www.example.com/foo/bar.png">',
       '<link rel="apple-touch-icon" href="https://www.example.com/bar/baz.png">'
     ];

@@ -1,7 +1,7 @@
 'use strict';
 
-var assert = require('assert');
-var configureFingerprint = require('../../lib/configure-fingerprint');
+const assert = require('assert');
+const configureFingerprint = require('../../lib/configure-fingerprint');
 
 describe('Unit: configureFingerprint()', function() {
   it('returns `false` when current options is `false`', function() {
@@ -9,42 +9,42 @@ describe('Unit: configureFingerprint()', function() {
   });
 
   it('returns safe configuration when options is undefined', function() {
-    var expected = {
+    let expected = {
       replaceExtensions: ['html', 'css', 'js', 'webmanifest']
     };
 
-    var actual = configureFingerprint(undefined, 'manifest.webmanifest');
+    let actual = configureFingerprint(undefined, 'manifest.webmanifest');
 
     assert.deepStrictEqual(actual, expected);
   });
 
   it('updates options', function() {
-    var userOptions = {
+    let userOptions = {
       prepend: 'prefix',
       exclude: ['foo', 'bar'],
       replaceExtensions: ['baz']
     };
-    var expected = {
+    let expected = {
       prepend: 'prefix',
       exclude: ['foo', 'bar'],
       replaceExtensions: ['baz', 'webmanifest']
     };
 
-    var actual = configureFingerprint(userOptions, 'manifest.webmanifest');
+    let actual = configureFingerprint(userOptions, 'manifest.webmanifest');
 
     assert.deepStrictEqual(actual, expected);
   });
 
   it('completes missing values using defaults', function() {
-    var userOptions = {
+    let userOptions = {
       prepend: 'prefix'
     };
-    var expected = {
+    let expected = {
       prepend: 'prefix',
       replaceExtensions: ['html', 'css', 'js', 'webmanifest']
     };
 
-    var actual = configureFingerprint(userOptions, 'manifest.webmanifest');
+    let actual = configureFingerprint(userOptions, 'manifest.webmanifest');
 
     assert.deepStrictEqual(actual, expected);
   });

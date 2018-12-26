@@ -1,14 +1,14 @@
 'use strict';
 
-var assert = require('assert');
-var faviconLinkTags = require('../../lib/favicon-link-tags');
+const assert = require('assert');
+const faviconLinkTags = require('../../lib/favicon-link-tags');
 
 describe('Unit: faviconLinkTags()', function() {
   it('excludes icons that are not targeted for favicon', function() {
-    var config = {
+    let config = {
       rootURL: '/qux/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png',
@@ -22,34 +22,34 @@ describe('Unit: faviconLinkTags()', function() {
       ]
     };
 
-    var expected = [];
+    let expected = [];
 
     assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is not defined', function() {
-    var config = {};
-    var manifest = {};
-    var expected = [];
+    let config = {};
+    let manifest = {};
+    let expected = [];
 
     assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('returns empty array when icons is empty', function() {
-    var config = {};
-    var manifest = {
+    let config = {};
+    let manifest = {
       icons: []
     };
-    var expected = [];
+    let expected = [];
 
     assert.deepStrictEqual(faviconLinkTags(manifest, config), expected);
   });
 
   it('does not render sizes attribute when is not defined', function() {
-    var config = {
+    let config = {
       rootURL: '/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png',
@@ -58,7 +58,7 @@ describe('Unit: faviconLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="icon" href="/foo/bar.png">',
     ];
 
@@ -66,10 +66,10 @@ describe('Unit: faviconLinkTags()', function() {
   });
 
   it('renders sizes attribute when it is defined', function() {
-    var config = {
+    let config = {
       rootURL: '/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png',
@@ -79,7 +79,7 @@ describe('Unit: faviconLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="icon" href="/foo/bar.png" sizes="16x16">',
     ];
 
@@ -87,10 +87,10 @@ describe('Unit: faviconLinkTags()', function() {
   });
 
   it('does not render type attribute when is not defined', function() {
-    var config = {
+    let config = {
       rootURL: '/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png',
@@ -99,7 +99,7 @@ describe('Unit: faviconLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="icon" href="/foo/bar.png">',
     ];
 
@@ -107,10 +107,10 @@ describe('Unit: faviconLinkTags()', function() {
   });
 
   it('renders type attribute when it is defined', function() {
-    var config = {
+    let config = {
       rootURL: '/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: '/foo/bar.png',
@@ -120,7 +120,7 @@ describe('Unit: faviconLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="icon" href="/foo/bar.png" type="image/png">',
     ];
 
@@ -128,9 +128,9 @@ describe('Unit: faviconLinkTags()', function() {
   });
 
   it('uses an empty string as rootURL if it is undefined', function() {
-    var config = {}
+    let config = {}
 
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: 'bar.png',
@@ -139,7 +139,7 @@ describe('Unit: faviconLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="icon" href="bar.png">',
     ];
 
@@ -147,10 +147,10 @@ describe('Unit: faviconLinkTags()', function() {
   });
 
   it('respects absolute urls', function() {
-    var config = {
+    let config = {
       rootURL: '/qux/'
     };
-    var manifest = {
+    let manifest = {
       icons: [
         {
           src: 'http://www.example.com/foo/bar.png',
@@ -163,7 +163,7 @@ describe('Unit: faviconLinkTags()', function() {
       ]
     };
 
-    var expected = [
+    let expected = [
       '<link rel="icon" href="http://www.example.com/foo/bar.png">',
       '<link rel="icon" href="https://www.example.com/bar/baz.png">'
     ];

@@ -1,14 +1,14 @@
 'use strict';
 
-var assert = require('assert');
-var androidMetaTags = require('../../lib/android-meta-tags');
+const assert = require('assert');
+const androidMetaTags = require('../../lib/android-meta-tags');
 
 describe('Unit: androidMetaTags()', function() {
   it('returns `theme-color` meta tag when it is defined', function() {
-    var manifest = {
+    let manifest = {
       theme_color: '#ff0000'
     };
-    var expected = [
+    let expected = [
       '<meta name="theme-color" content="#ff0000">'
     ];
 
@@ -16,8 +16,8 @@ describe('Unit: androidMetaTags()', function() {
   });
 
   it('resturns empty array when `theme-color` is not defined', function() {
-    var manifest = {};
-    var expected = [];
+    let manifest = {};
+    let expected = [];
 
     assert.deepStrictEqual(androidMetaTags(manifest), expected);
   });

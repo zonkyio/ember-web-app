@@ -1,11 +1,11 @@
-var assert = require('assert');
-var fs = require('fs');
-var AddonTestApp = require('ember-cli-addon-tests').AddonTestApp;
+const assert = require('assert');
+const fs = require('fs');
+const AddonTestApp = require('ember-cli-addon-tests').AddonTestApp;
 
 describe('Acceptance: manifest file generation', function() {
   this.timeout(300000);
 
-  var app;
+  let app;
 
   before(function() {
     if (process.env.SKIP_ACCEPTANCE === 'true') {

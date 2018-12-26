@@ -15,6 +15,7 @@ module.exports = {
     browser: true
   },
   rules: {
+    'no-var': 'error'
   },
   overrides: [
     // node files

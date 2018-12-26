@@ -1,12 +1,12 @@
 'use strict';
 
-var assert = require('assert');
-var androidLinkTags = require('../../lib/android-link-tags');
+const assert = require('assert');
+const androidLinkTags = require('../../lib/android-link-tags');
 
 describe('Unit: androidLinkTags()', function() {
   it('returns `manifest` link', function() {
-    var config = {};
-    var expected = [
+    let config = {};
+    let expected = [
       '<link rel="manifest" href="manifest.webmanifest">'
     ];
 
@@ -14,10 +14,10 @@ describe('Unit: androidLinkTags()', function() {
   });
 
   it('uses rootURL if defined', function() {
-    var config = {
+    let config = {
       rootURL: '/foo/bar/'
     };
-    var expected = [
+    let expected = [
       '<link rel="manifest" href="/foo/bar/manifest.webmanifest">'
     ];
 

@@ -5,11 +5,11 @@ module.exports = {
 
   locals(options) {
     return {
-      name: options.project.name()
+      name: options.project.name(),
     };
   },
 
   afterInstall() {
     return this.removePackageFromProject('ember-web-app-rename');
-  }
+  },
 };

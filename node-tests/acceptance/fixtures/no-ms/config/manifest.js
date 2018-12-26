@@ -2,6 +2,6 @@
 
 module.exports = function() {
   return {
-    ms: false
+    ms: false,
   };
-}
+};

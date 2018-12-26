@@ -6,7 +6,7 @@ const generateManifestFromConfiguration = require('../../lib/generate-manifest-f
 describe('Unit: generateManifestFromConfiguration()', function() {
   it('filters custom "apple" property', function() {
     let manifest = {
-      apple: 'apple'
+      apple: 'apple',
     };
 
     assert.deepStrictEqual(generateManifestFromConfiguration(manifest), {});
@@ -14,7 +14,7 @@ describe('Unit: generateManifestFromConfiguration()', function() {
 
   it('filters custom "ms" property', function() {
     let manifest = {
-      ms: 'ms'
+      ms: 'ms',
     };
 
     assert.deepStrictEqual(generateManifestFromConfiguration(manifest), {});
@@ -22,10 +22,12 @@ describe('Unit: generateManifestFromConfiguration()', function() {
 
   it('returns manifest properties', function() {
     let manifest = {
-      foo: 'bar'
+      foo: 'bar',
     };
 
-    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), { foo: 'bar' });
+    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), {
+      foo: 'bar',
+    });
   });
 
   it('includes icons with no target definition', function() {
@@ -34,9 +36,9 @@ describe('Unit: generateManifestFromConfiguration()', function() {
         {
           src: 'foo/bar.png',
           sizes: '120x120',
-          type: 'image/png'
-        }
-      ]
+          type: 'image/png',
+        },
+      ],
     };
 
     let manifest = {
@@ -44,12 +46,15 @@ describe('Unit: generateManifestFromConfiguration()', function() {
         {
           src: 'foo/bar.png',
           sizes: '120x120',
-          type: 'image/png'
-        }
-      ]
+          type: 'image/png',
+        },
+      ],
     };
 
-    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), expected);
+    assert.deepStrictEqual(
+      generateManifestFromConfiguration(manifest),
+      expected
+    );
   });
 
   it('filters icons that has a different target than manifest', function() {
@@ -58,9 +63,9 @@ describe('Unit: generateManifestFromConfiguration()', function() {
         {
           src: 'baz/qux.png',
           sizes: '120x120',
-          type: 'image/png'
-        }
-      ]
+          type: 'image/png',
+        },
+      ],
     };
 
     let manifest = {
@@ -69,17 +74,20 @@ describe('Unit: generateManifestFromConfiguration()', function() {
           src: 'foo/bar.png',
           sizes: '120x120',
           type: 'image/png',
-          targets: ['apple']
+          targets: ['apple'],
         },
         {
           src: 'baz/qux.png',
           sizes: '120x120',
           type: 'image/png',
-          targets: ['manifest']
-        }
-      ]
+          targets: ['manifest'],
+        },
+      ],
     };
 
-    assert.deepStrictEqual(generateManifestFromConfiguration(manifest), expected);
+    assert.deepStrictEqual(
+      generateManifestFromConfiguration(manifest),
+      expected
+    );
   });
 });

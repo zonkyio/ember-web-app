@@ -24,7 +24,7 @@ describe('Acceptance: browserconfig file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build')
+        return app.runEmberCommand('build');
       })
       .then(contentOf(app, 'dist/browserconfig.xml'))
       .then(function(content) {
@@ -41,7 +41,7 @@ describe('Acceptance: browserconfig file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build', '--prod')
+        return app.runEmberCommand('build', '--prod');
       })
       .then(contentOf(app, 'dist/browserconfig.xml'))
       .then(function(content) {
@@ -51,7 +51,7 @@ describe('Acceptance: browserconfig file generation', function() {
         );
       })
       .then(contentOf(app, 'dist/fastbootAssetMap.json'))
-      .then(assertJSON(app, { "pio.png": "pio-0987654321.png" }));
+      .then(assertJSON(app, { 'pio.png': 'pio-0987654321.png' }));
   });
 
   it(`doesn't generate browserconfig when disabled`, function() {
@@ -60,7 +60,7 @@ describe('Acceptance: browserconfig file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build')
+        return app.runEmberCommand('build');
       })
       .then(function() {
         assert.ok(
@@ -83,7 +83,7 @@ describe('Acceptance: browserconfig file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build')
+        return app.runEmberCommand('build');
       })
       .then(function() {
         assert.ok(
@@ -106,7 +106,7 @@ describe('Acceptance: browserconfig file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build')
+        return app.runEmberCommand('build');
       })
       .then(contentOf(app, 'dist/index.html'))
       .then(function(content) {
@@ -123,7 +123,7 @@ describe('Acceptance: browserconfig file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build', '--prod')
+        return app.runEmberCommand('build', '--prod');
       })
       .then(contentOf(app, 'dist/browserconfig.xml'))
       .then(function(content) {
@@ -131,7 +131,7 @@ describe('Acceptance: browserconfig file generation', function() {
           content,
           '<?xml version="1.0"?><browserconfig><msapplication><tile><square150x150logo src="https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png"/><TileColor>#FFFFFF</TileColor></tile></msapplication></browserconfig>'
         );
-      })
+      });
   });
 });
 

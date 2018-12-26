@@ -6,7 +6,7 @@ const appleMetaTags = require('../../lib/apple-meta-tags');
 describe('Unit: appleMetaTags()', function() {
   it('returns `web-app-capable` meta tag when display mode is fullscreen', function() {
     let manifest = {
-      display: 'fullscreen'
+      display: 'fullscreen',
     };
     let expected = '<meta name="apple-mobile-web-app-capable" content="yes">';
 
@@ -17,7 +17,7 @@ describe('Unit: appleMetaTags()', function() {
 
   it('returns `web-app-capable` meta tag when display mode is standalone', function() {
     let manifest = {
-      display: 'standalone'
+      display: 'standalone',
     };
     let expected = '<meta name="apple-mobile-web-app-capable" content="yes">';
 
@@ -28,9 +28,10 @@ describe('Unit: appleMetaTags()', function() {
 
   it('does not return `web-app-capable` meta tag when display mode is minimal-ui', function() {
     let manifest = {
-      display: 'minimal-ui'
+      display: 'minimal-ui',
     };
-    let notExpected = '<meta name="apple-mobile-web-app-capable" content="yes">';
+    let notExpected =
+      '<meta name="apple-mobile-web-app-capable" content="yes">';
 
     let actual = appleMetaTags(manifest);
 
@@ -39,9 +40,10 @@ describe('Unit: appleMetaTags()', function() {
 
   it('does not return `web-app-capable` meta tag when display mode is browser', function() {
     let manifest = {
-      display: 'browser'
+      display: 'browser',
     };
-    let notExpected = '<meta name="apple-mobile-web-app-capable" content="yes">';
+    let notExpected =
+      '<meta name="apple-mobile-web-app-capable" content="yes">';
 
     let actual = appleMetaTags(manifest);
 
@@ -50,7 +52,8 @@ describe('Unit: appleMetaTags()', function() {
 
   it('does not return `web-app-capable` meta tag when display mode is not defined', function() {
     let manifest = {};
-    let notExpected = '<meta name="apple-mobile-web-app-capable" content="yes">';
+    let notExpected =
+      '<meta name="apple-mobile-web-app-capable" content="yes">';
 
     let actual = appleMetaTags(manifest);
 
@@ -61,10 +64,11 @@ describe('Unit: appleMetaTags()', function() {
     let manifest = {
       display: 'fullscreen',
       apple: {
-        webAppCapable: false
-      }
+        webAppCapable: false,
+      },
     };
-    let notExpected = '<meta name="apple-mobile-web-app-capable" content="yes">';
+    let notExpected =
+      '<meta name="apple-mobile-web-app-capable" content="yes">';
 
     let actual = appleMetaTags(manifest);
 
@@ -75,10 +79,11 @@ describe('Unit: appleMetaTags()', function() {
     let manifest = {
       display: 'standalone',
       apple: {
-        webAppCapable: false
-      }
+        webAppCapable: false,
+      },
     };
-    let notExpected = '<meta name="apple-mobile-web-app-capable" content="yes">';
+    let notExpected =
+      '<meta name="apple-mobile-web-app-capable" content="yes">';
 
     let actual = appleMetaTags(manifest);
 
@@ -89,8 +94,8 @@ describe('Unit: appleMetaTags()', function() {
     let manifest = {
       display: 'browser',
       apple: {
-        webAppCapable: true
-      }
+        webAppCapable: true,
+      },
     };
     let expected = '<meta name="apple-mobile-web-app-capable" content="yes">';
 
@@ -103,8 +108,8 @@ describe('Unit: appleMetaTags()', function() {
     let manifest = {
       display: 'minimal-ui',
       apple: {
-        webAppCapable: true
-      }
+        webAppCapable: true,
+      },
     };
     let expected = '<meta name="apple-mobile-web-app-capable" content="yes">';
 
@@ -133,7 +138,8 @@ describe('Unit: appleMetaTags()', function() {
 
   it('returns `web-app-status-bar-style` meta tag with default value', function() {
     let manifest = {};
-    let expected = '<meta name="apple-mobile-web-app-status-bar-style" content="default">';
+    let expected =
+      '<meta name="apple-mobile-web-app-status-bar-style" content="default">';
 
     let actual = appleMetaTags(manifest);
 
@@ -143,10 +149,11 @@ describe('Unit: appleMetaTags()', function() {
   it('returns `web-app-status-bar-style` meta tag with custom value', function() {
     let manifest = {
       apple: {
-        statusBarStyle: 'black-translucent'
-      }
+        statusBarStyle: 'black-translucent',
+      },
     };
-    let expected = '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">';
+    let expected =
+      '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">';
 
     let actual = appleMetaTags(manifest);
 
@@ -156,7 +163,7 @@ describe('Unit: appleMetaTags()', function() {
   it('returns empty array when apple is false', function() {
     let manifest = {
       display: 'fullscreen',
-      apple: false
+      apple: false,
     };
     let expected = [];
 
@@ -169,9 +176,9 @@ describe('Unit: appleMetaTags()', function() {
     let manifest = {
       apple: {
         formatDetection: {
-          telephone: false
-        }
-      }
+          telephone: false,
+        },
+      },
     };
     let expected = '<meta name="format-detection" content="telephone=no">';
 
@@ -182,7 +189,7 @@ describe('Unit: appleMetaTags()', function() {
 
   it("doesn't include `format-detection` when format detection is not provided", function() {
     let manifest = {
-      apple: {}
+      apple: {},
     };
     let notExpected = 'format-detection';
 

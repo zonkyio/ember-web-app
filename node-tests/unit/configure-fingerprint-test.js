@@ -10,7 +10,7 @@ describe('Unit: configureFingerprint()', function() {
 
   it('returns safe configuration when options is undefined', function() {
     let expected = {
-      replaceExtensions: ['html', 'css', 'js', 'webmanifest']
+      replaceExtensions: ['html', 'css', 'js', 'webmanifest'],
     };
 
     let actual = configureFingerprint(undefined, 'manifest.webmanifest');
@@ -22,12 +22,12 @@ describe('Unit: configureFingerprint()', function() {
     let userOptions = {
       prepend: 'prefix',
       exclude: ['foo', 'bar'],
-      replaceExtensions: ['baz']
+      replaceExtensions: ['baz'],
     };
     let expected = {
       prepend: 'prefix',
       exclude: ['foo', 'bar'],
-      replaceExtensions: ['baz', 'webmanifest']
+      replaceExtensions: ['baz', 'webmanifest'],
     };
 
     let actual = configureFingerprint(userOptions, 'manifest.webmanifest');
@@ -37,11 +37,11 @@ describe('Unit: configureFingerprint()', function() {
 
   it('completes missing values using defaults', function() {
     let userOptions = {
-      prepend: 'prefix'
+      prepend: 'prefix',
     };
     let expected = {
       prepend: 'prefix',
-      replaceExtensions: ['html', 'css', 'js', 'webmanifest']
+      replaceExtensions: ['html', 'css', 'js', 'webmanifest'],
     };
 
     let actual = configureFingerprint(userOptions, 'manifest.webmanifest');

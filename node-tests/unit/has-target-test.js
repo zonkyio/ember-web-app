@@ -12,7 +12,7 @@ describe('Unit: hasTarget()', function() {
 
   it('returns true when object.targets contains the target', function() {
     let object = {
-      targets: ['foo']
+      targets: ['foo'],
     };
 
     assert.ok(hasTarget(object, 'foo'));
@@ -20,7 +20,7 @@ describe('Unit: hasTarget()', function() {
 
   it('returns false when object.targets does not contain the target', function() {
     let object = {
-      targets: ['bar']
+      targets: ['bar'],
     };
 
     assert.ok(!hasTarget(object, 'foo'));

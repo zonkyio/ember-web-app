@@ -4,17 +4,17 @@ module.exports = function() {
   return {
     icons: [
       {
-        src: 'pio.png'
+        src: 'pio.png',
       },
       {
         src: 'pio.png',
         element: 'square150x150logo',
-        targets: ['ms']
-      }
+        targets: ['ms'],
+      },
     ],
 
     ms: {
-      tileColor: '#FFFFFF'
-    }
+      tileColor: '#FFFFFF',
+    },
   };
-}
+};

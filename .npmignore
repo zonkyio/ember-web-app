@@ -11,6 +11,7 @@
 /.ember-cli
 /.eslintignore
 /.eslintrc.js
+/.prettierrc.js
 /.gitignore
 /.template-lintrc.js
 /.travis.yml

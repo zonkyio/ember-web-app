@@ -22,20 +22,21 @@ describe('Acceptance: manifest file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build')
+        return app.runEmberCommand('build');
       })
       .then(contentOf(app, 'dist/manifest.webmanifest'))
-      .then(assertJSON(app, {
-        name: 'empty',
-        short_name: 'empty',
-        description: '',
-        start_url: '/',
-        display: 'standalone',
-        background_color: '#fff',
-        theme_color: '#fff',
-        icons: [
-        ]
-      }));
+      .then(
+        assertJSON(app, {
+          name: 'empty',
+          short_name: 'empty',
+          description: '',
+          start_url: '/',
+          display: 'standalone',
+          background_color: '#fff',
+          theme_color: '#fff',
+          icons: [],
+        })
+      );
   });
 
   it('configures broccoli-asset-rev', function() {
@@ -44,14 +45,16 @@ describe('Acceptance: manifest file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build', '--prod')
+        return app.runEmberCommand('build', '--prod');
       })
       .then(contentOf(app, 'dist/manifest.webmanifest'))
-      .then(assertJSON(app, {
-        icons: [ { src: "pio-8911090226e7b5522790f1218f6924a5.png" } ]
-      }))
+      .then(
+        assertJSON(app, {
+          icons: [{ src: 'pio-8911090226e7b5522790f1218f6924a5.png' }],
+        })
+      )
       .then(contentOf(app, 'dist/fastbootAssetMap.json'))
-      .then(assertJSON(app, { "pio.png": "pio-0987654321.png" }));
+      .then(assertJSON(app, { 'pio.png': 'pio-0987654321.png' }));
   });
 
   it(`doesn't generate manifest when disabled`, function() {
@@ -60,7 +63,7 @@ describe('Acceptance: manifest file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build')
+        return app.runEmberCommand('build');
       })
       .then(function() {
         assert.ok(
@@ -83,7 +86,7 @@ describe('Acceptance: manifest file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build')
+        return app.runEmberCommand('build');
       })
       .then(contentOf(app, 'dist/index.html'))
       .then(function(content) {
@@ -100,23 +103,39 @@ describe('Acceptance: manifest file generation', function() {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {
-        return app.runEmberCommand('build', '--prod')
+        return app.runEmberCommand('build', '--prod');
       })
       .then(contentOf(app, 'dist/index.html'))
       .then(function(content) {
         assert.ok(
-          content.indexOf('href="https://www.example.com/manifest-f105f80557272f93397e34ea016e172d.webmanifest"') > -1,
+          content.indexOf(
+            'href="https://www.example.com/manifest-f105f80557272f93397e34ea016e172d.webmanifest"'
+          ) > -1,
           'checksum fingerprint is added to manifest.webmanifest file'
         );
         assert.ok(
-          content.indexOf('href="https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png"') > -1,
+          content.indexOf(
+            'href="https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png"'
+          ) > -1,
           'checksum fingerprint is added to image file'
         );
       })
-      .then(contentOf(app, 'dist/manifest-f105f80557272f93397e34ea016e172d.webmanifest'))
-      .then(assertJSON(app, {
-        icons: [ { src: "https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png" } ]
-      }));
+      .then(
+        contentOf(
+          app,
+          'dist/manifest-f105f80557272f93397e34ea016e172d.webmanifest'
+        )
+      )
+      .then(
+        assertJSON(app, {
+          icons: [
+            {
+              src:
+                'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
+            },
+          ],
+        })
+      );
   });
 });
 

@@ -28,7 +28,7 @@
   "dependencies": {
     "broccoli-asset-rev": "^3.0.0",
     "broccoli-caching-writer": "^3.0.3",
-    "broccoli-merge-trees": "^2.0.0",
+    "broccoli-merge-trees": "^3.0.2",
     "ember-cli-babel": "^6.6.0",
     "object-assign": "^4.1.1",
     "web-app-manifest-validator": "^1.0.0",

@@ -2,19 +2,28 @@
   "doc_site": {
     "sha": "2397cb00b51b60fbd94bd55d7e68c6a03baae9cc",
     "tag": null,
-    "path": "doc_site",
-    "name": "doc_site"
+    "path": "versions/doc_site",
+    "name": "doc_site",
+    "oldPath": "doc_site"
   },
   "master": {
     "sha": "ce0909d79c2ab8a8228fc1f7bcc392c9c456b6e1",
     "tag": null,
-    "path": "master",
-    "name": "master"
+    "path": "versions/master",
+    "name": "master",
+    "oldPath": "master"
   },
-  "latest": {
+  "-latest": {
     "sha": "5863641def03b368013bdb5b895a37bff66077fb",
     "tag": null,
-    "path": "latest",
-    "name": "latest"
+    "path": "",
+    "name": "Latest",
+    "oldPath": "latest"
+  },
+  "addon-docs": {
+    "path": "versions/addon-docs",
+    "name": "addon-docs",
+    "sha": "3cd66a7b3e2d004e8c3ca2f74d6b7ad776cb71cf",
+    "tag": null
   }
 }

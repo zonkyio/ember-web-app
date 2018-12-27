@@ -11,5 +11,11 @@
     "path": "",
     "name": "Latest",
     "oldPath": "latest"
+  },
+  "v3.0.0-beta.1": {
+    "path": "versions/v3.0.0-beta.1",
+    "name": "v3.0.0-beta.1",
+    "sha": "69f1f4a4f35da9826627fa70b8994442c434af32",
+    "tag": "v3.0.0-beta.1"
   }
 }

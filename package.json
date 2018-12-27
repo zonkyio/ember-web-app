@@ -67,8 +67,7 @@
     "loader.js": "^4.7.0",
     "mocha": "^5.2.0",
     "prettier": "^1.15.3",
-    "qunit-dom": "^0.8.0",
-    "strip-ansi": "^5.0.0"
+    "qunit-dom": "^0.8.0"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"

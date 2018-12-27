@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "ember build",
-    "fast-test": "SKIP_ACCEPTANCE=true npm run node-test",
+    "fast-test": "SKIP_ACCEPTANCE=true yarn node-test",
     "node-test": "mocha --recursive node-tests",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint . --cache",

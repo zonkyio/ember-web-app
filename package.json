@@ -37,7 +37,7 @@
     "xmlbuilder": "^10.1.1"
   },
   "devDependencies": {
-    "@ember/optional-features": "^0.6.3",
+    "@ember/optional-features": "^0.7.0",
     "ember-cli": "~3.6.0",
     "ember-cli-addon-docs": "^0.6.1",
     "ember-cli-addon-docs-esdoc": "^0.2.1",

@@ -24,5 +24,11 @@
     "name": "addon-docs",
     "sha": "3cd66a7b3e2d004e8c3ca2f74d6b7ad776cb71cf",
     "tag": null
+  },
+  "addon-docs-deploy-debug": {
+    "path": "versions/addon-docs-deploy-debug",
+    "name": "addon-docs-deploy-debug",
+    "sha": "7f0ee93d54894fbd06c151d6ff4dfb845548b9d4",
+    "tag": null
   }
 }

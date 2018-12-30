@@ -1,5 +1,5 @@
 module.exports = {
-  description: '',
+  description: 'Generates a configuration for web app manifest.',
 
   normalizeEntityName() {},
 

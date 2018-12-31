@@ -8,8 +8,4 @@ module.exports = {
       name: options.project.name(),
     };
   },
-
-  afterInstall() {
-    return this.removePackageFromProject('ember-web-app-rename');
-  },
 };

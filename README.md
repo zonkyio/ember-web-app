@@ -8,7 +8,7 @@
 
 This Ember addon helps you configure and manage the web app manifest and related meta tags needed to create a Progressive Web Application
 
-See [documentation](https://zonkyio.github.io/ember-web-app/versions/master/).
+See [documentation](https://zonkyio.github.io/ember-web-app).
 
 ## Contributing
 

@@ -1,5 +1,16 @@
 # Changelog
 
+## v3.0.0-beta.2 (2019-01-05)
+
+#### :rocket: Enhancement
+* [#50](https://github.com/zonkyio/ember-web-app/pull/50) Remove after install hook from blueprint, Closes [#47](https://github.com/zonkyio/ember-web-app/issues/47) ([@bobisjan](https://github.com/bobisjan))
+
+#### :memo: Documentation
+* [#48](https://github.com/zonkyio/ember-web-app/pull/48) Add blueprint description ([@bobisjan](https://github.com/bobisjan))
+
+#### Committers: 1
+- Jan Bobisud ([@bobisjan](https://github.com/bobisjan))
+
 ## v3.0.0-beta.1 (2018-12-27)
 
 #### :boom: Breaking Change

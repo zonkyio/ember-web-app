@@ -8,6 +8,19 @@
 
 This Ember addon helps you configure and manage the web app manifest and related meta tags needed to create a Progressive Web Application
 
+## Compatibility
+
+- Ember.js v2.18 or above
+- Ember CLI v2.13 or above
+
+## Installation
+
+```
+ember install ember-web-app
+```
+
+## Usage
+
 See [documentation](https://zonkyio.github.io/ember-web-app/versions/master/).
 
 ## Contributing

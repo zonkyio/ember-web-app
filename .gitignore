@@ -9,6 +9,8 @@
 /node_modules/
 
 # misc
+=======
+/.env*
 /.eslintcache
 /.sass-cache
 /connect.lock

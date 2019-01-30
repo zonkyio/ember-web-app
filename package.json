@@ -33,7 +33,7 @@
     "broccoli-asset-rev": "^3.0.0",
     "broccoli-caching-writer": "^3.0.3",
     "broccoli-merge-trees": "^3.0.2",
-    "ember-cli-babel": "^7.1.2",
+    "ember-cli-babel": "^7.4.1",
     "web-app-manifest-validator": "^1.0.0",
     "xmlbuilder": "^10.1.1"
   },

@@ -4523,10 +4523,10 @@ ember-cli-addon-docs-esdoc@^0.2.1:
     tmp "^0.0.33"
     walk-sync "^0.3.2"
 
-ember-cli-addon-docs@^0.6.4:
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/ember-cli-addon-docs/-/ember-cli-addon-docs-0.6.4.tgz#96dee16cadea442f21b97ec79dd4fc50694379d7"
-  integrity sha512-MnGPRe2UnymvEojCY/5y01zr/1Ime9rX/X6sNvt8TYmQa1VkEcKW1/+H3nbjOQ7P7Sx9SVxL6duKWwzY3tYF/A==
+ember-cli-addon-docs@^0.6.5:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/ember-cli-addon-docs/-/ember-cli-addon-docs-0.6.5.tgz#ff7abd9ab800625edebb2233858149cb314c1425"
+  integrity sha512-0hCInAwNAayYk6ZQVJ14gnQwRELAL0oAvdpBbr+YmuBBWxdZJpcLsby0s8M+9Bjne+yoGZlhZ5hSuJjvUQgDjw==
   dependencies:
     "@glimmer/syntax" "^0.36.4"
     broccoli-bridge "^1.0.0"
@@ -4556,7 +4556,7 @@ ember-cli-addon-docs@^0.6.4:
     ember-fetch-adapter "^0.4.3"
     ember-href-to "^1.15.1"
     ember-keyboard "^4.0.0"
-    ember-modal-dialog "2.4.3"
+    ember-modal-dialog "3.0.0-beta.3"
     ember-responsive "^3.0.0-beta.1"
     ember-router-scroll "^1.0.0"
     ember-svg-jar "^1.2.2"
@@ -5263,7 +5263,7 @@ ember-href-to@^1.15.1:
     ember-cli-babel "^6.8.2"
     ember-router-service-polyfill "^1.0.2"
 
-ember-ignore-children-helper@^1.0.0:
+ember-ignore-children-helper@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ember-ignore-children-helper/-/ember-ignore-children-helper-1.0.1.tgz#f7c4aa17afb9c5685e1d4dcdb61c7b138ca7cdc3"
   integrity sha512-AgKkrvd1/hIBWdLn42gITlweVsALUGPYF9fMpQ2IDqp7QnRmtO8ocRbZEmMddPDWY9Xu7W5qO2f35rbD7OSpYw==
@@ -5302,16 +5302,16 @@ ember-maybe-import-regenerator@^0.1.5, ember-maybe-import-regenerator@^0.1.6:
     ember-cli-babel "^6.0.0-beta.4"
     regenerator-runtime "^0.9.5"
 
-ember-modal-dialog@2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/ember-modal-dialog/-/ember-modal-dialog-2.4.3.tgz#8e254185e95dae6ccf46987822a095acf42561b1"
-  integrity sha1-jiVBheldrmzPRph4IqCVrPQlYbE=
+ember-modal-dialog@3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/ember-modal-dialog/-/ember-modal-dialog-3.0.0-beta.3.tgz#8ba00c1a228d62d837f63dc7ce964e48f25d1326"
+  integrity sha512-R9vo3KftPmNJK89rIipKvoTEvTC3tMEtM4Yhy2gyMX3yrFCcNPlnTXTRyTePUtSVxPNq9lNT1n0YWMBT1xoJxg==
   dependencies:
-    ember-cli-babel "^6.8.2"
-    ember-cli-htmlbars "^2.0.1"
+    ember-cli-babel "^7.1.3"
+    ember-cli-htmlbars "^3.0.0"
     ember-cli-version-checker "^2.1.0"
-    ember-ignore-children-helper "^1.0.0"
-    ember-wormhole "^0.5.1"
+    ember-ignore-children-helper "^1.0.1"
+    ember-wormhole "^0.5.5"
 
 ember-qunit@^4.3.0:
   version "4.3.0"
@@ -5478,7 +5478,7 @@ ember-try@^1.0.0:
     rsvp "^4.7.0"
     walk-sync "^0.3.3"
 
-ember-wormhole@^0.5.1:
+ember-wormhole@^0.5.5:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/ember-wormhole/-/ember-wormhole-0.5.5.tgz#db417ff748cb21e574cd5f233889897bc27096cb"
   integrity sha512-z8l3gpoKmRA2BnTwvnYRk4jKVcETKHpddsD6kpS+EJ4EfyugadFS3zUqBmRDuJhFbNP8BVBLXlbbATj+Rk1Kgg==

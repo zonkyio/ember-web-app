@@ -72,7 +72,7 @@
     "lerna-changelog": "^0.8.2",
     "loader.js": "^4.7.0",
     "mocha": "^6.1.4",
-    "prettier": "^1.16.4",
+    "prettier": "^1.17.0",
     "qunit-dom": "^0.8.4"
   },
   "engines": {

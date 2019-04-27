@@ -9,7 +9,10 @@
 /node_modules/
 
 # misc
+=======
+/.env*
 /.eslintcache
+/.pnp*
 /.sass-cache
 /connect.lock
 /coverage/

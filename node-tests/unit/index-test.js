@@ -8,6 +8,7 @@ function createIndex() {
     manifestConfiguration: {
       display: 'standalone',
     },
+    addonBuildConfig: {},
     _disabled() {
       return false;
     },

@@ -9,7 +9,7 @@ describe('Unit: androidLinkTags()', function() {
     let expected = ['<link rel="manifest" href="manifest.webmanifest">'];
 
     assert.deepStrictEqual(
-      androidLinkTags(config, 'manifest.webmanifest'),
+      androidLinkTags(config, {}, 'manifest.webmanifest'),
       expected
     );
   });
@@ -23,7 +23,22 @@ describe('Unit: androidLinkTags()', function() {
     ];
 
     assert.deepStrictEqual(
-      androidLinkTags(config, 'manifest.webmanifest'),
+      androidLinkTags(config, {}, 'manifest.webmanifest'),
+      expected
+    );
+  });
+
+  it('uses crossorigin if defined', function() {
+    let config = {};
+    let addonConfig = {
+      crossorigin: 'use-credentials',
+    };
+    let expected = [
+      '<link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">',
+    ];
+
+    assert.deepStrictEqual(
+      androidLinkTags(config, addonConfig, 'manifest.webmanifest'),
       expected
     );
   });

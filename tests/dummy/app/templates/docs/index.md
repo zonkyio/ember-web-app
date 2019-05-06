@@ -23,6 +23,7 @@ See the documentation section below for more information.
 - [Installation](#installation)
 - [Example](#example)
 - [Configuration](#configuration)
+  - [CORS](#cors)
   - [Disable](#disable)
   - [Fingerprint](#fingerprint)
 - [API Documentation](#api-documentation)
@@ -183,6 +184,26 @@ and the following `browserconfig.xml` file
 ```
 
 ## Configuration
+
+### CORS
+
+You can specify `crossorigin` behaviour for `manifest.webmanifest` by adding a configuration option to `ember-cli-build.js` build file.
+
+```js
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+module.exports = function(defaults) {
+  let options = {
+    'ember-web-app': {
+      crossorigin: 'use-credentials',
+    },
+  };
+
+  let app = new EmberApp(defaults, options);
+
+  return app.toTree();
+};
+```
 
 ### Disable
 

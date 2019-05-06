@@ -74,7 +74,11 @@ module.exports = {
       let tags = [];
 
       tags = tags.concat(
-        require('./lib/android-link-tags')(config, MANIFEST_NAME)
+        require('./lib/android-link-tags')(
+          config,
+          this.addonBuildConfig,
+          MANIFEST_NAME
+        )
       );
       tags = tags.concat(
         require('./lib/apple-link-tags')(this.manifestConfiguration, config)

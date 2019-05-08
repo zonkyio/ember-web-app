@@ -22,8 +22,8 @@ describe('Unit: appleLinkTags()', function() {
     };
 
     let expected = [
-      '<link rel="apple-touch-icon" href="/qux/foo/bar.png" sizes="180x180">',
-      '<link rel="apple-touch-icon" href="/qux/bar/baz.png" sizes="280x280">',
+      '<link rel="apple-touch-icon" href="/foo/bar.png" sizes="180x180">',
+      '<link rel="apple-touch-icon" href="/bar/baz.png" sizes="280x280">',
     ];
 
     assert.deepStrictEqual(appleLinkTags(manifest, config), expected);
@@ -48,7 +48,7 @@ describe('Unit: appleLinkTags()', function() {
     };
 
     let expected = [
-      '<link rel="apple-touch-icon" href="/qux/bar/baz.png" sizes="280x280">',
+      '<link rel="apple-touch-icon" href="/bar/baz.png" sizes="280x280">',
     ];
 
     assert.deepStrictEqual(appleLinkTags(manifest, config), expected);

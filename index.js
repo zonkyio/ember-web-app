@@ -81,16 +81,13 @@ module.exports = {
         )
       );
       tags = tags.concat(
-        require('./lib/apple-link-tags')(this.manifestConfiguration, config)
+        require('./lib/apple-link-tags')(this.manifestConfiguration)
       );
       tags = tags.concat(
-        require('./lib/safari-pinned-tab-tags')(
-          this.manifestConfiguration,
-          config
-        )
+        require('./lib/safari-pinned-tab-tags')(this.manifestConfiguration)
       );
       tags = tags.concat(
-        require('./lib/favicon-link-tags')(this.manifestConfiguration, config)
+        require('./lib/favicon-link-tags')(this.manifestConfiguration)
       );
 
       tags = tags.concat(

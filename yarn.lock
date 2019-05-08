@@ -12567,10 +12567,10 @@ xml-name-validator@^3.0.0:
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
 
-xmlbuilder@^12.0.1:
-  version "12.0.1"
-  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-12.0.1.tgz#885f0ab731e0c9bfd4970381513760131cc71a25"
-  integrity sha512-rRjf/JR+sEMqU2o6WEA+iR/YRIegH3P35eiQuCsT1YfZqOS+iu23azPq0igZjpBX+wa7D8gHd845kLPzow7IKg==
+xmlbuilder@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-13.0.0.tgz#51d5dfabaada7385c6861d74f274849b5d037ede"
+  integrity sha512-b1WOXl2I5wArvb2ZcSx147Rqg/SIudDKZgTcadjFaGjkgucy7Z0egSB5w4kBg9X0/edWdNiE/eKD8KQtaM2c6w==
 
 xmldom@^0.1.19:
   version "0.1.27"

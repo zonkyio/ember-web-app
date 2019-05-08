@@ -138,7 +138,7 @@ describe('Acceptance: manifest file generation', function() {
       );
   });
 
-  it.only('uses crossorigin configuration', function() {
+  it('uses crossorigin configuration', function() {
     return app
       .create('crossorigin', {
         fixturesPath: 'node-tests/acceptance/fixtures',

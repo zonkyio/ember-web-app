@@ -24,23 +24,13 @@ module.exports = {
 
     this.addonBuildConfig = this.app.options['ember-web-app'] || {};
 
-    if (!this._disabled()) {
-      this._configureFingerprint();
-      this.manifestConfiguration = getManifestConfiguration(
-        this.app.project,
-        this.app.env
-      );
-    }
+    this._configureFingerprint();
+    this.manifestConfiguration = getManifestConfiguration(
+      this.app.project,
+      this.app.env
+    );
 
     this._super.included.apply(this, arguments);
-  },
-
-  treeFor() {
-    if (this._disabled()) {
-      return;
-    }
-
-    return this._super.treeFor.apply(this, arguments);
   },
 
   treeForPublic() {
@@ -66,10 +56,6 @@ module.exports = {
   },
 
   contentFor(section, config) {
-    if (this._disabled()) {
-      return;
-    }
-
     if (section === 'head') {
       let tags = [];
 
@@ -120,9 +106,5 @@ module.exports = {
       this.app.options.fingerprint,
       BROWSERCONFIG_NAME
     );
-  },
-
-  _disabled() {
-    return this.addonBuildConfig.enabled === false;
   },
 };

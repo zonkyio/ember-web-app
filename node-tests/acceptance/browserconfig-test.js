@@ -54,29 +54,6 @@ describe('Acceptance: browserconfig file generation', function() {
       .then(assertJSON(app, { 'pio.png': 'pio-0987654321.png' }));
   });
 
-  it(`doesn't generate browserconfig when disabled`, function() {
-    return app
-      .create('disabled', {
-        fixturesPath: 'node-tests/acceptance/fixtures',
-      })
-      .then(function() {
-        return app.runEmberCommand('build');
-      })
-      .then(function() {
-        assert.ok(
-          !fs.existsSync(app.filePath('dist/browserconfig.xml')),
-          `Doesn't generate browserconfig.xml file`
-        );
-      })
-      .then(contentOf(app, 'dist/index.html'))
-      .then(function(content) {
-        assert.ok(
-          !content.includes('msapplication-config'),
-          `Doesn't include meta tags`
-        );
-      });
-  });
-
   it(`doesn't generate browserconfig when 'ms' is falsey`, function() {
     return app
       .create('no-ms', {

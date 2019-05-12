@@ -9,9 +9,6 @@ function createIndex() {
       display: 'standalone',
     },
     addonBuildConfig: {},
-    _disabled() {
-      return false;
-    },
   });
 }
 
@@ -64,18 +61,6 @@ describe('Unit: index', function() {
       };
 
       assert.ok(index.contentFor('head', { rootURL: '/' }).includes(expected));
-    });
-
-    it('returns empty meta tags when disabled', function() {
-      let index = createIndex();
-      index._disabled = function() {
-        return true;
-      };
-
-      assert.ok(
-        !index.contentFor('head', { rootURL: '/' }),
-        "Doesn't include meta tags when disabled"
-      );
     });
 
     it('returns safari pinned tab link tags', function() {

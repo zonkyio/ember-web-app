@@ -25,6 +25,7 @@ See the documentation section below for more information.
 - [Configuration](#configuration)
   - [CORS](#cors)
   - [Fingerprint](#fingerprint)
+  - [Browserconfig](#browserconfig)
 - [API Documentation](#api-documentation)
   - [`name`](#name)
   - [`short_name`](#short_name)
@@ -55,7 +56,14 @@ See the documentation section below for more information.
 $ ember install ember-web-app
 ```
 
-This generates a `config/manifest.js` configuration file.
+This generates a `config/manifest.js` configuration file and inserts HTML tags for `manifest.webmanifest` and `browserconfig.xml` into `app/index.html` file.
+
+```html
+<head>
+  <link rel="manifest" src="{{rootURL}}manifest.webmanifest" />
+  <meta name="msapplication-config" content="{{rootURL}}browserconfig.xml" />
+</head>
+```
 
 ## Example
 
@@ -107,13 +115,9 @@ module.exports = function() {
 };
 ```
 
-It will generate the following meta tags
-
-`index.html`
+It will generates the following meta tags into the `app/index.html`
 
 ```html
-<link rel="manifest" href="/manifest.webmanifest" />
-
 <link
   rel="apple-touch-icon"
   href="/images/icons/android-chrome-192x192-883114367f2d72fc9a509409454a1e73.png"
@@ -138,8 +142,6 @@ It will generate the following meta tags
   name="apple-mobile-web-app-status-bar-style"
   content="black-translucent"
 />
-
-<meta name="msapplication-config" content="/browserconfig.xml" />
 ```
 
 and the following `manifest.webmanifest` file
@@ -186,23 +188,17 @@ and the following `browserconfig.xml` file
 
 ### CORS
 
-You can specify `crossorigin` behaviour for `manifest.webmanifest` by adding a configuration option to `ember-cli-build.js` build file.
+You can specify `crossorigin` behaviour for `manifest.webmanifest` by updating the `app/index.html` file.
 
-```js
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
-module.exports = function(defaults) {
-  let options = {
-    'ember-web-app': {
-      crossorigin: 'use-credentials',
-    },
-  };
-
-  let app = new EmberApp(defaults, options);
-
-  return app.toTree();
-};
+```html
+<link
+  rel="manifest"
+  href="{{rootURL}}/manifest.webmanifest"
+  crossorigin="use-credentials"
+/>
 ```
+
+*See https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes for more details.*
 
 ### Fingerprint
 
@@ -229,6 +225,10 @@ module.exports = function(defaults) {
 ```
 
 Note that the `replaceExtensions` configuration from `broccoli-asset-rev` is updated internally by `ember-web-app` so you don't have to configure yourself on your project.
+
+### Browserconfig
+
+You can skip generating of `browserconfig.xml` by removing the `<meta name="msapplication-config" content="{{rootURL}}browserconfig.xml" />` tag from the `app/index.html` file.
 
 ## API Documentation
 
@@ -728,8 +728,6 @@ manifest.apple = {
 
 Possible values:
 
-- `true` Turn on.
-- `false` Turn off. This is the default value.
 - An object with custom settings (see the settings below)
 
 Example

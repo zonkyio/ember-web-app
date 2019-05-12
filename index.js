@@ -3,9 +3,8 @@
 const path = require('path');
 const getManifestConfiguration = require('./lib/get-manifest-configuration');
 const BroccoliMergeTrees = require('broccoli-merge-trees');
-
-const MANIFEST_NAME = 'manifest.webmanifest';
-const BROWSERCONFIG_NAME = 'browserconfig.xml';
+const Manifest = require('./lib/manifest');
+const Browserconfig = require('./lib/browserconfig');
 
 module.exports = {
   name: require('./package').name,
@@ -21,8 +20,10 @@ module.exports = {
   included(app) {
     this.app = app;
     app.options = app.options || {};
+    app.options[this.name] = app.options[this.name] || {};
 
-    this.addonBuildConfig = this.app.options['ember-web-app'] || {};
+    this.manifest = new Manifest(app);
+    this.browserconfig = new Browserconfig(app);
 
     this._configureFingerprint();
     this.manifestConfiguration = getManifestConfiguration(
@@ -38,7 +39,7 @@ module.exports = {
 
     const GenerateManifest = require('./lib/broccoli/generate-manifest-json');
     const manifest = new GenerateManifest(configPath, {
-      manifestName: MANIFEST_NAME,
+      manifest: this.manifest,
       project: this.app.project,
       env: this.app.env,
       ui: this.ui,
@@ -46,7 +47,7 @@ module.exports = {
 
     const GenerateBrowserconfig = require('./lib/broccoli/generate-browserconfig-xml');
     const browserconfig = new GenerateBrowserconfig(configPath, {
-      browserconfigName: BROWSERCONFIG_NAME,
+      browserconfig: this.browserconfig,
       project: this.app.project,
       env: this.app.env,
       ui: this.ui,
@@ -60,11 +61,7 @@ module.exports = {
       let tags = [];
 
       tags = tags.concat(
-        require('./lib/android-link-tags')(
-          config,
-          this.addonBuildConfig,
-          MANIFEST_NAME
-        )
+        require('./lib/android-link-tags')(this.manifestConfiguration, config)
       );
       tags = tags.concat(
         require('./lib/apple-link-tags')(this.manifestConfiguration)
@@ -83,11 +80,7 @@ module.exports = {
         require('./lib/apple-meta-tags')(this.manifestConfiguration, config)
       );
       tags = tags.concat(
-        require('./lib/ms-meta-tags')(
-          this.manifestConfiguration,
-          config,
-          BROWSERCONFIG_NAME
-        )
+        require('./lib/ms-meta-tags')(this.manifestConfiguration, config)
       );
 
       return tags.join('\n');
@@ -99,12 +92,12 @@ module.exports = {
 
     this.app.options.fingerprint = configureFingerprint(
       this.app.options.fingerprint,
-      MANIFEST_NAME
+      this.manifest.name
     );
 
     this.app.options.fingerprint = configureFingerprint(
       this.app.options.fingerprint,
-      BROWSERCONFIG_NAME
+      this.browserconfig.name
     );
   },
 };

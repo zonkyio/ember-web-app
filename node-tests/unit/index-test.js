@@ -14,28 +14,12 @@ function createIndex() {
 
 describe('Unit: index', function() {
   describe('contentFor()', function() {
-    it('returns link tag when section is "head"', function() {
-      let expected = '<link rel="manifest" href="/manifest.webmanifest">';
-      let index = createIndex();
-
-      assert.ok(index.contentFor('head', { rootURL: '/' }).includes(expected));
-    });
     it('returns empty when section is other than "head"', function() {
       let index = createIndex();
 
       assert.strictEqual(
         index.contentFor('head-footer', { rootURL: '/' }),
         undefined
-      );
-    });
-
-    it('uses rootURL config', function() {
-      let expected =
-        '<link rel="manifest" href="/foo/bar/manifest.webmanifest">';
-      let index = createIndex();
-
-      assert.ok(
-        index.contentFor('head', { rootURL: '/foo/bar/' }).includes(expected)
       );
     });
 

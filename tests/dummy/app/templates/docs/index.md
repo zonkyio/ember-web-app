@@ -24,7 +24,6 @@ See the documentation section below for more information.
 - [Example](#example)
 - [Configuration](#configuration)
   - [CORS](#cors)
-  - [Disable](#disable)
   - [Fingerprint](#fingerprint)
 - [API Documentation](#api-documentation)
   - [`name`](#name)
@@ -196,26 +195,6 @@ module.exports = function(defaults) {
   let options = {
     'ember-web-app': {
       crossorigin: 'use-credentials',
-    },
-  };
-
-  let app = new EmberApp(defaults, options);
-
-  return app.toTree();
-};
-```
-
-### Disable
-
-You can disable the addon by adding a configuration option to `ember-cli-build.js` build file.
-
-```js
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
-module.exports = function(defaults) {
-  let options = {
-    'ember-web-app': {
-      enabled: false,
     },
   };
 

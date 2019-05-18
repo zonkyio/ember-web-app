@@ -54,9 +54,9 @@ describe('Acceptance: browserconfig file generation', function() {
       .then(assertJSON(app, { 'pio.png': 'pio-0987654321.png' }));
   });
 
-  it(`doesn't generate browserconfig when 'ms' is falsey`, function() {
+  it(`doesn't generate browserconfig when tag is omitted`, function() {
     return app
-      .create('no-ms', {
+      .create('no-browserconfig', {
         fixturesPath: 'node-tests/acceptance/fixtures',
       })
       .then(function() {

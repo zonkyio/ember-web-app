@@ -148,25 +148,6 @@ describe('Acceptance: manifest file generation', function() {
         })
       );
   });
-
-  it('uses crossorigin configuration', function() {
-    return app
-      .create('crossorigin', {
-        fixturesPath: 'node-tests/acceptance/fixtures',
-      })
-      .then(function() {
-        return app.runEmberCommand('build');
-      })
-      .then(contentOf(app, 'dist/index.html'))
-      .then(function(content) {
-        assert.ok(
-          content.indexOf(
-            '<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">'
-          ) > -1,
-          'index.html uses crossorigin from configuration'
-        );
-      });
-  });
 });
 
 function contentOf(app, path) {

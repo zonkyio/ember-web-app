@@ -6583,7 +6583,7 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Ember.Object.extend({serialize:null,deserialize:null})
 e.default=t}),define("ember-data/version",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default="3.9.3"}),define("ember-fetch-adapter/-private/add-query-params",["exports","ember-fetch/mixins/adapter-fetch"],function(e,t){"use strict"
+e.default="3.10.0"}),define("ember-fetch-adapter/-private/add-query-params",["exports","ember-fetch/mixins/adapter-fetch"],function(e,t){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(e,r){if(r&&Object.keys(r).length){r=(0,t.serializeQueryParams)(r)
 var n=e.indexOf("?")>-1?"&":"?"
 return""+e+n+r}return e}}),define("ember-fetch-adapter/-private/headers-to-object",["exports"],function(e){"use strict"

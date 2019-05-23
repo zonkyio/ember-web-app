@@ -36,7 +36,7 @@
     "ember-cli-babel": "^7.7.3",
     "jsdom": "^15.1.0",
     "web-app-manifest-validator": "^1.0.0",
-    "xmlbuilder": "^13.0.1"
+    "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",

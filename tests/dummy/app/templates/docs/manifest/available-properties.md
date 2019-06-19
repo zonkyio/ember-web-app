@@ -1,280 +1,14 @@
-# Documentation
+# Available Properties
 
-This Ember addon helps you configure and manage the web app manifest and related meta tags needed to create a Progressive Web Application
+The following list of properties allows to configure `Web App Manifest` generation by modifying `config/manifest.js` file.
 
-From [MDN](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+See W3C's [Web App Manifest specification](https://w3c.github.io/manifest/) for more details.
 
-> The web app manifest provides information about an application (such as name,
-> author, icon, and description) in a text file. The purpose of the manifest is
-> to install web applications to the homescreen of a device, providing users
-> with quicker access and a richer experience.
-
-Addon features:
-
-- Generates a `manifest.webmanifest` file using a JavaScript template
-- Uses fingerprint for images
-- Generates equivalent meta tags for supporting other devices (e.g. iPhone)
-- Validates the configuration
-
-See the documentation section below for more information.
-
-## Table of Content
-
-- [Installation](#installation)
-- [Example](#example)
-- [Configuration](#configuration)
-  - [CORS](#cors)
-  - [Fingerprint](#fingerprint)
-  - [Browserconfig](#browserconfig)
-- [API Documentation](#api-documentation)
-  - [`name`](#name)
-  - [`short_name`](#short_name)
-  - [`background_color`](#background_color)
-  - [`description`](#description)
-  - [`dir`](#dir)
-  - [`display`](#display)
-  - [`icons`](#icons)
-  - [`lang`](#lang)
-  - [`orientation`](#orientation)
-  - [`prefer_related_applications`](#prefer_related_applications)
-  - [`related_applications`](#related_applications)
-  - [`scope`](#scope)
-  - [`start_url`](#start_url)
-  - [`theme_color`](#theme_color)
-  - [`apple`](#apple)
-    - [`apple.statusBarStyle`](#applestatusbarstyle)
-    - [`apple.precomposed`](#appleprecomposed)
-    - [`apple.formatDetection`](#appleformatdetection)
-    - [`apple.webAppCapable`](#applewebappcapable)
-  - [`ms`](#ms)
-    - [`ms.tileColor`](#mstilecolor)
-- [Generating Icons](#generating-icons)
-
-## Installation
-
-```sh
-$ ember install ember-web-app
-```
-
-This generates a `config/manifest.js` configuration file and inserts HTML tags for `manifest.webmanifest` and `browserconfig.xml` into `app/index.html` file.
-
-```html
-<head>
-  <link rel="manifest" src="{{rootURL}}manifest.webmanifest" />
-  <meta name="msapplication-config" content="{{rootURL}}browserconfig.xml" />
-</head>
-```
-
-## Example
-
-Having the following configuration file `config/manifest.js`
-
-```js
-module.exports = function() {
-  return {
-    name: "Let's Cook",
-    short_name: "Let's Cook",
-    description: 'An app for organizing your weekly menu and groceries list.',
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#ffa105',
-    theme_color: '#ffa105',
-
-    icons: [
-      {
-        src: '/images/icons/android-chrome-192x192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        src: '/images/icons/android-chrome-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-      {
-        src: '/images/icons/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'image/png',
-        targets: ['apple'],
-      },
-      {
-        src: '/images/icons/mstile-150x150.png',
-        element: 'square150x150logo',
-        targets: ['ms'],
-      },
-    ],
-
-    apple: {
-      statusBarStyle: 'black-translucent',
-    },
-
-    ms: {
-      tileColor: '#ffffff',
-    },
-  };
-};
-```
-
-It will generates the following meta tags into the `app/index.html`
-
-```html
-<link
-  rel="apple-touch-icon"
-  href="/images/icons/android-chrome-192x192-883114367f2d72fc9a509409454a1e73.png"
-  sizes="192x192"
-/>
-<link
-  rel="apple-touch-icon"
-  href="/images/icons/android-chrome-512x512-af3d768ff652dc2be589a3c22c6dc827.png"
-  sizes="512x512"
-/>
-<link
-  rel="apple-touch-icon"
-  href="/images/icons/apple-touch-icon-36cba25bc155e8ba414265f9d85861ca.png"
-  sizes="180x180"
-/>
-
-<meta name="theme-color" content="#ffa105" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="Let's Cook" />
-<meta
-  name="apple-mobile-web-app-status-bar-style"
-  content="black-translucent"
-/>
-```
-
-and the following `manifest.webmanifest` file
-
-```json
-{
-  "name": "Let's Cook",
-  "short_name": "Let's Cook",
-  "description": "An app for organizing your weekly menu and groceries list.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffa105",
-  "theme_color": "#ffa105",
-  "icons": [
-    {
-      "src": "/images/icons/android-chrome-192x192-883114367f2d72fc9a509409454a1e73.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/icons/android-chrome-512x512-af3d768ff652dc2be589a3c22c6dc827.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
-```
-
-and the following `browserconfig.xml` file
-
-```xml
-<?xml version="1.0"?>
-<browserconfig>
-  <msapplication>
-    <tile>
-      <square150x150logo src="/images/icons/mstile-150x150.png"/>
-      <TileColor>#ffffff</TileColor>
-    </tile>
-  </msapplication>
-</browserconfig>
-```
-
-## Configuration
-
-### CORS
-
-You can specify `crossorigin` behaviour for `manifest.webmanifest` by updating the `app/index.html` file.
-
-```html
-<link
-  rel="manifest"
-  href="{{rootURL}}/manifest.webmanifest"
-  crossorigin="use-credentials"
-/>
-```
-
-*See https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes for more details.*
-
-### Fingerprint
-
-You can add fingerprint checksum to your `manifest.webmanifest` file by configuring [broccoli-asset-rev](https://github.com/rickharrison/broccoli-asset-rev) in `ember-cli-build.js`.
-
-The following example prepends with a custom domain and adds fingerprint checksum to the `manifest.webmanifest` file.
-
-```js
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const broccoliAssetRevDefaults = require('broccoli-asset-rev/lib/default-options');
-
-module.exports = function(defaults) {
-  let options = {
-    fingerprint: {
-      extensions: broccoliAssetRevDefaults.extensions.concat(['webmanifest']),
-      prepend: 'https://www.example.com/',
-    },
-  };
-
-  let app = new EmberApp(defaults, options);
-
-  return app.toTree();
-};
-```
-
-Note that the `replaceExtensions` configuration from `broccoli-asset-rev` is updated internally by `ember-web-app` so you don't have to configure yourself on your project.
-
-### Browserconfig
-
-You can skip generating of `browserconfig.xml` by removing the `<meta name="msapplication-config" content="{{rootURL}}browserconfig.xml" />` tag from the `app/index.html` file.
-
-## API Documentation
-
-This Ember addon generates a [Web Application Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) at build time using the `config/manifest.js` configuration file.
-
-It also generates some compatibility meta tags for supporting vendor specific web application features like Apple's [Web Content For Safari](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/Introduction/Introduction.html) and Microsoft's [Browser configuration schema](https://msdn.microsoft.com/en-us/library/dn320426%28v=vs.85%29.aspx) that don't yet support the Web Application Manifest standard.
-
-Internally, this addon takes into account four different types of targets for generating the web app manifest taking care of including some backward compatibility meta tags in order to support as many devices and browsers as possible. These targets are:
-
-- `manifest` (default target)
-- `apple` (to target iOS devices)
-- `ms` (to target Win8/Win10 devices)
-- `android` (to target options specific for android devices)
-
-Not all targets are used for all properties (actually, most properties are not affected by the targets).
-
-### List of Supported Properties.
-
-- [`name`](#name)
-- [`short_name`](#short_name)
-- [`background_color`](#background_color)
-- [`description`](#description)
-- [`dir`](#dir)
-- [`display`](#display)
-- [`icons`](#icons)
-- [`lang`](#lang)
-- [`orientation`](#orientation)
-- [`prefer_related_applications`](#prefer_related_applications)
-- [`related_applications`](#related_applications)
-- [`scope`](#scope)
-- [`start_url`](#start_url)
-- [`theme_color`](#theme_color)
-- [`apple`](#apple)
-  - [`apple.statusBarStyle`](#applestatusbarstyle)
-  - [`apple.precomposed`](#appleprecomposed)
-  - [`apple.formatDetection`](#appleformatdetection)
-- [`ms`](#ms)
-  - [`ms.tileColor`](#mstilecolor)
-
-#### `name`
+## `name`
 
 > Provides a human-readable name for the application as it is intended to be displayed to the user, for example among a list of other applications or as a label for an icon.
 
-Example
-
-```js
+```javascript
 manifest.name = 'dummy';
 ```
 
@@ -285,13 +19,11 @@ manifest.name = 'dummy';
 | `ms`       | `<meta name="application-name" content="dummy">`           |
 | `android`  | does not apply                                             |
 
-#### `short_name`
+## `short_name`
 
 > Provides a short human-readable name for the application. This is intended for use where there is insufficient space to display the full name of the web application.
 
-Example
-
-```js
+```javascript
 manifest.short_name = 'dummy';
 ```
 
@@ -302,13 +34,11 @@ manifest.short_name = 'dummy';
 | `ms`       | does not apply              |
 | `android`  | does not apply              |
 
-#### `background_color`
+## `background_color`
 
 > Defines the expected background color for the web application.
 
-Example
-
-```js
+```javascript
 manifest.background_color = '#fff';
 ```
 
@@ -319,13 +49,11 @@ manifest.background_color = '#fff';
 | `ms`       | does not apply                   |
 | `android`  | does not apply                   |
 
-#### `description`
+## `description`
 
 > Provides a general description of what the web application does.
 
-Example
-
-```js
+```javascript
 manifest.description = 'Lorem ipsum dolor';
 ```
 
@@ -336,7 +64,7 @@ manifest.description = 'Lorem ipsum dolor';
 | `ms`       | does not apply                           |
 | `android`  | does not apply                           |
 
-#### `dir`
+## `dir`
 
 > Specifies the primary text direction for the `name`, `short_name`, and description members.
 
@@ -346,9 +74,7 @@ Possible values:
 - rtl (right-to-left)
 - auto
 
-Example
-
-```js
+```javascript
 manifest.dir = 'ltr';
 ```
 
@@ -359,7 +85,7 @@ manifest.dir = 'ltr';
 | `ms`       | does not apply     |
 | `android`  | does not apply     |
 
-#### `display`
+## `display`
 
 > Defines the developer's preferred display mode for the web application.
 
@@ -372,9 +98,7 @@ Possible values:
 
 The default value for `display` is `browser` when is not defined.
 
-Example
-
-```js
+```javascript
 manifest.display = 'fullscreen';
 ```
 
@@ -387,7 +111,7 @@ manifest.display = 'fullscreen';
 
 **Note that for iOS the meta tag will be render with value `yes` only when display is `fullscreen` or `standalone`.**
 
-#### `icons`
+## `icons`
 
 > Specifies an array of image objects that can serve as application icons in various contexts. For example, they can be used to represent the web application amongst a list of other applications, or to integrate the web application with an OS's task switcher and/or system preferences.
 
@@ -400,9 +124,7 @@ Image object members:
 - `element` **Non standard** Only when the target is `ms`. Must be one of `square70x70logo`, `square150x150logo`, `wide310x150logo` or `square310x310logo`.
 - `safariPinnedTabColor` **Non standard** Only when the target is `safari-pinned-tab`. Can specify a single color with a hexadecimal value (#990000), an RGB value (rgb(153, 0, 0)), or a recognized color-keyword, such as: red, lime, or navy..
 
-Example
-
-```js
+```javascript
 icons: [
   {
     src: '/foo/bar.png',
@@ -440,13 +162,11 @@ icons: [
 | `ms`                | icon in `browserconfig.xml`                                                                                                             |
 | `safari-pinned-tab` | `<link rel="mask-icon" href="/foo/monochrome.svg" color="#cc6600">`                                                                     |
 
-#### `lang`
+## `lang`
 
 > Specifies the primary language for the values in the name and short_name members.
 
-Example
-
-```js
+```javascript
 manifest.lang = 'es-UY';
 ```
 
@@ -457,7 +177,7 @@ manifest.lang = 'es-UY';
 | `ms`       | does not apply        |
 | `android`  | does not apply        |
 
-#### `orientation`
+## `orientation`
 
 > Defines the default orientation for all the web application's top level browsing contexts.
 
@@ -472,9 +192,7 @@ Possible values:
 - portrait-primary
 - portrait-secondary
 
-Example
-
-```js
+```javascript
 manifest.orientation = 'portrait';
 ```
 
@@ -485,7 +203,7 @@ manifest.orientation = 'portrait';
 | `ms`       | does not apply                  |
 | `android`  | does not apply                  |
 
-#### `prefer_related_applications`
+## `prefer_related_applications`
 
 > Specifies a boolean value that hints for the user agent to indicate to the user that the specified related applications are available, and recommended over the web application.
 
@@ -494,9 +212,7 @@ Possible values:
 - true
 - false
 
-Example
-
-```js
+```javascript
 manifest.prefer_related_applications = true;
 ```
 
@@ -507,7 +223,7 @@ manifest.prefer_related_applications = true;
 | `ms`       | does not apply                            |
 | `android`  | does not apply                            |
 
-#### `related_applications`
+## `related_applications`
 
 > Specifies an array of "application objects" representing native applications that are installable by, or accessible to, the underlying platform.
 
@@ -517,9 +233,7 @@ Application object members:
 - `url` The URL at which the application can be found.
 - `id` The ID used to represent the application on the specified platform.
 
-Example
-
-```js
+```javascript
 manifest.prefer_related_applications = true;
 manifest.related_applications = [
   {
@@ -536,13 +250,11 @@ manifest.related_applications = [
 | `ms`       | does not apply                                                                                                                                               |
 | `android`  | does not apply                                                                                                                                               |
 
-#### `scope`
+## `scope`
 
 > Defines the navigation scope of this web application's application context. This basically restricts what web pages can be viewed while the manifest is applied.
 
-Example
-
-```js
+```javascript
 manifest.scope = '/myapp/';
 ```
 
@@ -553,13 +265,11 @@ manifest.scope = '/myapp/';
 | `ms`       | does not apply           |
 | `android`  | does not apply           |
 
-#### `start_url`
+## `start_url`
 
 > Specifies the URL that loads when a user launches the application from a device.
 
-Example
-
-```js
+```javascript
 manifest.start_url = './?utm_source=web_app_manifest';
 ```
 
@@ -570,13 +280,11 @@ manifest.start_url = './?utm_source=web_app_manifest';
 | `ms`       | does not apply                                      |
 | `android`  | does not apply                                      |
 
-#### `theme_color`
+## `theme_color`
 
 > Defines the default theme color for an application. This sometimes affects how the application is displayed by the OS.
 
-Example
-
-```js
+```javascript
 manifest.theme_color = 'aliceblue';
 ```
 
@@ -587,11 +295,9 @@ manifest.theme_color = 'aliceblue';
 | `ms`       | does not apply                                  |
 | `android`  | `<meta name="theme-color" content="aliceblue">` |
 
-### Vendor specific properties (non-standard)
+## `apple` \*
 
-#### `apple`
-
-> Turns on/off the generation of Apple-specific meta and link tags.
+> Turns on/off the generation of Apple-specific `meta` and `link` tags.
 
 Possible values:
 
@@ -599,9 +305,7 @@ Possible values:
 - `false` Turn off.
 - An object with custom settings (see the settings below)
 
-Example
-
-```js
+```javascript
 manifest.apple = false;
 ```
 
@@ -612,7 +316,7 @@ manifest.apple = false;
 | `ms`       | does not apply              |
 | `android`  | does not apply              |
 
-#### `apple.webAppCapable`
+### `apple.webAppCapable` \*
 
 > Overrides `manifest.display` for the generation of the `apple-mobile-web-app-capable` meta tag.
 
@@ -621,9 +325,7 @@ Possible values:
 - `true` Turn on.
 - `false` Turn off.
 
-Example
-
-```js
+```javascript
 manifest = {
   display: 'standalone',
   apple: {
@@ -639,7 +341,7 @@ manifest = {
 | `ms`       | does not apply                                             |
 | `android`  | does not apply                                             |
 
-#### `apple.statusBarStyle`
+### `apple.statusBarStyle` \*
 
 > Sets the style of the status bar for a web application in iOS
 
@@ -653,9 +355,7 @@ Possible values:
 
 Note that if set to default or black, the web content is displayed below the status bar. If set to black-translucent, the web content is displayed on the entire screen, partially obscured by the status bar.
 
-Example
-
-```js
+```javascript
 manifest.apple = {
   statusBarStyle: 'black-translucent',
 };
@@ -668,7 +368,7 @@ manifest.apple = {
 | `ms`       | does not apply                                                                    |
 | `android`  | does not apply                                                                    |
 
-#### `apple.precomposed`
+### `apple.precomposed` \*
 
 > Adds `precomposed` suffix to Apple touch icons
 
@@ -679,9 +379,7 @@ Possible values:
 - `true` Adds precomposed suffix.
 - `false` (default) Does not add precomposed suffix.
 
-Example
-
-```js
+```javascript
 manifest.apple = {
   precomposed: 'true',
 };
@@ -694,7 +392,7 @@ manifest.apple = {
 | `ms`       | does not apply                                                                                                |
 | `android`  | does not apply                                                                                                |
 
-#### `apple.formatDetection`
+### `apple.formatDetection` \*
 
 > Adds `format-detection` meta tag if needed
 
@@ -705,9 +403,7 @@ Possible values:
 - An object with following settings
   - `telephone: false` Disables automatic phone number detection.
 
-Example
-
-```js
+```javascript
 manifest.apple = {
   formatDetection: {
     telephone: false,
@@ -722,7 +418,7 @@ manifest.apple = {
 | `ms`       | does not apply                                          |
 | `android`  | does not apply                                          |
 
-#### `ms`
+## `ms` \*
 
 > Turns on/off the generation of Microsoft-specific meta and link tags.
 
@@ -730,13 +426,11 @@ Possible values:
 
 - An object with custom settings (see the settings below)
 
-Example
-
-```js
+```javascript
 manifest.ms = false;
 ```
 
-#### `ms.tileColor`
+### `ms.tileColor` \*
 
 > Sets the `<TileColor>` property in `browserconfig.xml`.
 
@@ -746,57 +440,10 @@ Possible values:
 
 - A color in hex format.
 
-Example
-
-```js
+```javascript
 manifest.ms = {
   tileColor: '#ffffff',
 };
 ```
 
-## Generating Icons
-
-`ember-web-app` doesn't generate icons or images. If you want to automate the generation of icons starting from a master image, you can install `ember-cli-image-transformer`.
-
-Managing all the various icon sizes and types can be overwhelming. One solution is to start with a base image which can be use to generate the necessary icon permutations for your environment. You can use [ember-cli-image-transformer](https://github.com/jrjohnson/ember-cli-image-transformer) to handle this task.
-
-If your `manifest.js` looks like this and needs a 192px and a 512px icon:
-
-```javascript
-// config/manifest.js
-export default function() {
-  return {
-    icons: [
-      {
-        src: '/assets/icons/appicon-32.png',
-        sizes: `32x32`,
-        targets: ['favicon'],
-      },
-      ...[192, 280, 512].map(size => ({
-        src: `/assets/icons/appicon-${size}.png`,
-        sizes: `${size}x${size}`,
-      })),
-    ],
-  };
-}
-```
-
-You can start with a base `brand-icon.svg` image and automatically build the 192x192 and 512x512 versions by installing `ember-cli-image-transformer` and adding the necessary configuration to your `ember-cli-build.js` file:
-
-```javascript
-// ember-cli-build.js
-module.exports = function(defaults) {
-  let app = new EmberApp(defaults, {
-    'ember-cli-image-transformer': {
-      images: [
-        {
-          inputFilename: 'lib/images/brand-icon.svg',
-          outputFileName: 'appicon-',
-          convertTo: 'png',
-          destination: 'assets/icons/',
-          sizes: [32, 192, 280, 512]
-        }
-      ]
-    }
-  });
-```
+_\* non-standard vendor property_

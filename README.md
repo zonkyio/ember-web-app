@@ -6,7 +6,7 @@
 [![dependencies Status](https://david-dm.org/zonkyio/ember-web-app/status.svg)](https://david-dm.org/zonkyio/ember-web-app)
 [![devDependencies Status](https://david-dm.org/zonkyio/ember-web-app/dev-status.svg)](https://david-dm.org/zonkyio/ember-web-app?type=dev)
 
-This Ember addon helps you configure and manage the web app manifest and related meta tags needed to create a Progressive Web Application
+This Ember addon helps you configure and manage the Web App Manifest to create a Progressive Web App.
 
 ## Compatibility
 

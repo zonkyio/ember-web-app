@@ -1,11 +1,21 @@
-{{docs-header}}
-
 {{#docs-viewer as |viewer|}}
+  {{#viewer.nav as |nav|}}
+    {{nav.section "Getting Started"}}
+    {{nav.item "What is Web App?" "docs.getting-started.what-is-web-app"}}
+    {{nav.item "Installation" "docs.getting-started.installation"}}
+    {{nav.item "Upgrade Guide" "docs.getting-started.upgrade-guide"}}
+    {{nav.item "Overview" "docs.getting-started.overview"}}
+
+    {{nav.section "Manifest"}}
+    {{nav.item "Available Properties" "docs.manifest.available-properties"}}
+
+    {{nav.section "Advanced"}}
+    {{nav.item "Fingerprinting" "docs.advanced.fingerprinting"}}
+    {{nav.item "Using CORS" "docs.advanced.using-cors"}}
+    {{nav.item "Generating Icons" "docs.advanced.generating-icons"}}
+  {{/viewer.nav}}
+
   {{#viewer.main}}
-    <div class="docs-container">
-      <div class="docs-section">
-        {{outlet}}
-      </div>
-    </div>
+    {{outlet}}
   {{/viewer.main}}
 {{/docs-viewer}}

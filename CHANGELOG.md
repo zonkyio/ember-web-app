@@ -1,5 +1,25 @@
 # Changelog
 
+## v3.0.0-beta.4 (2019-06-19)
+
+#### :boom: Breaking Change
+
+- [#148](https://github.com/zonkyio/ember-web-app/pull/148) Use explicit references for manifest and browserconfig ([@bobisjan](https://github.com/bobisjan))
+- [#147](https://github.com/zonkyio/ember-web-app/pull/147) Remove `enabled` configuration option ([@bobisjan](https://github.com/bobisjan))
+
+#### :rocket: Enhancement
+
+- [#148](https://github.com/zonkyio/ember-web-app/pull/148) Use explicit references for manifest and browserconfig ([@bobisjan](https://github.com/bobisjan))
+
+#### :memo: Documentation
+
+- [#177](https://github.com/zonkyio/ember-web-app/pull/177) Restructure documentation ([@bobisjan](https://github.com/bobisjan))
+
+#### Committers: 2
+
+- Jan Bobisud ([@bobisjan](https://github.com/bobisjan))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
 ## v3.0.0-beta.3 (2019-05-08)
 
 #### :boom: Breaking Change

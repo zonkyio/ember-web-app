@@ -1,6 +1,6 @@
 {
   "name": "ember-web-app",
-  "version": "3.0.0-beta.3",
+  "version": "3.0.0-beta.4",
   "description": "This Ember addon helps you configure and manage the Web App Manifest to create a Progressive Web App",
   "keywords": [
     "PWA",

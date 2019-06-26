@@ -4,6 +4,7 @@ const path = require('path');
 const BroccoliMergeTrees = require('broccoli-merge-trees');
 const Manifest = require('./lib/manifest');
 const Browserconfig = require('./lib/browserconfig');
+const tags = require('./lib/tags');
 
 module.exports = {
   name: require('./package').name,
@@ -52,29 +53,9 @@ module.exports = {
     return new BroccoliMergeTrees([manifest, browserconfig]);
   },
 
-  contentFor(section, config) {
+  contentFor(section) {
     if (section === 'head') {
-      let { configuration } = this.manifest;
-      let tags = [];
-
-      tags = tags.concat(
-        require('./lib/android-link-tags')(configuration, config)
-      );
-      tags = tags.concat(require('./lib/apple-link-tags')(configuration));
-      tags = tags.concat(
-        require('./lib/safari-pinned-tab-tags')(configuration)
-      );
-      tags = tags.concat(require('./lib/favicon-link-tags')(configuration));
-
-      tags = tags.concat(
-        require('./lib/android-meta-tags')(configuration, config)
-      );
-      tags = tags.concat(
-        require('./lib/apple-meta-tags')(configuration, config)
-      );
-      tags = tags.concat(require('./lib/ms-meta-tags')(configuration, config));
-
-      return tags.join('\n');
+      return tags(this.manifest.configuration);
     }
   },
 };

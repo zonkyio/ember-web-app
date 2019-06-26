@@ -5,8 +5,10 @@ const pristineIndex = require('../../index');
 
 function createIndex() {
   return Object.assign({}, pristineIndex, {
-    manifestConfiguration: {
-      display: 'standalone',
+    manifest: {
+      configuration: {
+        display: 'standalone',
+      },
     },
     addonBuildConfig: {},
   });
@@ -35,7 +37,7 @@ describe('Unit: index', function() {
         '<link rel="apple-touch-icon" href="/foo/bar.png" sizes="180x180">';
       let index = createIndex();
 
-      index.manifestConfiguration = {
+      index.manifest.configuration = {
         icons: [
           {
             src: '/foo/bar.png',
@@ -51,7 +53,7 @@ describe('Unit: index', function() {
       let expected = '<link rel="mask-icon" href="/foo/bar.svg" color="red">';
       let index = createIndex();
 
-      index.manifestConfiguration = {
+      index.manifest.configuration = {
         icons: [
           {
             src: '/foo/bar.svg',

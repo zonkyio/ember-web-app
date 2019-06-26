@@ -1,7 +1,6 @@
 'use strict';
 
 const path = require('path');
-const getManifestConfiguration = require('./lib/get-manifest-configuration');
 const BroccoliMergeTrees = require('broccoli-merge-trees');
 const Manifest = require('./lib/manifest');
 const Browserconfig = require('./lib/browserconfig');
@@ -27,11 +26,6 @@ module.exports = {
 
     this.manifest.configureFingerprint();
     this.browserconfig.configureFingerprint();
-
-    this.manifestConfiguration = getManifestConfiguration(
-      this.app.project,
-      this.app.env
-    );
 
     this._super.included.apply(this, arguments);
   },
@@ -60,30 +54,25 @@ module.exports = {
 
   contentFor(section, config) {
     if (section === 'head') {
+      let { configuration } = this.manifest;
       let tags = [];
 
       tags = tags.concat(
-        require('./lib/android-link-tags')(this.manifestConfiguration, config)
+        require('./lib/android-link-tags')(configuration, config)
       );
+      tags = tags.concat(require('./lib/apple-link-tags')(configuration));
       tags = tags.concat(
-        require('./lib/apple-link-tags')(this.manifestConfiguration)
+        require('./lib/safari-pinned-tab-tags')(configuration)
       );
-      tags = tags.concat(
-        require('./lib/safari-pinned-tab-tags')(this.manifestConfiguration)
-      );
-      tags = tags.concat(
-        require('./lib/favicon-link-tags')(this.manifestConfiguration)
-      );
+      tags = tags.concat(require('./lib/favicon-link-tags')(configuration));
 
       tags = tags.concat(
-        require('./lib/android-meta-tags')(this.manifestConfiguration, config)
+        require('./lib/android-meta-tags')(configuration, config)
       );
       tags = tags.concat(
-        require('./lib/apple-meta-tags')(this.manifestConfiguration, config)
+        require('./lib/apple-meta-tags')(configuration, config)
       );
-      tags = tags.concat(
-        require('./lib/ms-meta-tags')(this.manifestConfiguration, config)
-      );
+      tags = tags.concat(require('./lib/ms-meta-tags')(configuration, config));
 
       return tags.join('\n');
     }

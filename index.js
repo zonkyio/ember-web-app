@@ -25,7 +25,9 @@ module.exports = {
     this.manifest = new Manifest(app);
     this.browserconfig = new Browserconfig(app);
 
-    this._configureFingerprint();
+    this.manifest.configureFingerprint();
+    this.browserconfig.configureFingerprint();
+
     this.manifestConfiguration = getManifestConfiguration(
       this.app.project,
       this.app.env
@@ -85,19 +87,5 @@ module.exports = {
 
       return tags.join('\n');
     }
-  },
-
-  _configureFingerprint() {
-    let configureFingerprint = require('./lib/configure-fingerprint');
-
-    this.app.options.fingerprint = configureFingerprint(
-      this.app.options.fingerprint,
-      this.manifest.name
-    );
-
-    this.app.options.fingerprint = configureFingerprint(
-      this.app.options.fingerprint,
-      this.browserconfig.name
-    );
   },
 };

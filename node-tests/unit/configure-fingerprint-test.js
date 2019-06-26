@@ -1,25 +1,50 @@
 'use strict';
 
 const assert = require('assert');
-const configureFingerprint = require('../../lib/configure-fingerprint');
+const BaseManifest = require('../../lib/base-manifest');
 
-describe('Unit: configureFingerprint()', function() {
-  it('returns `false` when current options is `false`', function() {
-    assert.strictEqual(configureFingerprint(false), false);
+class TestManifest extends BaseManifest {
+  constructor(app, required = true) {
+    super(app, {
+      name: 'manifest.webmanifest',
+      selector: 'link[rel="manifest"]',
+    });
+    this.required = required;
+  }
+
+  get isRequired() {
+    return this.required;
+  }
+}
+
+describe('Unit: BaseManifest.configureFingerprint()', function() {
+  it('does nothing when is not required', function() {
+    let manifest = new TestManifest({ options: {} }, false);
+    manifest.configureFingerprint();
+
+    assert.deepStrictEqual(manifest.app.options.fingerprint, undefined);
   });
 
-  it('returns safe configuration when options is undefined', function() {
+  it('does nothing when fingerprinting is disabled', function() {
+    let manifest = new TestManifest({ options: { fingerprint: false } });
+    manifest.configureFingerprint();
+
+    assert.strictEqual(manifest.app.options.fingerprint, false);
+  });
+
+  it('configures when options is undefined', function() {
     let expected = {
       replaceExtensions: ['html', 'css', 'js', 'webmanifest'],
     };
 
-    let actual = configureFingerprint(undefined, 'manifest.webmanifest');
+    let manifest = new TestManifest({ options: { fingerprint: undefined } });
+    manifest.configureFingerprint();
 
-    assert.deepStrictEqual(actual, expected);
+    assert.deepStrictEqual(manifest.app.options.fingerprint, expected);
   });
 
   it('updates options', function() {
-    let userOptions = {
+    let fingerprint = {
       prepend: 'prefix',
       exclude: ['foo', 'bar'],
       replaceExtensions: ['baz'],
@@ -30,13 +55,14 @@ describe('Unit: configureFingerprint()', function() {
       replaceExtensions: ['baz', 'webmanifest'],
     };
 
-    let actual = configureFingerprint(userOptions, 'manifest.webmanifest');
+    let manifest = new TestManifest({ options: { fingerprint } });
+    manifest.configureFingerprint();
 
-    assert.deepStrictEqual(actual, expected);
+    assert.deepStrictEqual(manifest.app.options.fingerprint, expected);
   });
 
   it('completes missing values using defaults', function() {
-    let userOptions = {
+    let fingerprint = {
       prepend: 'prefix',
     };
     let expected = {
@@ -44,8 +70,9 @@ describe('Unit: configureFingerprint()', function() {
       replaceExtensions: ['html', 'css', 'js', 'webmanifest'],
     };
 
-    let actual = configureFingerprint(userOptions, 'manifest.webmanifest');
+    let manifest = new TestManifest({ options: { fingerprint } });
+    manifest.configureFingerprint();
 
-    assert.deepStrictEqual(actual, expected);
+    assert.deepStrictEqual(manifest.app.options.fingerprint, expected);
   });
 });

@@ -1,6 +1,4 @@
 'use strict';
-
-const path = require('path');
 const BroccoliMergeTrees = require('broccoli-merge-trees');
 const Manifest = require('./lib/manifest');
 const Browserconfig = require('./lib/browserconfig');
@@ -22,7 +20,7 @@ module.exports = {
     app.options = app.options || {};
     app.options[this.name] = app.options[this.name] || {};
 
-    this.manifest = new Manifest(app);
+    this.manifest = new Manifest(app, { ui: this.ui });
     this.browserconfig = new Browserconfig(app);
 
     this.manifest.configureFingerprint();
@@ -32,23 +30,8 @@ module.exports = {
   },
 
   treeForPublic() {
-    const configPath = path.join(this.app.project.root, 'config');
-
-    const GenerateManifest = require('./lib/broccoli/generate-manifest-json');
-    const manifest = new GenerateManifest(configPath, {
-      manifest: this.manifest,
-      project: this.app.project,
-      env: this.app.env,
-      ui: this.ui,
-    });
-
-    const GenerateBrowserconfig = require('./lib/broccoli/generate-browserconfig-xml');
-    const browserconfig = new GenerateBrowserconfig(configPath, {
-      browserconfig: this.browserconfig,
-      project: this.app.project,
-      env: this.app.env,
-      ui: this.ui,
-    });
+    let manifest = this.manifest.toTree();
+    let browserconfig = this.browserconfig.toTree();
 
     return new BroccoliMergeTrees([manifest, browserconfig]);
   },

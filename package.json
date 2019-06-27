@@ -21,7 +21,7 @@
   "scripts": {
     "build": "ember build",
     "fast-test": "SKIP_ACCEPTANCE=true yarn node-test",
-    "node-test": "mocha --recursive node-tests",
+    "node-test": "nyc --reporter=lcov mocha --recursive node-tests",
     "changelog": "lerna-changelog",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint . --cache",
@@ -73,6 +73,7 @@
     "lerna-changelog": "^0.8.2",
     "loader.js": "^4.7.0",
     "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "prettier": "^1.18.2",
     "qunit-dom": "^0.9.0"
   },
@@ -85,5 +86,13 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "before": "broccoli-asset-rev"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "index.js",
+      "blueprints/ember-web-app/index.js",
+      "lib/*"
+    ]
   }
 }

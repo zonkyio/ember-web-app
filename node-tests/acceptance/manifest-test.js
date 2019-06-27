@@ -1,163 +1,154 @@
+'use strict';
 const assert = require('assert');
-const fs = require('fs');
-const AddonTestApp = require('ember-cli-addon-tests').AddonTestApp;
+const { AddonTestApp } = require('ember-cli-addon-tests');
+const { contentOf, assertJSON } = require('./helpers');
 
-describe('Acceptance: manifest file generation', function() {
-  this.timeout(300000);
+describe('Acceptance', function() {
+  describe('manifest', function() {
+    this.timeout(300000);
 
-  let app;
+    let app;
 
-  before(function() {
-    if (process.env.SKIP_ACCEPTANCE === 'true') {
-      this.skip();
-      return;
-    }
+    before(function() {
+      if (process.env.SKIP_ACCEPTANCE === 'true') {
+        this.skip();
+        return;
+      }
 
-    app = new AddonTestApp();
-  });
+      app = new AddonTestApp();
+    });
 
-  it('generates a manifest.webmanifest file', function() {
-    return app
-      .create('empty', {
-        fixturesPath: 'node-tests/acceptance/fixtures',
-      })
-      .then(function() {
-        return app.runEmberCommand('build');
-      })
-      .then(contentOf(app, 'dist/manifest.webmanifest'))
-      .then(
-        assertJSON(app, {
-          name: 'empty',
-          short_name: 'empty',
-          description: '',
-          start_url: '/',
-          display: 'standalone',
-          background_color: '#fff',
-          theme_color: '#fff',
-          icons: [],
+    it('generates a manifest.webmanifest file', function() {
+      return app
+        .create('empty', {
+          fixturesPath: 'node-tests/acceptance/fixtures',
         })
-      );
-  });
-
-  it('configures broccoli-asset-rev', function() {
-    return app
-      .create('dummy', {
-        fixturesPath: 'node-tests/acceptance/fixtures',
-      })
-      .then(function() {
-        return app.runEmberCommand('build', '--prod');
-      })
-      .then(contentOf(app, 'dist/manifest.webmanifest'))
-      .then(
-        assertJSON(app, {
-          icons: [{ src: 'pio-8911090226e7b5522790f1218f6924a5.png' }],
+        .then(function() {
+          return app.runEmberCommand('build');
         })
-      )
-      .then(contentOf(app, 'dist/fastbootAssetMap.json'))
-      .then(assertJSON(app, { 'pio.png': 'pio-0987654321.png' }));
-  });
+        .then(contentOf(app, 'dist/manifest.webmanifest'))
+        .then(
+          assertJSON(app, {
+            name: 'empty',
+            short_name: 'empty',
+            description: '',
+            start_url: '/',
+            display: 'standalone',
+            background_color: '#fff',
+            theme_color: '#fff',
+            icons: [],
+          })
+        );
+    });
 
-  it('uses rootURL configuration', function() {
-    return app
-      .create('config-root-url', {
-        fixturesPath: 'node-tests/acceptance/fixtures',
-      })
-      .then(function() {
-        return app.runEmberCommand('build');
-      })
-      .then(contentOf(app, 'dist/index.html'))
-      .then(function(content) {
-        assert.ok(
-          content.indexOf('href="/foo/bar/baz/manifest.webmanifest"') > -1,
-          'index.html uses rootURL from configuration'
-        );
-      });
-  });
-
-  it('uses fingerprint configuration for manifest', function() {
-    return app
-      .create('broccoli-asset-rev', {
-        fixturesPath: 'node-tests/acceptance/fixtures',
-      })
-      .then(function() {
-        return app.runEmberCommand('build', '--prod');
-      })
-      .then(contentOf(app, 'dist/index.html'))
-      .then(function(content) {
-        assert.ok(
-          content.indexOf(
-            'href="https://www.example.com/manifest-f105f80557272f93397e34ea016e172d.webmanifest"'
-          ) > -1,
-          'checksum fingerprint is added to manifest.webmanifest file'
-        );
-        assert.ok(
-          content.indexOf(
-            'href="https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png"'
-          ) > -1,
-          'checksum fingerprint is added to image file'
-        );
-      })
-      .then(
-        contentOf(
-          app,
-          'dist/manifest-f105f80557272f93397e34ea016e172d.webmanifest'
+    it('configures broccoli-asset-rev', function() {
+      return app
+        .create('dummy', {
+          fixturesPath: 'node-tests/acceptance/fixtures',
+        })
+        .then(function() {
+          return app.runEmberCommand('build', '--prod');
+        })
+        .then(contentOf(app, 'dist/manifest.webmanifest'))
+        .then(
+          assertJSON(app, {
+            icons: [{ src: 'pio-8911090226e7b5522790f1218f6924a5.png' }],
+          })
         )
-      )
-      .then(
-        assertJSON(app, {
-          icons: [
-            {
-              src:
-                'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
-            },
-          ],
-        })
-      );
-  });
+        .then(contentOf(app, 'dist/fastbootAssetMap.json'))
+        .then(assertJSON(app, { 'pio.png': 'pio-0987654321.png' }));
+    });
 
-  it('uses rootURL and fingerprint configurations', function() {
-    return app
-      .create('root-url-fingerprint', {
-        fixturesPath: 'node-tests/acceptance/fixtures',
-      })
-      .then(function() {
-        return app.runEmberCommand('build', '--prod');
-      })
-      .then(contentOf(app, 'dist/index.html'))
-      .then(function(content) {
-        assert.ok(
-          content.indexOf('href="/dummy/manifest.webmanifest"') > -1,
-          'checksum fingerprint is added to manifest.webmanifest file'
-        );
-        assert.ok(
-          content.indexOf(
-            'href="https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png"'
-          ) > -1,
-          'checksum fingerprint is added to image file'
-        );
-      })
-      .then(contentOf(app, 'dist/manifest.webmanifest'))
-      .then(
-        assertJSON(app, {
-          icons: [
-            {
-              src:
-                'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
-            },
-          ],
+    it('uses rootURL configuration', function() {
+      return app
+        .create('config-root-url', {
+          fixturesPath: 'node-tests/acceptance/fixtures',
         })
-      );
+        .then(function() {
+          return app.runEmberCommand('build');
+        })
+        .then(contentOf(app, 'dist/index.html'))
+        .then(function(content) {
+          assert.ok(
+            content.indexOf('href="/foo/bar/baz/manifest.webmanifest"') > -1,
+            'index.html uses rootURL from configuration'
+          );
+        });
+    });
+
+    it('uses fingerprint configuration for manifest', function() {
+      return app
+        .create('broccoli-asset-rev', {
+          fixturesPath: 'node-tests/acceptance/fixtures',
+        })
+        .then(function() {
+          return app.runEmberCommand('build', '--prod');
+        })
+        .then(contentOf(app, 'dist/index.html'))
+        .then(function(content) {
+          assert.ok(
+            content.indexOf(
+              'href="https://www.example.com/manifest-f105f80557272f93397e34ea016e172d.webmanifest"'
+            ) > -1,
+            'checksum fingerprint is added to manifest.webmanifest file'
+          );
+          assert.ok(
+            content.indexOf(
+              'href="https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png"'
+            ) > -1,
+            'checksum fingerprint is added to image file'
+          );
+        })
+        .then(
+          contentOf(
+            app,
+            'dist/manifest-f105f80557272f93397e34ea016e172d.webmanifest'
+          )
+        )
+        .then(
+          assertJSON(app, {
+            icons: [
+              {
+                src:
+                  'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
+              },
+            ],
+          })
+        );
+    });
+
+    it('uses rootURL and fingerprint configurations', function() {
+      return app
+        .create('root-url-fingerprint', {
+          fixturesPath: 'node-tests/acceptance/fixtures',
+        })
+        .then(function() {
+          return app.runEmberCommand('build', '--prod');
+        })
+        .then(contentOf(app, 'dist/index.html'))
+        .then(function(content) {
+          assert.ok(
+            content.indexOf('href="/dummy/manifest.webmanifest"') > -1,
+            'checksum fingerprint is added to manifest.webmanifest file'
+          );
+          assert.ok(
+            content.indexOf(
+              'href="https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png"'
+            ) > -1,
+            'checksum fingerprint is added to image file'
+          );
+        })
+        .then(contentOf(app, 'dist/manifest.webmanifest'))
+        .then(
+          assertJSON(app, {
+            icons: [
+              {
+                src:
+                  'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
+              },
+            ],
+          })
+        );
+    });
   });
 });
-
-function contentOf(app, path) {
-  return function() {
-    return fs.readFileSync(app.filePath(path), { encoding: 'utf-8' });
-  };
-}
-
-function assertJSON(app, expected) {
-  return function(actual) {
-    assert.deepStrictEqual(JSON.parse(actual), expected, 'assert JSON');
-  };
-}

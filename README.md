@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/zonkyio/ember-web-app.svg?branch=master)](https://travis-ci.org/zonkyio/ember-web-app)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-web-app.svg)](https://emberobserver.com/addons/ember-web-app)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3745a4b7af3f134d40ed/maintainability)](https://codeclimate.com/github/zonkyio/ember-web-app/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3745a4b7af3f134d40ed/test_coverage)](https://codeclimate.com/github/zonkyio/ember-web-app/test_coverage)
 [![dependencies Status](https://david-dm.org/zonkyio/ember-web-app/status.svg)](https://david-dm.org/zonkyio/ember-web-app)
 [![devDependencies Status](https://david-dm.org/zonkyio/ember-web-app/dev-status.svg)](https://david-dm.org/zonkyio/ember-web-app?type=dev)
 

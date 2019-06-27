@@ -12,6 +12,7 @@
 =======
 /.env*
 /.eslintcache
+/.nyc_output
 /.pnp*
 /.sass-cache
 /connect.lock

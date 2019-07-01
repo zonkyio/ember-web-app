@@ -5543,10 +5543,10 @@ ember-source-channel-url@^2.0.1:
   dependencies:
     got "^8.0.1"
 
-ember-source@~3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.11.0.tgz#03515692782404ce3b2ca37d45a78af8e66c0cb9"
-  integrity sha512-88M+5xUQz03PKy1HyTfwykN7wtm6Ty4GHEnDPoe1JPXA+9tn33j+JpOyS8ga0i+Vpj5DkEJeXcckNadX9+9iBQ==
+ember-source@~3.11.1:
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.11.1.tgz#2318fbe600c88d3a8abbf56fc2f3a61645ee42d8"
+  integrity sha512-FPHHHu/5FBbKQ3o1D2HXEIniBUVqG1N4vDB66BaP0ht2ZcO6EB3HMjGxVH8Ad3Of8QOcXtZrBfXDHZdIWLW4lQ==
   dependencies:
     broccoli-funnel "^2.0.2"
     broccoli-merge-trees "^3.0.2"
@@ -5848,8 +5848,9 @@ esdoc-ecmascript-proposal-plugin@^1.0.0:
   resolved "https://registry.yarnpkg.com/esdoc-ecmascript-proposal-plugin/-/esdoc-ecmascript-proposal-plugin-1.0.0.tgz#390dc5656ba8a2830e39dba3570d79138df2ffd9"
   integrity sha1-OQ3FZWuoooMOOdujVw15E43y/9k=
 
-"esdoc@github:pzuraq/esdoc#015a342":
+esdoc@pzuraq/esdoc#015a342:
   version "1.0.4"
+  uid "015a3426b2e53b2b0270a9c00133780db3f1d144"
   resolved "https://codeload.github.com/pzuraq/esdoc/tar.gz/015a3426b2e53b2b0270a9c00133780db3f1d144"
   dependencies:
     babel-generator "6.26.0"

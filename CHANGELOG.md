@@ -1,5 +1,25 @@
 # Changelog
 
+## v3.0.0-beta.5 (2019-08-03)
+
+#### :house: Internal
+
+- [#203](https://github.com/zonkyio/ember-web-app/pull/203) Refresh package.json ([@bobisjan](https://github.com/bobisjan))
+- [#202](https://github.com/zonkyio/ember-web-app/pull/202) Refresh yarn.lock ([@bobisjan](https://github.com/bobisjan))
+- [#200](https://github.com/zonkyio/ember-web-app/pull/200) Use ember-template-lint directly ([@bobisjan](https://github.com/bobisjan))
+- [#189](https://github.com/zonkyio/ember-web-app/pull/189) Setup code coverage ([@bobisjan](https://github.com/bobisjan))
+- [#188](https://github.com/zonkyio/ember-web-app/pull/188) Tests cleanup ([@bobisjan](https://github.com/bobisjan))
+- [#187](https://github.com/zonkyio/ember-web-app/pull/187) Refactor tags composition to remove complexity ([@bobisjan](https://github.com/bobisjan))
+- [#186](https://github.com/zonkyio/ember-web-app/pull/186) Move tree construction into manifest ([@bobisjan](https://github.com/bobisjan))
+- [#185](https://github.com/zonkyio/ember-web-app/pull/185) Move tags generator outside index ([@bobisjan](https://github.com/bobisjan))
+- [#184](https://github.com/zonkyio/ember-web-app/pull/184) Move configuration into manifest ([@bobisjan](https://github.com/bobisjan))
+- [#183](https://github.com/zonkyio/ember-web-app/pull/183) Move fingerprint configuration into manifest ([@bobisjan](https://github.com/bobisjan))
+
+#### Committers: 2
+
+- Jan Bobisud ([@bobisjan](https://github.com/bobisjan))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
 ## v3.0.0-beta.4 (2019-06-19)
 
 #### :boom: Breaking Change

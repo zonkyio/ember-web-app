@@ -1,5 +1,15 @@
 # Changelog
 
+## v3.0.0-beta.6 (2019-08-03)
+
+#### :bug: Bug Fix
+
+- [#205](https://github.com/zonkyio/ember-web-app/pull/205) Remove coverage output from published package ([@bobisjan](https://github.com/bobisjan))
+
+#### Committers: 1
+
+- Jan Bobisud ([@bobisjan](https://github.com/bobisjan))
+
 ## v3.0.0-beta.5 (2019-08-03)
 
 #### :house: Internal

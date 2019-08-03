@@ -17,12 +17,14 @@
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig
+/.nyc_output/
 /bower.json
 /config/ember-try.js
 /CHANGELOG.md
 /CONTRIBUTING.md
 /ember-cli-build.js
 /testem.js
+/coverage/
 /tests/
 /node-tests/
 /yarn.lock

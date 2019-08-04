@@ -23,7 +23,7 @@ ember install ember-web-app
 
 ## Usage
 
-See [documentation](https://zonkyio.github.io/ember-web-app/versions/master/).
+See [documentation](https://zonkyio.github.io/ember-web-app).
 
 ## Contributing
 

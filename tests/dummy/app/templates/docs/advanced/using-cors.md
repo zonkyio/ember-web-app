@@ -5,7 +5,7 @@ You can specify `crossorigin` behaviour for `manifest.webmanifest` by updating t
 ```html
 <link
   rel="manifest"
-  href="{{rootURL}}/manifest.webmanifest"
+  href="{{rootURL}}manifest.webmanifest"
   crossorigin="use-credentials"
 />
 ```

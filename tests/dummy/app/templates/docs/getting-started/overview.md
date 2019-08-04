@@ -39,11 +39,13 @@ It also generates some compatibility `meta` tags for supporting non-standard ven
 
 ## Targets
 
-Internally, Web App takes into account four different types of targets for generating the _Web App Manifest_ taking care of including some backward compatibility `meta` tags in order to support as many devices and browsers as possible. These targets are:
+Internally, Web App takes into account several different types of targets for generating the _Web App Manifest_ taking care of including some backward compatibility `meta` tags in order to support as many devices and browsers as possible. These targets are:
 
 - `manifest` (default target)
 - `android` (to target Android devices)
 - `apple` (to target Apple devices)
 - `ms` (to target Win8/Win10 devices)
+- `favicon` (to target browser favicons)
+- `safari-pinned-tab` (to target Safari Pinned Tab)
 
 _Not all targets are used for all properties (actually, most properties are not affected by the targets)._

@@ -1,12 +1,13 @@
 # Generating Icons
 
-`ember-web-app` doesn't generate icons. If you want to automate the generation of icons starting from a master image, you can install [ember-cli-image-transformer](https://github.com/jrjohnson/ember-cli-image-transformer).
+Web App doesn't generate icons. If you want to automate the generation of icons starting from a master image, you can install [ember-cli-image-transformer](https://github.com/jrjohnson/ember-cli-image-transformer).
 
-If your `config/manifest.js` looks like this and needs a `192px` and a `512px` icon:
+If your `config/manifest.js` looks like this and needs a `192px` and a `512px` icons:
 
 ```javascript
 'use strict';
-export default function() {
+
+module.exports = function() {
   return {
     icons: [
       {
@@ -20,13 +21,14 @@ export default function() {
       })),
     ],
   };
-}
+};
 ```
 
 You can start with a base `brand-icon.svg` image and automatically build the `192x192` and `512x512` versions by installing `ember-cli-image-transformer` and adding the necessary configuration to your `ember-cli-build.js` file:
 
 ```javascript
 'use strict';
+
 module.exports = function(defaults) {
   let options = {
     'ember-cli-image-transformer': {

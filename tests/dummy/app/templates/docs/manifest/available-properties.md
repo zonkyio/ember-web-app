@@ -70,9 +70,9 @@ manifest.description = 'Lorem ipsum dolor';
 
 Possible values:
 
-- ltr (left-to-right)
-- rtl (right-to-left)
-- auto
+- `ltr` (left-to-right)
+- `rtl` (right-to-left)
+- `auto`
 
 ```javascript
 manifest.dir = 'ltr';
@@ -91,10 +91,10 @@ manifest.dir = 'ltr';
 
 Possible values:
 
-- fullscreen
-- standalone
-- minimal-ui
-- browser
+- `fullscreen`
+- `standalone`
+- `minimal-ui`
+- `browser`
 
 The default value for `display` is `browser` when is not defined.
 
@@ -133,7 +133,7 @@ icons: [
   {
     src: '/bar/baz.png',
     sizes: '280x280',
-    targets: ['apple'], // non-standard property
+    targets: ['apple'], // *
   },
   {
     src: '/bar/fav.png',
@@ -142,13 +142,13 @@ icons: [
   },
   {
     src: '/bar/ms.png',
-    element: 'square70x70logo', // non-standard property
-    targets: ['ms'], // non-standard-property
+    element: 'square70x70logo', // *
+    targets: ['ms'], // *
   },
   {
     src: '/foo/monochrome.svg',
-    safariPinnedTabColor: '#cc6600', // non-standard property
-    targets: ['safari-pinned-tab'], // non-standard-property
+    safariPinnedTabColor: '#cc6600', // *
+    targets: ['safari-pinned-tab'], // *
   },
 ];
 ```
@@ -183,14 +183,14 @@ manifest.lang = 'es-UY';
 
 Possible values:
 
-- any
-- natural
-- landscape
-- landscape-primary
-- landscape-secondary
-- portrait
-- portrait-primary
-- portrait-secondary
+- `any`
+- `natural`
+- `landscape`
+- `landscape-primary`
+- `landscape-secondary`
+- `portrait`
+- `portrait-primary`
+- `portrait-secondary`
 
 ```javascript
 manifest.orientation = 'portrait';
@@ -209,8 +209,8 @@ manifest.orientation = 'portrait';
 
 Possible values:
 
-- true
-- false
+- `true`
+- `false`
 
 ```javascript
 manifest.prefer_related_applications = true;
@@ -345,7 +345,7 @@ manifest = {
 
 > Sets the style of the status bar for a web application in iOS
 
-See [Changing the Status Bar Appearance](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW1)
+See [Changing the Status Bar Appearance](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW1).
 
 Possible values:
 
@@ -353,7 +353,7 @@ Possible values:
 - `black` The status bar has a black background.
 - `black-translucent` The status bar is black and translucent.
 
-Note that if set to default or black, the web content is displayed below the status bar. If set to black-translucent, the web content is displayed on the entire screen, partially obscured by the status bar.
+Note that if set to `default` or `black`, the web content is displayed below the status bar. If set to `black-translucent`, the web content is displayed on the entire screen, partially obscured by the status bar.
 
 ```javascript
 manifest.apple = {
@@ -372,7 +372,7 @@ manifest.apple = {
 
 > Adds `precomposed` suffix to Apple touch icons
 
-See [Precomposed Keyword for Apple touch icons](https://mathiasbynens.be/notes/touch-icons#effects)
+See [Precomposed Keyword for Apple touch icons](https://mathiasbynens.be/notes/touch-icons#effects).
 
 Possible values:
 
@@ -396,7 +396,7 @@ manifest.apple = {
 
 > Adds `format-detection` meta tag if needed
 
-See [Safari HTML Reference](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html#//apple_ref/doc/uid/TP40008193-SW5)
+See [Safari HTML Reference](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html#//apple_ref/doc/uid/TP40008193-SW5).
 
 Possible values:
 
@@ -420,25 +420,21 @@ manifest.apple = {
 
 ## `ms` \*
 
-> Turns on/off the generation of Microsoft-specific meta and link tags.
+> Allows to configure the generation of Microsoft-specific `browserconfig.xml` manifest.
 
 Possible values:
 
 - An object with custom settings (see the settings below)
 
-```javascript
-manifest.ms = false;
-```
-
 ### `ms.tileColor` \*
 
 > Sets the `<TileColor>` property in `browserconfig.xml`.
 
-See [Browser configuration schema reference](<https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx>)
+See [Browser configuration schema reference](<https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85)>).
 
 Possible values:
 
-- A color in hex format.
+- A color in `#hexadecimal` format.
 
 ```javascript
 manifest.ms = {

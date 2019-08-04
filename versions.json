@@ -6,11 +6,10 @@
     "tag": null
   },
   "-latest": {
-    "sha": "5863641def03b368013bdb5b895a37bff66077fb",
-    "tag": null,
     "path": "",
     "name": "Latest",
-    "oldPath": "latest"
+    "sha": "d1f8cd40b70ea20f4ed92539c01ebf4b8e4553c2",
+    "tag": "v3.0.0"
   },
   "v3.0.0-beta.1": {
     "path": "versions/v3.0.0-beta.1",
@@ -53,5 +52,11 @@
     "name": "v3.0.0-beta.6",
     "sha": "1a1ec9edaa33bd23a6c09754a9d8817a9562758e",
     "tag": "v3.0.0-beta.6"
+  },
+  "v3.0.0": {
+    "path": "versions/v3.0.0",
+    "name": "v3.0.0",
+    "sha": "d1f8cd40b70ea20f4ed92539c01ebf4b8e4553c2",
+    "tag": "v3.0.0"
   }
 }

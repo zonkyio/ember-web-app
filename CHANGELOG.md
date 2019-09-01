@@ -1,5 +1,19 @@
 # Changelog
 
+## v3.0.1 (2019-09-01)
+
+#### :bug: Bug Fix
+
+- [#229](https://github.com/zonkyio/ember-web-app/pull/229) Use href attribute in documentation ([@bobisjan](https://github.com/bobisjan))
+
+#### :memo: Documentation
+
+- [#229](https://github.com/zonkyio/ember-web-app/pull/229) Use href attribute in documentation ([@bobisjan](https://github.com/bobisjan))
+
+#### Committers: 1
+
+- Jan Bobisud ([@bobisjan](https://github.com/bobisjan))
+
 ## v3.0.0 (2019-08-04)
 
 #### :boom: Breaking Change

@@ -10,7 +10,7 @@ Ember should install the addon, add a `config/manifest.js` file, and insert HTML
 
 ```html
 <head>
-  <link rel="manifest" src="{{rootURL}}manifest.webmanifest" />
+  <link rel="manifest" href="{{rootURL}}manifest.webmanifest" />
   <meta name="msapplication-config" content="{{rootURL}}browserconfig.xml" />
 </head>
 ```

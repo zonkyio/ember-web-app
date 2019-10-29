@@ -904,16 +904,6 @@
     resolve "^1.8.1"
     semver "^5.6.0"
 
-"@glimmer/compiler@^0.42.0":
-  version "0.42.2"
-  resolved "https://registry.yarnpkg.com/@glimmer/compiler/-/compiler-0.42.2.tgz#505778ab9dc66f65307dfd450e1ae075dfe33581"
-  integrity sha512-/NSp8sAlvRjMwa/4c35/m7W+E5xRohzN0Fwc7t+7rrSYwbZD/B9T5n4oXZjwWrXpGOYaIrzXSGGTbozqbRIIag==
-  dependencies:
-    "@glimmer/interfaces" "^0.42.2"
-    "@glimmer/syntax" "^0.42.2"
-    "@glimmer/util" "^0.42.2"
-    "@glimmer/wire-format" "^0.42.2"
-
 "@glimmer/di@^0.2.0":
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@glimmer/di/-/di-0.2.1.tgz#5286b6b32040232b751138f6d006130c728d4b3d"
@@ -950,14 +940,6 @@
   version "0.42.2"
   resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.42.2.tgz#9ca1631e42766ea6059f4b49d0bdfb6095aad2c4"
   integrity sha512-Heck0baFSaWDanCYtmOcLeaz7v+rSqI8ovS7twrp2/FWEteb3Ze5sWQ2BEuSAG23L/k/lzVwYM/MY7ZugxBpaA==
-
-"@glimmer/wire-format@^0.42.2":
-  version "0.42.2"
-  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.42.2.tgz#b95062b594dddeb8bd11cba3a6a0accbfabc9930"
-  integrity sha512-IqUo6mdJ7GRsK7KCyZxrc17ioSg9RBniEnb418ZMQxsV/WBv9NQ359MuClUck2M24z1AOXo4TerUw0U7+pb1/A==
-  dependencies:
-    "@glimmer/interfaces" "^0.42.2"
-    "@glimmer/util" "^0.42.2"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -5941,12 +5923,12 @@ ember-svg-jar@^2.1.0:
     mkdirp "^0.5.1"
     path-posix "^1.0.0"
 
-ember-template-lint@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-1.5.3.tgz#0ebcd9e48e0b9c385ebdce3b56a0d38de804e598"
-  integrity sha512-t/Bm21UVQHYqeexQTUSqAf1xyJnimhLMCIhNPtysjbuI9y7g275AnrJvSGI8H+RiJlH/RpR59TEwvPPt4cA4Qw==
+ember-template-lint@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-1.6.1.tgz#9530f702996691d479570be71cab396d42b07234"
+  integrity sha512-vETWXQtQzv+hZc0/vOrox0+6G+5Sr0qPEOnaTy0ZkwcRv9TJyflru7IXm3V1vEtKCljR7pHzRQ4/IsSEWSDLVw==
   dependencies:
-    "@glimmer/compiler" "^0.42.0"
+    "@glimmer/syntax" "^0.42.2"
     chalk "^2.0.0"
     globby "^9.0.0"
     minimatch "^3.0.4"

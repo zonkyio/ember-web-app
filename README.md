@@ -1,6 +1,6 @@
 # ember-web-app
 
-[![Build Status](https://travis-ci.org/zonkyio/ember-web-app.svg?branch=master)](https://travis-ci.org/zonkyio/ember-web-app)
+[![Actions Status](https://github.com/zonkyio/ember-web-app/workflows/CI/badge.svg)](https://github.com/zonkyio/ember-web-app/actions)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-web-app.svg)](https://emberobserver.com/addons/ember-web-app)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3745a4b7af3f134d40ed/maintainability)](https://codeclimate.com/github/zonkyio/ember-web-app/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3745a4b7af3f134d40ed/test_coverage)](https://codeclimate.com/github/zonkyio/ember-web-app/test_coverage)

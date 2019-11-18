@@ -1,4 +1,5 @@
-window.EmberENV={FEATURES:{},EXTEND_PROTOTYPES:{Date:!1},_JQUERY_INTEGRATION:!1}
+window.EmberENV=function(e,t){for(var r in t)e[r]=t[r]
+return e}(window.EmberENV||{},{FEATURES:{},EXTEND_PROTOTYPES:{Date:!1},_JQUERY_INTEGRATION:!1})
 var loader,define,requireModule,require,requirejs,runningTests=!1
 if(function(e){"use strict"
 function t(){var e=Object.create(null)

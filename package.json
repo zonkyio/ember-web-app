@@ -69,7 +69,7 @@
     "eslint-plugin-ember": "^7.6.0",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "lerna-changelog": "^0.8.2",
+    "lerna-changelog": "^0.8.3",
     "loader.js": "^4.7.0",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",

@@ -13,7 +13,7 @@ This Ember addon helps you configure and manage the Web App Manifest to create a
 
 - Ember.js v2.18 or above
 - Ember CLI v2.13 or above
-- Node.js v8 or above
+- Node.js v10, v12 or above
 
 ## Installation
 

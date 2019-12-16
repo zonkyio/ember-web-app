@@ -2,7 +2,7 @@
 
 You can specify `crossorigin` behaviour for `manifest.webmanifest` by updating the `app/index.html` file.
 
-```html
+```
 <link
   rel="manifest"
   href="{{rootURL}}manifest.webmanifest"

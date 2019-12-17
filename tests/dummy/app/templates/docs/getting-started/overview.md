@@ -13,7 +13,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
 The generated `manifest.webmanifest` file is linked to the application using `link` tag in `app/index.html` file.
 
-```html
+```
 <link rel="manifest" src="{{rootURL}}manifest.webmanifest" />
 ```
 
@@ -27,7 +27,7 @@ From [Microsoft](https://msdn.microsoft.com/en-us/library/dn320426%28v=vs.85%29.
 
 The generated `browserconfig.xml` file is linked to the application using `meta` tag in `app/index.html` file.
 
-```html
+```
 <meta name="msapplication-config" content="{{rootURL}}browserconfig.xml" />
 ```
 

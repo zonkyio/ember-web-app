@@ -1,5 +1,5 @@
-{{#docs-viewer as |viewer|}}
-  {{#viewer.nav as |nav|}}
+<DocsViewer as |viewer|>
+  <viewer.nav as |nav|>
     {{nav.section "Getting Started"}}
     {{nav.item "What is Web App?" "docs.getting-started.what-is-web-app"}}
     {{nav.item "Installation" "docs.getting-started.installation"}}
@@ -13,9 +13,9 @@
     {{nav.item "Fingerprinting" "docs.advanced.fingerprinting"}}
     {{nav.item "Using CORS" "docs.advanced.using-cors"}}
     {{nav.item "Generating Icons" "docs.advanced.generating-icons"}}
-  {{/viewer.nav}}
+  </viewer.nav>
 
-  {{#viewer.main}}
+  <viewer.main>
     {{outlet}}
-  {{/viewer.main}}
-{{/docs-viewer}}
+  </viewer.main>
+</DocsViewer>

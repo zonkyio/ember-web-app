@@ -13,8 +13,8 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
 The generated `manifest.webmanifest` file is linked to the application using `link` tag in `app/index.html` file.
 
-```
-<link rel="manifest" src="{{rootURL}}manifest.webmanifest" />
+```html
+<link rel="manifest" src="{{rootURL}}manifest.webmanifest">
 ```
 
 _The generated manifest is validated using `web-app-manifest-validator` package._
@@ -27,8 +27,8 @@ From [Microsoft](https://msdn.microsoft.com/en-us/library/dn320426%28v=vs.85%29.
 
 The generated `browserconfig.xml` file is linked to the application using `meta` tag in `app/index.html` file.
 
-```
-<meta name="msapplication-config" content="{{rootURL}}browserconfig.xml" />
+```html
+<meta name="msapplication-config" content="{{rootURL}}browserconfig.xml">
 ```
 
 _You can skip generating of `browserconfig.xml` file by removing the `meta` tag from the `app/index.html` file._

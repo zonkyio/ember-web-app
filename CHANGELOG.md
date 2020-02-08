@@ -1,4 +1,26 @@
-# Changelog
+## v4.0.0 (2020-02-08)
+
+#### :boom: Breaking Change
+
+- [#343](https://github.com/zonkyio/ember-web-app/pull/343) Upgrade to Ember Octane ([@bobisjan](https://github.com/bobisjan))
+- [#316](https://github.com/zonkyio/ember-web-app/pull/316) Bump supported Node.js to v10, v12 or above ([@bobisjan](https://github.com/bobisjan))
+
+#### :memo: Documentation
+
+- [#345](https://github.com/zonkyio/ember-web-app/pull/345) Add v4.0 notes into Upgrade Guides ([@bobisjan](https://github.com/bobisjan))
+- [#344](https://github.com/zonkyio/ember-web-app/pull/344) Remove trailing slashes from HTML snippets ([@bobisjan](https://github.com/bobisjan))
+
+#### :house: Internal
+
+- [#367](https://github.com/zonkyio/ember-web-app/pull/367) Add lint staged ([@bobisjan](https://github.com/bobisjan))
+- [#366](https://github.com/zonkyio/ember-web-app/pull/366) Use Lerna changelog for GitHub release notes ([@bobisjan](https://github.com/bobisjan))
+- [#365](https://github.com/zonkyio/ember-web-app/pull/365) Add Release It! 🚀 ([@bobisjan](https://github.com/bobisjan))
+- [#285](https://github.com/zonkyio/ember-web-app/pull/285) Remove ember-cli-htmlbars-inline-precompile ([@bobisjan](https://github.com/bobisjan))
+
+#### Committers: 2
+
+- Jan Bobisud ([@bobisjan](https://github.com/bobisjan))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
 
 ## v3.0.1 (2019-09-01)
 

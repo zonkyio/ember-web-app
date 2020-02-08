@@ -7,6 +7,7 @@ module.exports = {
   },
   github: {
     release: true,
+    releaseName: 'v${version}',
     releaseNotes:
       'yarn changelog --next-version="Release Notes" --from=v${latestVersion}',
   },

@@ -26,11 +26,13 @@ module.exports = {
     {
       files: [
         '.eslintrc.js',
+        '.huskyrc.js',
         '.prettierrc.js',
         '.release-it.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
         'index.js',
+        'lint-staged.config.js',
         'testem.js',
         'blueprints/*/index.js',
         'config/**/*.js',

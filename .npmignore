@@ -12,6 +12,7 @@
 /.env*
 /.eslintignore
 /.eslintrc.js
+/.huskyrc.js
 /.prettierrc.js
 /.gitignore
 /.release-it.js
@@ -24,6 +25,7 @@
 /CHANGELOG.md
 /CONTRIBUTING.md
 /ember-cli-build.js
+/lint-staged.config.js
 /testem.js
 /coverage/
 /tests/

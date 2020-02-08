@@ -20,9 +20,9 @@
   },
   "scripts": {
     "build": "ember build",
+    "release": "release-it",
     "fast-test": "SKIP_ACCEPTANCE=true yarn node-test",
     "node-test": "nyc --reporter=lcov mocha --recursive node-tests",
-    "changelog": "lerna-changelog",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint . --cache",
     "start": "ember serve",
@@ -71,12 +71,13 @@
     "eslint-plugin-ember": "^7.7.2",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "lerna-changelog": "^1.0.0",
     "loader.js": "^4.7.0",
     "mocha": "^7.0.1",
     "nyc": "^15.0.0",
     "prettier": "^1.19.1",
-    "qunit-dom": "^1.0.0"
+    "qunit-dom": "^1.0.0",
+    "release-it": "^12.4.3",
+    "release-it-lerna-changelog": "^1.0.3"
   },
   "engines": {
     "node": "10.* || >= 12.*"

@@ -14,6 +14,7 @@
 /.eslintrc.js
 /.prettierrc.js
 /.gitignore
+/.release-it.js
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig

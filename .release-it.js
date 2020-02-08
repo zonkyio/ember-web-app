@@ -9,7 +9,7 @@ module.exports = {
     release: true,
     releaseName: 'v${version}',
     releaseNotes:
-      'yarn changelog --next-version="Release Notes" --from=v${latestVersion}',
+      'yarn --silent changelog --next-version="Release Notes" --from=v${latestVersion}',
   },
   npm: {
     publish: false,

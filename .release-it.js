@@ -7,6 +7,8 @@ module.exports = {
   },
   github: {
     release: true,
+    releaseNotes:
+      'yarn changelog --next-version="Release Notes" --from=v${latestVersion}',
   },
   npm: {
     publish: false,

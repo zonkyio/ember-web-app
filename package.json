@@ -79,7 +79,7 @@
     "mocha": "^7.1.0",
     "nyc": "^15.0.0",
     "prettier": "^1.19.1",
-    "qunit-dom": "^1.0.0",
+    "qunit-dom": "^1.1.0",
     "release-it": "^12.6.3",
     "release-it-lerna-changelog": "^1.0.3"
   },

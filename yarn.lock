@@ -6784,10 +6784,10 @@ ember-svg-jar@^2.2.3:
     mkdirp "^0.5.1"
     path-posix "^1.0.0"
 
-ember-template-lint@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-2.2.0.tgz#e488f37ab5b837f8ed7815501ab00c508abbedc5"
-  integrity sha512-TTfmj98UappdpsWbnP8TG3e8M6mESbvm63xxYYZAukfD74RgZyA1ri7Wq0tohXTzhQO3TPF1FrVZP4Vom/U2aQ==
+ember-template-lint@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-2.3.0.tgz#4284a21e5c003862602a3669ad1d9c52b41b8e7b"
+  integrity sha512-TwdQ6zhOWdES9FzBu3yI2s9bKbfmz1QKglYNfVBY9kQtIV3IN9zJ+xpDNldCvpnFIftJiFwYIu1xU9g1Dpnvow==
   dependencies:
     chalk "^3.0.0"
     ember-template-recast "^4.1.1"
@@ -6795,6 +6795,7 @@ ember-template-lint@^2.2.0:
     globby "^11.0.0"
     micromatch "^4.0.2"
     resolve "^1.15.1"
+    yargs "^15.1.0"
 
 ember-template-recast@^4.1.1:
   version "4.1.1"
@@ -15412,7 +15413,7 @@ yargs@^11.0.0:
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
 
-yargs@^15.0.0, yargs@^15.0.2:
+yargs@^15.0.0, yargs@^15.0.2, yargs@^15.1.0:
   version "15.1.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.1.0.tgz#e111381f5830e863a89550bd4b136bb6a5f37219"
   integrity sha512-T39FNN1b6hCW4SOIk1XyTOWxtXdcen0t+XYrysQmChzSipvhBO8Bj0nK1ozAasdk24dNWuMZvr4k24nz+8HHLg==

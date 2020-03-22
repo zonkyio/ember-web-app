@@ -32,7 +32,7 @@
   "github-actions": {
     "path": "versions/github-actions",
     "name": "github-actions",
-    "sha": "231f3af3a72158a096d5ebd71da140cdbe383fee",
+    "sha": "419462c808404d06612d52552a6ccd5125e9ad6f",
     "tag": null
   }
 }

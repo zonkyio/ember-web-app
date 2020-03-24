@@ -28,7 +28,9 @@
     "lint:js": "eslint . --cache",
     "start": "ember serve",
     "test": "ember test",
-    "test:all": "ember try:each"
+    "test:all": "ember try:each",
+    "test:one": "ember try:one",
+    "deploy": "ember deploy production --activate --verbose"
   },
   "dependencies": {
     "broccoli-asset-rev": "^3.0.0",

@@ -2,10 +2,10 @@
 const assert = require('assert');
 const android = require('../../../lib/tags/android');
 
-describe('Unit', function() {
-  describe('tags', function() {
-    describe('android', function() {
-      it('returns `theme-color` meta tag when it is defined', function() {
+describe('Unit', function () {
+  describe('tags', function () {
+    describe('android', function () {
+      it('returns `theme-color` meta tag when it is defined', function () {
         let manifest = {
           theme_color: '#ff0000',
         };
@@ -15,7 +15,7 @@ describe('Unit', function() {
         ]);
       });
 
-      it('returns empty array when `theme-color` is not defined', function() {
+      it('returns empty array when `theme-color` is not defined', function () {
         let manifest = {};
 
         assert.deepStrictEqual(android(manifest), []);

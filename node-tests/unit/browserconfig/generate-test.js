@@ -13,10 +13,10 @@ class TestBrowserconfig extends Browserconfig {
   }
 }
 
-describe('Unit', function() {
-  describe('browserconfig', function() {
-    describe('generate()', function() {
-      it(`generates the minimal browserconfig.xml if there are no icons with 'ms' target`, function() {
+describe('Unit', function () {
+  describe('browserconfig', function () {
+    describe('generate()', function () {
+      it(`generates the minimal browserconfig.xml if there are no icons with 'ms' target`, function () {
         let browserconfig = new TestBrowserconfig({});
 
         assert.strictEqual(
@@ -25,7 +25,7 @@ describe('Unit', function() {
         );
       });
 
-      it(`throws an error if it finds an icon with target 'ms' without the right 'element' property`, function() {
+      it(`throws an error if it finds an icon with target 'ms' without the right 'element' property`, function () {
         let browserconfig = new TestBrowserconfig({
           icons: [
             {
@@ -39,7 +39,7 @@ describe('Unit', function() {
         assert.throws(() => browserconfig.generate());
       });
 
-      it(`throws an error if the icon is valid but there's no 'ms.tileColor' property`, function() {
+      it(`throws an error if the icon is valid but there's no 'ms.tileColor' property`, function () {
         let browserconfig = new TestBrowserconfig({
           icons: [
             {
@@ -54,7 +54,7 @@ describe('Unit', function() {
         assert.throws(() => browserconfig.generate());
       });
 
-      it(`adds each icon to the list of tiles`, function() {
+      it(`adds each icon to the list of tiles`, function () {
         let browserconfig = new TestBrowserconfig({
           icons: [
             {

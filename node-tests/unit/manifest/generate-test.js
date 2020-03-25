@@ -13,10 +13,10 @@ class TestManifest extends Manifest {
   }
 }
 
-describe('Unit', function() {
-  describe('manifest', function() {
-    describe('generate()', function() {
-      it('filters custom "apple" property', function() {
+describe('Unit', function () {
+  describe('manifest', function () {
+    describe('generate()', function () {
+      it('filters custom "apple" property', function () {
         let manifest = new TestManifest({
           apple: 'apple',
         });
@@ -24,7 +24,7 @@ describe('Unit', function() {
         assert.strictEqual(manifest.generate(), '{}\n');
       });
 
-      it('filters custom "ms" property', function() {
+      it('filters custom "ms" property', function () {
         let manifest = new TestManifest({
           ms: 'ms',
         });
@@ -32,7 +32,7 @@ describe('Unit', function() {
         assert.strictEqual(manifest.generate(), '{}\n');
       });
 
-      it('returns manifest properties', function() {
+      it('returns manifest properties', function () {
         let manifest = new TestManifest({
           foo: 'bar',
         });
@@ -40,7 +40,7 @@ describe('Unit', function() {
         assert.strictEqual(manifest.generate(), '{"foo":"bar"}\n');
       });
 
-      it('includes icons with no target definition', function() {
+      it('includes icons with no target definition', function () {
         let manifest = new TestManifest({
           icons: [
             {
@@ -57,7 +57,7 @@ describe('Unit', function() {
         );
       });
 
-      it('filters icons that has a different target than manifest', function() {
+      it('filters icons that has a different target than manifest', function () {
         let manifest = new TestManifest({
           icons: [
             {

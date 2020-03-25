@@ -13,16 +13,16 @@ function createIndex() {
   });
 }
 
-describe('Unit', function() {
-  describe('index', function() {
-    describe('contentFor()', function() {
-      it('returns empty when section is other than "head"', function() {
+describe('Unit', function () {
+  describe('index', function () {
+    describe('contentFor()', function () {
+      it('returns empty when section is other than "head"', function () {
         let index = createIndex();
 
         assert.strictEqual(index.contentFor('head-footer'), undefined);
       });
 
-      it('returns apple meta tags', function() {
+      it('returns apple meta tags', function () {
         let index = createIndex();
 
         assert.ok(
@@ -34,7 +34,7 @@ describe('Unit', function() {
         );
       });
 
-      it('returns apple link tags', function() {
+      it('returns apple link tags', function () {
         let index = createIndex();
 
         index.manifest.configuration = {
@@ -55,7 +55,7 @@ describe('Unit', function() {
         );
       });
 
-      it('returns safari pinned tab link tags', function() {
+      it('returns safari pinned tab link tags', function () {
         let index = createIndex();
 
         index.manifest.configuration = {

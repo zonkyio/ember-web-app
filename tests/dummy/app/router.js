@@ -6,20 +6,20 @@ export default class Router extends AddonDocsRouter {
   rootURL = config.rootURL;
 }
 
-Router.map(function() {
-  docsRoute(this, function() {
-    this.route('getting-started', function() {
+Router.map(function () {
+  docsRoute(this, function () {
+    this.route('getting-started', function () {
       this.route('what-is-web-app');
       this.route('installation');
       this.route('upgrade-guide');
       this.route('overview');
     });
 
-    this.route('manifest', function() {
+    this.route('manifest', function () {
       this.route('available-properties');
     });
 
-    this.route('advanced', function() {
+    this.route('advanced', function () {
       this.route('fingerprinting');
       this.route('using-cors');
       this.route('generating-icons');

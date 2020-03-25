@@ -13,6 +13,6 @@ function exists(app, path) {
 }
 
 function assertJSON(app, expected) {
-  return actual =>
+  return (actual) =>
     assert.deepStrictEqual(JSON.parse(actual), expected, 'assert JSON');
 }

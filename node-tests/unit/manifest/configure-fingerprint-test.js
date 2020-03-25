@@ -13,24 +13,24 @@ class TestManifest extends Manifest {
   }
 }
 
-describe('Unit', function() {
-  describe('manifest', function() {
-    describe('configureFingerprint()', function() {
-      it('does nothing when is not required', function() {
+describe('Unit', function () {
+  describe('manifest', function () {
+    describe('configureFingerprint()', function () {
+      it('does nothing when is not required', function () {
         let manifest = new TestManifest({ options: {} }, false);
         manifest.configureFingerprint();
 
         assert.deepStrictEqual(manifest.app.options.fingerprint, undefined);
       });
 
-      it('does nothing when fingerprinting is disabled', function() {
+      it('does nothing when fingerprinting is disabled', function () {
         let manifest = new TestManifest({ options: { fingerprint: false } });
         manifest.configureFingerprint();
 
         assert.strictEqual(manifest.app.options.fingerprint, false);
       });
 
-      it('configures when options is undefined', function() {
+      it('configures when options is undefined', function () {
         let manifest = new TestManifest({
           options: { fingerprint: undefined },
         });
@@ -41,7 +41,7 @@ describe('Unit', function() {
         });
       });
 
-      it('updates options', function() {
+      it('updates options', function () {
         let fingerprint = {
           prepend: 'prefix',
           exclude: ['foo', 'bar'],
@@ -58,7 +58,7 @@ describe('Unit', function() {
         });
       });
 
-      it('completes missing values using defaults', function() {
+      it('completes missing values using defaults', function () {
         let fingerprint = {
           prepend: 'prefix',
         };

@@ -3,13 +3,13 @@ const assert = require('assert');
 const { AddonTestApp } = require('ember-cli-addon-tests');
 const { contentOf, assertJSON } = require('./helpers');
 
-describe('Acceptance', function() {
-  describe('manifest', function() {
+describe('Acceptance', function () {
+  describe('manifest', function () {
     this.timeout(300000);
 
     let app;
 
-    before(function() {
+    before(function () {
       if (process.env.SKIP_ACCEPTANCE === 'true') {
         this.skip();
         return;
@@ -18,12 +18,12 @@ describe('Acceptance', function() {
       app = new AddonTestApp();
     });
 
-    it('generates a manifest.webmanifest file', function() {
+    it('generates a manifest.webmanifest file', function () {
       return app
         .create('empty', {
           fixturesPath: 'node-tests/acceptance/fixtures',
         })
-        .then(function() {
+        .then(function () {
           return app.runEmberCommand('build');
         })
         .then(contentOf(app, 'dist/manifest.webmanifest'))
@@ -41,12 +41,12 @@ describe('Acceptance', function() {
         );
     });
 
-    it('configures broccoli-asset-rev', function() {
+    it('configures broccoli-asset-rev', function () {
       return app
         .create('dummy', {
           fixturesPath: 'node-tests/acceptance/fixtures',
         })
-        .then(function() {
+        .then(function () {
           return app.runEmberCommand('build', '--prod');
         })
         .then(contentOf(app, 'dist/manifest.webmanifest'))
@@ -59,16 +59,16 @@ describe('Acceptance', function() {
         .then(assertJSON(app, { 'pio.png': 'pio-0987654321.png' }));
     });
 
-    it('uses rootURL configuration', function() {
+    it('uses rootURL configuration', function () {
       return app
         .create('config-root-url', {
           fixturesPath: 'node-tests/acceptance/fixtures',
         })
-        .then(function() {
+        .then(function () {
           return app.runEmberCommand('build');
         })
         .then(contentOf(app, 'dist/index.html'))
-        .then(function(content) {
+        .then(function (content) {
           assert.ok(
             content.indexOf('href="/foo/bar/baz/manifest.webmanifest"') > -1,
             'index.html uses rootURL from configuration'
@@ -76,16 +76,16 @@ describe('Acceptance', function() {
         });
     });
 
-    it('uses fingerprint configuration for manifest', function() {
+    it('uses fingerprint configuration for manifest', function () {
       return app
         .create('broccoli-asset-rev', {
           fixturesPath: 'node-tests/acceptance/fixtures',
         })
-        .then(function() {
+        .then(function () {
           return app.runEmberCommand('build', '--prod');
         })
         .then(contentOf(app, 'dist/index.html'))
-        .then(function(content) {
+        .then(function (content) {
           assert.ok(
             content.indexOf(
               'href="https://www.example.com/manifest-f105f80557272f93397e34ea016e172d.webmanifest"'
@@ -117,16 +117,16 @@ describe('Acceptance', function() {
         );
     });
 
-    it('uses rootURL and fingerprint configurations', function() {
+    it('uses rootURL and fingerprint configurations', function () {
       return app
         .create('root-url-fingerprint', {
           fixturesPath: 'node-tests/acceptance/fixtures',
         })
-        .then(function() {
+        .then(function () {
           return app.runEmberCommand('build', '--prod');
         })
         .then(contentOf(app, 'dist/index.html'))
-        .then(function(content) {
+        .then(function (content) {
           assert.ok(
             content.indexOf('href="/dummy/manifest.webmanifest"') > -1,
             'checksum fingerprint is added to manifest.webmanifest file'

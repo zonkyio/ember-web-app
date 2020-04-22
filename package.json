@@ -80,7 +80,7 @@
     "loader.js": "^4.7.0",
     "mocha": "^7.1.1",
     "nyc": "^15.0.1",
-    "prettier": "^2.0.4",
+    "prettier": "^2.0.5",
     "qunit-dom": "^1.2.0",
     "release-it": "^13.5.4",
     "release-it-lerna-changelog": "^2.1.2"

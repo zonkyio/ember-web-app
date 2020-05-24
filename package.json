@@ -102,5 +102,9 @@
       "blueprints/ember-web-app/index.js",
       "lib/*"
     ]
+  },
+  "volta": {
+    "node": "12.16.3",
+    "yarn": "1.22.4"
   }
 }

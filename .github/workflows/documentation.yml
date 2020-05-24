@@ -17,14 +17,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: Set environment ADDON_DOCS_VERSION_PATH
-        run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::${GITHUB_REF##*/}"
-      - name: Set environment ADDON_DOCS_UPDATE_LATEST
-        if: contains(github.ref , 'master') != true
+      - run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::${GITHUB_REF##*/}"
+      - if: contains(github.ref , 'master') != true
         run: echo "::set-env name=ADDON_DOCS_UPDATE_LATEST::true"
-      - name: Run yarn install --non-interactive
-        run: yarn install
-      - name: Run yarn deploy
-        env:
+      - run: yarn install
+      - env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: yarn deploy

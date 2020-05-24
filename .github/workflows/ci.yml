@@ -18,12 +18,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: Run yarn install
-        run: yarn install --non-interactive
-      - name: Run yarn lint:js
-        run: yarn lint:js
-      - name: Run yarn lint:hbs
-        run: yarn lint:hbs
+      - run: yarn install --non-interactive
+      - run: yarn lint:js
+      - run: yarn lint:hbs
 
   test-ember:
     name: Tests / Ember
@@ -34,10 +31,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: Run yarn install
-        run: yarn install --non-interactive
-      - name: Run yarn test
-        run: yarn test
+      - run: yarn install --non-interactive
+      - run: yarn test
 
   test-node:
     name: Tests / Node
@@ -48,10 +43,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: Run yarn install
-        run: yarn install --non-interactive
-      - name: Run yarn node-test
-        uses: paambaati/codeclimate-action@v2.5.5
+      - run: yarn install --non-interactive
+      - uses: paambaati/codeclimate-action@v2.5.5
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
@@ -66,10 +59,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: Run yarn install
-        run: yarn install --ignore-lockfile --non-interactive
-      - name: Run yarn test
-        run: yarn test
+      - run: yarn install --ignore-lockfile --non-interactive
+      - run: yarn test
 
   try-scenarios:
     name: Tests / ${{ matrix.ember-try-scenario }}
@@ -92,9 +83,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: Run yarn install
-        run: yarn install --non-interactive
-      - name: Run yarn test:one
-        env:
+      - run: yarn install --non-interactive
+      - env:
           EMBER_TRY_SCENARIO: ${{ matrix.ember-try-scenario }}
         run: yarn test:one $EMBER_TRY_SCENARIO

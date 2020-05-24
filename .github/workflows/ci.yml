@@ -8,9 +8,6 @@ on:
       - 'v*'
   pull_request: {}
 
-env:
-  CI: true
-
 jobs:
   lint:
     name: Linting

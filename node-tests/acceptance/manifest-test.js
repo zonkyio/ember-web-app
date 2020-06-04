@@ -33,6 +33,7 @@ describe('Acceptance', function () {
             short_name: 'empty',
             description: '',
             start_url: '/',
+            scope: '/',
             display: 'standalone',
             background_color: '#fff',
             theme_color: '#fff',

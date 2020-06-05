@@ -9,6 +9,7 @@ module.exports = function(/* environment, appConfig */) {
     short_name: "<%= name %>",
     description: "",
     start_url: "/",
+    scope: "/",
     display: "standalone",
     background_color: "#fff",
     theme_color: "#fff",

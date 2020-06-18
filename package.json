@@ -76,7 +76,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "lerna-changelog": "^1.0.1",
-    "lint-staged": "^10.2.10",
+    "lint-staged": "^10.2.11",
     "loader.js": "^4.7.0",
     "mocha": "^8.0.1",
     "nyc": "^15.1.0",

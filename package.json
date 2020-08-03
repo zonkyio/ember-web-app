@@ -82,7 +82,7 @@
     "nyc": "^15.1.0",
     "prettier": "^2.0.5",
     "qunit-dom": "^1.4.0",
-    "release-it": "^13.6.5",
+    "release-it": "^13.6.6",
     "release-it-lerna-changelog": "^2.3.0"
   },
   "engines": {

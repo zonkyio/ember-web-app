@@ -14,11 +14,19 @@ yarn add -D ember-web-app@X.X.X
 
 You can view all of Web App's release notes on [our Releases page](https://github.com/zonkyio/ember-web-app/releases).
 
+## 5.0 Upgrade Guide
+
+There was a one breaking change made in the 5.0 release.
+
+### 1. Drop Ember.js 3.8 LTS support
+
+Web App supports Ember.js 3.12+ versions.
+
 ## 4.0 Upgrade Guide
 
 There were a two breaking changes made in the 4.0 release.
 
-### 1. Drop Ember.js 3.4 (and below) support
+### 1. Drop Ember.js 3.4 LTS support
 
 Web App supports Ember.js 3.8+ versions.
 

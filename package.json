@@ -85,6 +85,9 @@
     "release-it": "^13.6.6",
     "release-it-lerna-changelog": "^2.3.0"
   },
+  "resolutions": {
+    "ember-fetch": "^8.0.2"
+  },
   "engines": {
     "node": "10.* || >= 12.*"
   },

@@ -86,7 +86,7 @@
     "release-it-lerna-changelog": "^2.3.0"
   },
   "engines": {
-    "node": "10.* || >= 12.*"
+    "node": "10.* || 12.* || >= 14.*"
   },
   "ember": {
     "edition": "octane"

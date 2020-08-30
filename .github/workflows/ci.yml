@@ -15,9 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
+
       - run: yarn install --non-interactive
       - run: yarn lint:js
       - run: yarn lint:hbs
@@ -28,9 +27,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
+
       - run: yarn install --non-interactive
       - run: yarn test
 
@@ -40,9 +38,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
+
       - run: yarn install --non-interactive
       - uses: paambaati/codeclimate-action@v2.5.5
         env:
@@ -56,9 +53,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
+
       - run: yarn install --ignore-lockfile --non-interactive
       - run: yarn test
 
@@ -80,9 +76,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
+
       - run: yarn install --non-interactive
       - env:
           EMBER_TRY_SCENARIO: ${{ matrix.ember-try-scenario }}

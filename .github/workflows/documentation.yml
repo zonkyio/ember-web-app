@@ -14,9 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+      - uses: volta-cli/action@v1
+
       - run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::${GITHUB_REF##*/}"
       - if: contains(github.ref , 'master') != true
         run: echo "::set-env name=ADDON_DOCS_UPDATE_LATEST::true"

@@ -74,7 +74,7 @@
     "eslint-plugin-ember": "^8.13.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.2.5",
+    "husky": "^4.3.0",
     "lerna-changelog": "^1.0.1",
     "lint-staged": "^10.2.13",
     "loader.js": "^4.7.0",

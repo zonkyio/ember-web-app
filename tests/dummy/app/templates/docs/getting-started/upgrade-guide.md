@@ -18,9 +18,9 @@ You can view all of Web App's release notes on [our Releases page](https://githu
 
 There were a two breaking changes made in the 5.0 release.
 
-### 1. Drop Ember.js 3.8 LTS support
+### 1. Drop Ember.js 3.8 and 3.12 LTS support
 
-Web App supports Ember.js 3.12+ versions.
+Web App supports Ember.js 3.16+ versions.
 
 ### 2. Drop Node.js 13 support
 

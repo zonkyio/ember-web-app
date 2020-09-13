@@ -29,12 +29,6 @@
     "sha": "438d1788be1dde6a9c80d246ce76ca274b4ec806",
     "tag": "v4.0.0"
   },
-  "github-actions": {
-    "path": "versions/github-actions",
-    "name": "github-actions",
-    "sha": "35b37503c3afbeb4886d80dc32e6c536fc28821d",
-    "tag": null
-  },
   "v5.0.0": {
     "path": "versions/v5.0.0",
     "name": "v5.0.0",

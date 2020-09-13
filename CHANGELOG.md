@@ -1,3 +1,40 @@
+## v5.0.0 (2020-09-13)
+
+#### :boom: Breaking Change
+
+- [#594](https://github.com/zonkyio/ember-web-app/pull/594) Drop Ember 3.12 LTS support ([@bobisjan](https://github.com/bobisjan))
+- [#575](https://github.com/zonkyio/ember-web-app/pull/575) Drop Node.js 13 support ([@bobisjan](https://github.com/bobisjan))
+- [#565](https://github.com/zonkyio/ember-web-app/pull/565) Drop support for Ember.js LTS 3.8 ([@bobisjan](https://github.com/bobisjan))
+
+#### :rocket: Enhancement
+
+- [#422](https://github.com/zonkyio/ember-web-app/pull/422) add "scope" to default manifest ([@nickschot](https://github.com/nickschot))
+
+#### :bug: Bug Fix
+
+- [#583](https://github.com/zonkyio/ember-web-app/pull/583) Make config path dynamic according to package.json ([@ming-codes](https://github.com/ming-codes))
+
+#### :memo: Documentation
+
+- [#494](https://github.com/zonkyio/ember-web-app/pull/494) Add mention about service workers, Closes [#292](https://github.com/zonkyio/ember-web-app/issues/292) ([@bobisjan](https://github.com/bobisjan))
+
+#### :house: Internal
+
+- [#593](https://github.com/zonkyio/ember-web-app/pull/593) Add Ember 3.20 LTS into testing matrix ([@bobisjan](https://github.com/bobisjan))
+- [#576](https://github.com/zonkyio/ember-web-app/pull/576) Use Volta Action ([@bobisjan](https://github.com/bobisjan))
+- [#495](https://github.com/zonkyio/ember-web-app/pull/495) Cleanup GitHub Actions ([@bobisjan](https://github.com/bobisjan))
+- [#492](https://github.com/zonkyio/ember-web-app/pull/492) Pin Node and Yarn using Volta ([@bobisjan](https://github.com/bobisjan))
+- [#282](https://github.com/zonkyio/ember-web-app/pull/282) Use GitHub Actions ([@bobisjan](https://github.com/bobisjan))
+- [#369](https://github.com/zonkyio/ember-web-app/pull/369) Use silent mode to remove Yarn output from release notes ([@bobisjan](https://github.com/bobisjan))
+- [#368](https://github.com/zonkyio/ember-web-app/pull/368) Use version as GitHub release ([@bobisjan](https://github.com/bobisjan))
+
+#### Committers: 4
+
+- Jan Bobisud ([@bobisjan](https://github.com/bobisjan))
+- Ming Liu ([@ming-codes](https://github.com/ming-codes))
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
 ## v4.0.0 (2020-02-08)
 
 #### :boom: Breaking Change

@@ -38,7 +38,7 @@
     "broccoli-merge-trees": "^4.2.0",
     "ember-cli-babel": "^7.23.0",
     "jsdom": "^16.4.0",
-    "web-app-manifest-validator": "^1.0.0",
+    "web-app-manifest-validator": "^1.1.0",
     "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {

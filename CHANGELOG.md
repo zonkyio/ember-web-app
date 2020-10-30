@@ -1,3 +1,11 @@
+## v5.0.1 (2020-10-30)
+
+#### :bug: Bug Fix
+
+- [#629](https://github.com/zonkyio/ember-web-app/pull/629) Bump web-app-manifest-validator from 1.0.0 to 1.1.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### Committers: 0
+
 ## v5.0.0 (2020-09-13)
 
 #### :boom: Breaking Change

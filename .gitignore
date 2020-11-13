@@ -9,7 +9,6 @@
 /node_modules/
 
 # misc
-=======
 /.env*
 /.eslintcache
 /.nyc_output

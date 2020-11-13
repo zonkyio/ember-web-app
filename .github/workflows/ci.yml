@@ -18,8 +18,7 @@ jobs:
       - uses: volta-cli/action@v1
 
       - run: yarn install --non-interactive
-      - run: yarn lint:js
-      - run: yarn lint:hbs
+      - run: yarn lint
 
   test-ember:
     name: Tests / Ember
@@ -30,7 +29,7 @@ jobs:
       - uses: volta-cli/action@v1
 
       - run: yarn install --non-interactive
-      - run: yarn test
+      - run: yarn test:ember
 
   test-node:
     name: Tests / Node
@@ -56,7 +55,7 @@ jobs:
       - uses: volta-cli/action@v1
 
       - run: yarn install --ignore-lockfile --non-interactive
-      - run: yarn test
+      - run: yarn test:ember
 
   try-scenarios:
     name: Tests / ${{ matrix.ember-try-scenario }}

@@ -16,9 +16,9 @@ jobs:
       - uses: actions/checkout@v1
       - uses: volta-cli/action@v1
 
-      - run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::${GITHUB_REF##*/}"
+      - run: echo "ADDON_DOCS_VERSION_PATH=${GITHUB_REF##*/}" >> $GITHUB_ENV
       - if: contains(github.ref , 'master') != true
-        run: echo "::set-env name=ADDON_DOCS_UPDATE_LATEST::true"
+        run: echo "ADDON_DOCS_UPDATE_LATEST=true" >> $GITHUB_ENV
       - run: yarn install
       - env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

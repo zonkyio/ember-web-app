@@ -1,0 +1,4 @@
+body > .ember-view {
+  flex: none;
+  margin-top: 0;
+}

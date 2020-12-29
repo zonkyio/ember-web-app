@@ -31,20 +31,20 @@ jobs:
       - run: yarn install --non-interactive
       - run: yarn test:ember
 
-  test-node:
-    name: Tests / Node
-    runs-on: ubuntu-latest
+  # test-node:
+  #   name: Tests / Node
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v1
-      - uses: volta-cli/action@v1
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: volta-cli/action@v1
 
-      - run: yarn install --non-interactive
-      - uses: paambaati/codeclimate-action@v2.5.5
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: yarn node-test
+  #     - run: yarn install --non-interactive
+  #     - uses: paambaati/codeclimate-action@v2.5.5
+  #       env:
+  #         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+  #       with:
+  #         coverageCommand: yarn node-test
 
   test-float:
     name: Tests / floating dependencies
@@ -72,6 +72,8 @@ jobs:
           - ember-canary
           - ember-default-with-jquery
           - ember-classic
+          - embroider-safe
+          # - embroider-optimized
 
     steps:
       - uses: actions/checkout@v1

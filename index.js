@@ -29,6 +29,11 @@ module.exports = {
     this._super.included.apply(this, arguments);
   },
 
+  // postBuild(result) {
+  //   this.manifest.build(result);
+  //   this.browserconfig.build(result);
+  // },
+
   treeForPublic() {
     let manifest = this.manifest.toTree();
     let browserconfig = this.browserconfig.toTree();

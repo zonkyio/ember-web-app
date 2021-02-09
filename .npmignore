@@ -12,7 +12,7 @@
 /.env*
 /.eslintignore
 /.eslintrc.js
-/.huskyrc.js
+/.huskyrc/
 /.prettierrc.js
 /.git/
 /.gitignore

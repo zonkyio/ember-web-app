@@ -28,7 +28,6 @@ module.exports = {
     {
       files: [
         '.eslintrc.js',
-        '.huskyrc.js',
         '.prettierrc.js',
         '.release-it.js',
         '.template-lintrc.js',

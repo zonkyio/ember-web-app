@@ -110,8 +110,7 @@ describe('Acceptance', function () {
           assertJSON(app, {
             icons: [
               {
-                src:
-                  'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
+                src: 'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
               },
             ],
           })
@@ -144,8 +143,7 @@ describe('Acceptance', function () {
           assertJSON(app, {
             icons: [
               {
-                src:
-                  'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
+                src: 'https://www.example.com/pio-8911090226e7b5522790f1218f6924a5.png',
               },
             ],
           })

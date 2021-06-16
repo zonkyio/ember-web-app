@@ -14,6 +14,14 @@ yarn add -D ember-web-app@X.X.X
 
 You can view all of Web App's release notes on [our Releases page](https://github.com/zonkyio/ember-web-app/releases).
 
+## 6.0 Upgrade Guide
+
+There was one breaking change made in the 6.0 release.
+
+### 1. Drop Node.js 10 support
+
+Web App supports Node.js 12, 14, and 16+ versions.
+
 ## 5.0 Upgrade Guide
 
 There were a two breaking changes made in the 5.0 release.

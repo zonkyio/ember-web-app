@@ -27,26 +27,19 @@ module.exports = {
     // node files
     {
       files: [
-        '.eslintrc.js',
-        '.prettierrc.js',
-        '.release-it.js',
-        '.template-lintrc.js',
-        'ember-cli-build.js',
-        'index.js',
-        'lint-staged.config.js',
-        'testem.js',
-        'blueprints/*/index.js',
-        'config/**/*.js',
-        'lib/**/*.js',
-        'tests/dummy/config/**/*.js',
-        'node-tests/**/*.js',
-      ],
-      excludedFiles: [
-        'addon/**',
-        'addon-test-support/**',
-        'app/**',
-        'tests/dummy/app/**',
-        'node-tests/**/*-test.js',
+        './.eslintrc.js',
+        './.prettierrc.js',
+        './.release-it.js',
+        './.template-lintrc.js',
+        './ember-cli-build.js',
+        './index.js',
+        './lint-staged.config.js',
+        './testem.js',
+        './blueprints/*/index.js',
+        './config/**/*.js',
+        './lib/**/*.js',
+        './node-tests/**/*.js',
+        './tests/dummy/config/**/*.js',
       ],
       parserOptions: {
         sourceType: 'script',
@@ -60,7 +53,7 @@ module.exports = {
     },
     // mocha files
     {
-      files: ['node-tests/**/*-test.js'],
+      files: ['./node-tests/**/*-test.js'],
       parserOptions: {
         sourceType: 'script',
       },

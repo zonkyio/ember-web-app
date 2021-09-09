@@ -1,4 +1,4 @@
-/*! For license information please see chunk.916.8c3ef469f08513ad20bf.js.LICENSE.txt */
+/*! For license information please see chunk.916.963de9928de2cccb80cc.js.LICENSE.txt */
 (self.webpackChunk_ember_auto_import_=self.webpackChunk_ember_auto_import_||[]).push([[916],{916:function(e,t,n){var r
 e=n.nmd(e),function(){"use strict"
 var i,o="function"==typeof o?o:function(){var e=Object.create(null),t=Object.prototype.hasOwnProperty
@@ -278,7 +278,7 @@ var $e=!1,Ge=!1
 function Ye(){Ge=!0,b?b((function(){Je()})):Je()}function We(){P.blocking=!1,le.advance()}function Je(){if(P.started)We()
 else{P.started=N(),""===P.modules[0].name&&0===P.modules[0].tests.length&&P.modules.shift()
 for(var e=P.modules.length,t=[],n=0;n<e;n++)t.push({name:P.modules[n].name,tests:P.modules[n].tests})
-J("runStart",ze.start(!0)),X("begin",{totalTests:de.count,modules:t}).then(We)}}Qe.isLocal=g&&g.location&&"file:"===g.location.protocol,Qe.version="2.17.0",R(Qe,{config:P,dump:F,equiv:U,reporters:He,is:A,objectType:_,on:function(e,t){if("string"!==_(e))throw new TypeError("eventName must be a string when registering a listener")
+J("runStart",ze.start(!0)),X("begin",{totalTests:de.count,modules:t}).then(We)}}Qe.isLocal=g&&g.location&&"file:"===g.location.protocol,Qe.version="2.17.1",R(Qe,{config:P,dump:F,equiv:U,reporters:He,is:A,objectType:_,on:function(e,t){if("string"!==_(e))throw new TypeError("eventName must be a string when registering a listener")
 if(!I(e,W)){var n=W.join(", ")
 throw new Error('"'.concat(e,'" is not a valid event; must be one of: ').concat(n,"."))}if("function"!==_(t))throw new TypeError("callback must be a function when registering a listener")
 Y[e]||(Y[e]=[]),I(t,Y[e])||Y[e].push(t)},onError:function(e){if(E.warn("QUnit.onError is deprecated and will be removed in QUnit 3.0. Please use QUnit.onUncaughtException instead."),P.current&&P.current.ignoreGlobalErrors)return!0
@@ -419,7 +419,7 @@ if(!t)return E.warn("global failure"),void E.warn(e)
 var n=Xe(L(e))
 n="<span class='test-message'>"+n+"</span>",e&&e.stack&&(n+="<table><tr class='test-source'><th>Source: </th><td><pre>"+Xe(e.stack)+"</pre></td></tr></table>")
 var r=t.getElementsByTagName("ol")[0],i=k.createElement("li")
-i.className="fail",i.innerHTML=n,r.appendChild(i)}))
+i.className="fail",i.innerHTML=n,r.appendChild(i),t.className="fail"}))
 var o,s=(o=g.phantom)&&o.version&&o.version.major>0
 s&&v.warn("Support for PhantomJS is deprecated and will be removed in QUnit 3.0."),s||"complete"!==k.readyState?l(g,"load",Qe.load):Qe.load()
 var a=g.onerror

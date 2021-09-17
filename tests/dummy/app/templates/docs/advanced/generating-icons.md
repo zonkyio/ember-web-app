@@ -7,7 +7,7 @@ If your `config/manifest.js` looks like this and needs a `192px` and a `512px` i
 ```javascript
 'use strict';
 
-module.exports = function() {
+module.exports = function () {
   return {
     icons: [
       {
@@ -15,7 +15,7 @@ module.exports = function() {
         sizes: '32x32',
         targets: ['favicon'],
       },
-      ...[192, 280, 512].map(size => ({
+      ...[192, 280, 512].map((size) => ({
         src: `/assets/icons/appicon-${size}.png`,
         sizes: `${size}x${size}`,
       })),
@@ -28,8 +28,9 @@ You can start with a base `brand-icon.svg` image and automatically build the `19
 
 ```javascript
 'use strict';
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let options = {
     'ember-cli-image-transformer': {
       images: [

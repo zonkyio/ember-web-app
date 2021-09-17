@@ -12,6 +12,7 @@ jobs:
   lint:
     name: Linting
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v1
@@ -23,6 +24,7 @@ jobs:
   test-ember:
     name: Tests / Ember
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v1
@@ -34,6 +36,7 @@ jobs:
   test-node:
     name: Tests / Node
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v1
@@ -49,6 +52,7 @@ jobs:
   test-float:
     name: Tests / floating dependencies
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v1
@@ -61,6 +65,7 @@ jobs:
     name: Tests / ${{ matrix.ember-try-scenario }}
     runs-on: ubuntu-latest
     needs: [lint, test-ember]
+    timeout-minutes: 15
 
     strategy:
       matrix:
@@ -72,6 +77,8 @@ jobs:
           - ember-canary
           - ember-default-with-jquery
           - ember-classic
+          - embroider-safe
+          # - embroider-optimized
 
     steps:
       - uses: actions/checkout@v1

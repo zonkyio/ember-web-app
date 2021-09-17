@@ -7,12 +7,12 @@ The following example prepends with a custom domain and adds fingerprint checksu
 ```javascript
 'use strict';
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const broccoliAssetRevDefaults = require('broccoli-asset-rev/lib/default-options');
+const { extensions } = require('broccoli-asset-rev/lib/default-options');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let options = {
     fingerprint: {
-      extensions: broccoliAssetRevDefaults.extensions.concat(['webmanifest']),
+      extensions: [...extensions, 'webmanifest'],
       prepend: 'https://www.example.com/',
     },
   };

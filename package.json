@@ -40,7 +40,7 @@
     "broccoli-caching-writer": "^3.0.3",
     "broccoli-merge-trees": "^4.2.0",
     "ember-cli-babel": "^7.26.6",
-    "jsdom": "^17.0.0",
+    "jsdom": "^18.0.0",
     "web-app-manifest-validator": "^1.1.0",
     "xmlbuilder": "^15.1.1"
   },

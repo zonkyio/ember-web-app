@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('assert');
 const { AddonTestApp } = require('ember-cli-addon-tests');
-const { contentOf, assertJSON } = require('./helpers');
+const { contentOf, assertJSON, create } = require('./helpers');
 
 describe('Acceptance', function () {
   describe('manifest', function () {
@@ -19,10 +19,7 @@ describe('Acceptance', function () {
     });
 
     it('generates a manifest.webmanifest file', function () {
-      return app
-        .create('empty', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'empty')
         .then(function () {
           return app.runEmberCommand('build');
         })
@@ -43,10 +40,7 @@ describe('Acceptance', function () {
     });
 
     it('configures broccoli-asset-rev', function () {
-      return app
-        .create('dummy', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'dummy')
         .then(function () {
           return app.runEmberCommand('build', '--prod');
         })
@@ -61,10 +55,7 @@ describe('Acceptance', function () {
     });
 
     it('uses rootURL configuration', function () {
-      return app
-        .create('config-root-url', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'config-root-url')
         .then(function () {
           return app.runEmberCommand('build');
         })
@@ -78,10 +69,7 @@ describe('Acceptance', function () {
     });
 
     it('uses fingerprint configuration for manifest', function () {
-      return app
-        .create('broccoli-asset-rev', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'broccoli-asset-rev')
         .then(function () {
           return app.runEmberCommand('build', '--prod');
         })
@@ -118,10 +106,7 @@ describe('Acceptance', function () {
     });
 
     it('uses rootURL and fingerprint configurations', function () {
-      return app
-        .create('root-url-fingerprint', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'root-url-fingerprint')
         .then(function () {
           return app.runEmberCommand('build', '--prod');
         })

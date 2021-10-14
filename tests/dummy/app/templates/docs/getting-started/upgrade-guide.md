@@ -16,9 +16,13 @@ You can view all of Web App's release notes on [our Releases page](https://githu
 
 ## 6.0 Upgrade Guide
 
-There was one breaking change made in the 6.0 release.
+There were two breaking changes made in the 6.0 release.
 
-### 1. Drop Node.js 10 support
+### 1. Drop Ember.js 3.16 LTS support
+
+Web App supports Ember.js 3.20+ versions.
+
+### 2. Drop Node.js 10 support
 
 Web App supports Node.js 12, 14, and 16+ versions.
 

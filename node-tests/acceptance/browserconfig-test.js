@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('assert');
 const { AddonTestApp } = require('ember-cli-addon-tests');
-const { contentOf, exists, assertJSON } = require('./helpers');
+const { contentOf, exists, assertJSON, create } = require('./helpers');
 
 describe('Acceptance', function () {
   describe('browserconfig', function () {
@@ -19,10 +19,7 @@ describe('Acceptance', function () {
     });
 
     it('generates a browserconfig.xml file', function () {
-      return app
-        .create('empty', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'empty')
         .then(() => app.runEmberCommand('build'))
         .then(contentOf(app, 'dist/browserconfig.xml'))
         .then((content) =>
@@ -34,10 +31,7 @@ describe('Acceptance', function () {
     });
 
     it('configures broccoli-asset-rev', function () {
-      return app
-        .create('dummy', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'dummy')
         .then(() => app.runEmberCommand('build', '--prod'))
         .then(contentOf(app, 'dist/browserconfig.xml'))
         .then((content) =>
@@ -51,10 +45,7 @@ describe('Acceptance', function () {
     });
 
     it(`doesn't generate browserconfig when tag is omitted`, function () {
-      return app
-        .create('no-browserconfig', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'no-browserconfig')
         .then(() => app.runEmberCommand('build'))
         .then(() =>
           assert.ok(
@@ -72,10 +63,7 @@ describe('Acceptance', function () {
     });
 
     it('uses rootURL configuration', function () {
-      return app
-        .create('config-root-url', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'config-root-url')
         .then(() => app.runEmberCommand('build'))
         .then(contentOf(app, 'dist/index.html'))
         .then((content) =>
@@ -87,10 +75,7 @@ describe('Acceptance', function () {
     });
 
     it('uses fingerprint configuration for browserconfig', function () {
-      return app
-        .create('broccoli-asset-rev', {
-          fixturesPath: 'node-tests/acceptance/fixtures',
-        })
+      return create(app, 'broccoli-asset-rev')
         .then(() => app.runEmberCommand('build', '--prod'))
         .then(contentOf(app, 'dist/browserconfig.xml'))
         .then((content) =>

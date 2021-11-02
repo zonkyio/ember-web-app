@@ -3,9 +3,10 @@ const BroccoliMergeTrees = require('broccoli-merge-trees');
 const Manifest = require('./lib/manifest');
 const Browserconfig = require('./lib/browserconfig');
 const tags = require('./lib/tags');
+const pkg = require('./package');
 
 module.exports = {
-  name: require('./package').name,
+  name: pkg.name,
 
   shouldIncludeChildAddon(childAddon) {
     if (childAddon.name === 'broccoli-asset-rev') {
@@ -17,6 +18,15 @@ module.exports = {
 
   included(app) {
     this.app = app;
+  },
+
+  treeForPublic() {
+    if (!this.manifest) {
+      return this._treeForManifest(this.app);
+    }
+  },
+
+  _treeForManifest(app) {
     app.options = app.options || {};
     app.options[this.name] = app.options[this.name] || {};
 
@@ -26,19 +36,19 @@ module.exports = {
     this.manifest.configureFingerprint();
     this.browserconfig.configureFingerprint();
 
-    this._super.included.apply(this, arguments);
-  },
-
-  treeForPublic() {
-    let manifest = this.manifest.toTree();
-    let browserconfig = this.browserconfig.toTree();
-
-    return new BroccoliMergeTrees([manifest, browserconfig]);
+    return new BroccoliMergeTrees([
+      this.manifest.toTree(),
+      this.browserconfig.toTree(),
+    ]);
   },
 
   contentFor(section) {
-    if (section === 'head') {
+    if (this.manifest && section === 'head') {
       return tags(this.manifest.configuration);
     }
   },
+};
+
+module.exports.treeForManifest = function treeForManifest(app) {
+  return app.project.findAddonByName(pkg.name)._treeForManifest(app);
 };

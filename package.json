@@ -23,7 +23,7 @@
     "release": "release-it",
     "changelog": "lerna-changelog",
     "fast-test": "SKIP_ACCEPTANCE=true yarn node-test",
-    "node-test": "nyc --reporter=lcov mocha --recursive node-tests",
+    "node-test": "nyc --reporter=lcov mocha --recursive node-tests/**/*-test.js",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.5.0",
+    "@embroider/test-setup": "^0.47.0",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "babel-eslint": "^10.1.0",

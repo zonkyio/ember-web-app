@@ -1,6 +1,8 @@
 'use strict';
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+const { maybeEmbroider } = require('@embroider/test-setup');
+const { treeForManifest } = require('./index');
 
 module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
@@ -14,5 +16,7 @@ module.exports = function (defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  return app.toTree();
+  return maybeEmbroider(app, {
+    extraPublicTrees: [treeForManifest(app)],
+  });
 };

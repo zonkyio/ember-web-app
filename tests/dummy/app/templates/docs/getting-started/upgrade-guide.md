@@ -20,7 +20,7 @@ There were two breaking changes made in the 6.0 release.
 
 ### 1. Drop Ember.js 3.16 LTS support
 
-Web App supports Ember.js 3.20+ versions.
+Web App supports Ember.js 3.24+ versions.
 
 ### 2. Drop Node.js 10 support
 

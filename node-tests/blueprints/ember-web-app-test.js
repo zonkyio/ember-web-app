@@ -18,9 +18,9 @@ describe('Blueprints', function () {
       return emberNew().then(() =>
         emberGenerateDestroy(args, (file) => {
           expect(file('config/manifest.js'))
-            .to.contain('name: "my-app"')
-            .to.contain('short_name: "my-app"')
-            .to.contain('display: "standalone"');
+            .to.contain("name: 'my-app'")
+            .to.contain("short_name: 'my-app'")
+            .to.contain("display: 'standalone'");
         })
       );
     });

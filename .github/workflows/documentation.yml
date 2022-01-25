@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.4.0
       - uses: volta-cli/action@v1
 
       - run: echo "ADDON_DOCS_VERSION_PATH=${GITHUB_REF##*/}" >> $GITHUB_ENV

@@ -3,10 +3,15 @@ name: CI
 on:
   push:
     branches:
+      - main
       - master
     tags:
       - 'v*'
   pull_request: {}
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   lint:
@@ -65,8 +70,8 @@ jobs:
     strategy:
       matrix:
         ember-try-scenario:
-          - ember-lts-3.20
           - ember-lts-3.24
+          - ember-lts-3.28
           - ember-release
           - ember-beta
           - ember-canary

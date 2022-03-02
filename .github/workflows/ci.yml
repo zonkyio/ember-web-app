@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
 
       - run: yarn install --non-interactive
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
 
       - run: yarn install --non-interactive
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
 
       - run: yarn install --non-interactive
@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
 
       - run: yarn install --ignore-lockfile --non-interactive
@@ -79,7 +79,7 @@ jobs:
           - ember-classic
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
 
       - run: yarn install --non-interactive

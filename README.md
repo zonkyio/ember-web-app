@@ -31,6 +31,4 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 
-ember-web-app is licensed under the MIT license.
-
 See [LICENSE](./LICENSE) for the full license text.

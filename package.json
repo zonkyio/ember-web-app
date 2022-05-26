@@ -48,7 +48,7 @@
     "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.17.0",
+    "@babel/eslint-parser": "^7.18.2",
     "@babel/plugin-proposal-decorators": "^7.18.2",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",

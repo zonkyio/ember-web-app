@@ -22,9 +22,9 @@ There were two breaking changes made in the 6.0 release.
 
 Web App supports Ember.js 3.24+ versions.
 
-### 2. Drop Node.js 10 support
+### 2. Drop Node.js 10 and 12 support
 
-Web App supports Node.js 12, 14, and 16+ versions.
+Web App supports Node.js 14, 16, and 18+ versions.
 
 ## 5.0 Upgrade Guide
 

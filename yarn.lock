@@ -7034,8 +7034,9 @@ ember-load-initializers@^2.1.2:
     ember-cli-babel "^7.13.0"
     ember-cli-typescript "^2.0.2"
 
-"ember-modal-dialog@github:yapplabs/ember-modal-dialog#31ffee4c657ebe96b1f80adbc39c0339b52236e2":
+ember-modal-dialog@yapplabs/ember-modal-dialog#31ffee4c657ebe96b1f80adbc39c0339b52236e2:
   version "4.0.0-alpha.1"
+  uid "31ffee4c657ebe96b1f80adbc39c0339b52236e2"
   resolved "https://codeload.github.com/yapplabs/ember-modal-dialog/tar.gz/31ffee4c657ebe96b1f80adbc39c0339b52236e2"
   dependencies:
     "@embroider/macros" "^0.49.0"
@@ -9311,10 +9312,10 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.4.tgz#242048245dc49c8fb1bf0cc7cfb98dd722531535"
-  integrity sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==
+husky@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
+  integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.13, iconv-lite@^0.4.24:
   version "0.4.24"

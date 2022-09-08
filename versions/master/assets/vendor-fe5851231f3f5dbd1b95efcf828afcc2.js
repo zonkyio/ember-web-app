@@ -33,7 +33,7 @@ if(!r||"new"===r.state)return(r=new a(e,[],l,null)).module.exports=t,r.state="fi
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   4.6.0
+ * @version   4.7.0
  */
 var e,t;(function(){var r="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:null
 if(null===r)throw new Error("unable to locate global object")
@@ -47,7 +47,7 @@ a=i[s]={},o||function(e,t){throw t?new Error("Could not find module "+e+" requir
 for(var l=o.deps,u=o.callback,c=new Array(l.length),d=0;d<l.length;d++)"exports"===l[d]?c[d]=a:"require"===l[d]?c[d]=t:c[d]=t(l[d],s)
 return u.apply(this,c),a}e=function(e,t,r){n[e]={deps:t,callback:r}},(t=function(e){return s(e,null)}).default=t,t.has=function(e){return Boolean(n[e])||Boolean(n[e+"/index"])},t._eak_seen=t.entries=n})(),e("@ember/-internals/bootstrap/index",["require"],(function(e){"use strict"
 "object"==typeof module&&"function"==typeof module.require&&(module.exports=(0,e.default)("ember").default)})),e("@ember/-internals/browser-environment/index",["exports"],(function(e){"use strict"
-Object.defineProperty(e,"__esModule",{value:!0}),e.window=e.userAgent=e.location=e.isIE=e.isFirefox=e.isChrome=e.history=e.hasDOM=void 0
+Object.defineProperty(e,"__esModule",{value:!0}),e.window=e.userAgent=e.location=e.isFirefox=e.isChrome=e.history=e.hasDOM=void 0
 var t="object"==typeof self&&null!==self&&self.Object===Object&&"undefined"!=typeof Window&&self.constructor===Window&&"object"==typeof document&&null!==document&&self.document===document&&"object"==typeof location&&null!==location&&self.location===location&&"object"==typeof history&&null!==history&&self.history===history&&"object"==typeof navigator&&null!==navigator&&self.navigator===navigator&&"string"==typeof navigator.userAgent
 e.hasDOM=t
 var r=t?self:null
@@ -60,10 +60,8 @@ var s=t?self.navigator.userAgent:"Lynx (textmode)"
 e.userAgent=s
 var o=!!t&&("object"==typeof chrome&&!("object"==typeof opera))
 e.isChrome=o
-var a=!!t&&"undefined"!=typeof InstallTrigger
-e.isFirefox=a
-var l=!!t&&("undefined"!=typeof MSInputMethodContext&&"undefined"!=typeof documentMode)
-e.isIE=l})),e("@ember/-internals/container/index",["exports","@ember/-internals/owner","@ember/-internals/utils","@ember/debug"],(function(e,t,r,n){"use strict"
+var a=!!t&&/Firefox|FxiOS/.test(s)
+e.isFirefox=a})),e("@ember/-internals/container/index",["exports","@ember/-internals/owner","@ember/-internals/utils","@ember/debug"],(function(e,t,r,n){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.Registry=e.INIT_FACTORY=e.Container=void 0,e.getFactoryFor=function(e){return e[c]},e.privatize=function(e){var[t]=e
 var n=m[t]
 if(n)return n
@@ -3302,7 +3300,7 @@ return n.Adapter=i,n.QUnitAdapter=s,Object.defineProperty(I,"Test",{configurable
 var $=I
 t.default=$})),e("ember/version",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default="4.6.0"})),e("route-recognizer",["exports"],(function(e){"use strict"
+e.default="4.7.0"})),e("route-recognizer",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Object.create
 function r(){var e=t(null)

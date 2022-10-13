@@ -33,7 +33,7 @@ if(!r||"new"===r.state)return(r=new a(e,[],l,null)).module.exports=t,r.state="fi
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   4.7.0
+ * @version   4.7.1
  */
 var e,t;(function(){var r="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:null
 if(null===r)throw new Error("unable to locate global object")
@@ -3300,7 +3300,7 @@ return n.Adapter=i,n.QUnitAdapter=s,Object.defineProperty(I,"Test",{configurable
 var $=I
 t.default=$})),e("ember/version",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default="4.7.0"})),e("route-recognizer",["exports"],(function(e){"use strict"
+e.default="4.7.1"})),e("route-recognizer",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Object.create
 function r(){var e=t(null)
@@ -3455,7 +3455,7 @@ e&&(this.stashResolvedModel(e,t),e[g]=e[g]||{},e[g][this.name]=n)
 var i=t===this.context
 !("context"in this)&&i||(r=t)
 var s=O.get(this),o=new R(this.router,this.name,this.paramNames,n,this.route,r)
-return void 0!==s&&O.set(this,s),o}shouldSupersede(e){if(!e)return!0
+return void 0!==s&&O.set(o,s),o}shouldSupersede(e){if(!e)return!0
 var t=e.context===this.context
 return e.name!==this.name||"context"in this&&!t||this.hasOwnProperty("params")&&!function(e,t){if(e===t)return!0
 if(!e||!t)return!1

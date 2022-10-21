@@ -48,7 +48,7 @@ jobs:
       - uses: volta-cli/action@v4
 
       - run: yarn install --non-interactive
-      - uses: paambaati/codeclimate-action@v3.1.0
+      - uses: paambaati/codeclimate-action@v3.1.1
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
